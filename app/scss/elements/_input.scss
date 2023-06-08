@@ -1,0 +1,12 @@
+.input {
+    color: $black;
+    padding: 12px 16px;
+    border: 1px solid #CDCFD1;
+    border-radius: $brForElem;
+    width: 100%;
+    transition: $transition;
+
+    &:hover, &:active {
+        border: 1px solid $active;
+    }
+}

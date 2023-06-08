@@ -1,0 +1,19 @@
+.button {
+    cursor: pointer;
+    display: block;
+    background-color: $active;
+    width: 100%;
+    color: $white;
+    border-radius: $brForElem;
+    padding: 14px 32px;
+    line-height: 1;
+    transition: $transition;
+
+    &:hover {
+        background-color: #7a4ae4;
+    }
+
+    &:active {
+        background-color: #4f2aa0;
+    }
+}
