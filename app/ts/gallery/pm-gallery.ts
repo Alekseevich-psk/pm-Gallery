@@ -8,6 +8,10 @@ type Options = {
 
 class PmGallery {
 
+    private activeClass: string = 'active';
+    private previewPictureClass: string = '.pm-gallery__preview-picture';
+    private mainPictureClass: string = '.pm-gallery__main-picture';
+
     private init: boolean = false;
     private activeSlide: number = 0;
 
@@ -28,7 +32,7 @@ class PmGallery {
         if (options.activeSlide &&
             options.activeSlide < this.previews.length)
             this.activeSlide = options.activeSlide;
-        this.previews[this.activeSlide].classList.add('active');
+        this.previews[this.activeSlide].classList.add(this.activeClass);
         this.getActiveSlide(this.previews);
     }
 
@@ -43,8 +47,8 @@ class PmGallery {
     private setActiveSlide(oldIndex: number, newIndex: number) {
         const oldSlide = this.previews[oldIndex];
         const newSlide = this.previews[newIndex];
-        if (oldSlide.classList.contains('active')) oldSlide.classList.remove('active');
-        if (!newSlide.classList.contains('active')) newSlide.classList.add('active');
+        if (oldSlide.classList.contains(this.activeClass)) oldSlide.classList.remove(this.activeClass);
+        if (!newSlide.classList.contains(this.activeClass)) newSlide.classList.add(this.activeClass);
         this.activeSlide = newIndex;
         this.onMainPicture(this.activeSlide)
     }
@@ -52,7 +56,6 @@ class PmGallery {
     private onMainPicture(index: number) {
         const srcImg = this.previews[index].querySelector('img');
         this.mainPicture.src = srcImg.src;
-        
     }
 
     private getElements(parent: string, options: Options): boolean {
@@ -66,7 +69,7 @@ class PmGallery {
         if (options.classForPreviews) {
             this.previews = this.parent.querySelectorAll(options.classForPreviews);
         } else {
-            this.previews = this.parent.querySelectorAll('.pm-gallery__preview-picture');
+            this.previews = this.parent.querySelectorAll(this.previewPictureClass);
         }
 
         if (this.previews.length === 0) {
@@ -77,7 +80,7 @@ class PmGallery {
         if (options.classForMainPicture) {
             this.mainPicture = this.parent.querySelector(options.classForMainPicture);
         } else {
-            this.mainPicture = this.parent.querySelector('.pm-gallery__main-picture');
+            this.mainPicture = this.parent.querySelector(this.mainPictureClass);
         }
 
         if (this.mainPicture === null) {
