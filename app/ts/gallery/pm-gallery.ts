@@ -1,4 +1,5 @@
 import initControl from './init-control';
+import eventScroll from './scroll';
 
 type Options = {
     elForPreviews?: string,
@@ -19,24 +20,26 @@ class PmGallery {
     private activeSlide: number = 0;
     private timerId: ReturnType<typeof setInterval>;
 
-    private parent: Element;
+    private wrapper: Element;
     private mainPicture: HTMLImageElement;
     private previews: NodeListOf<Element>;
 
-    constructor(parent: string, options: Options) {
-        this.initGallery(parent, options);
+    constructor(wrapper: string, options: Options) {
+        this.initGallery(wrapper, options);
     }
 
-    private initGallery(parent: string, options: Options) {
-        if (!this.getElements(parent, options)) return;
+    private initGallery(wrapper: string, options: Options) {
+        if (!this.getElements(wrapper, options)) return;
 
         this.initActiveSlide(options);
-        initControl(this.parent, options);
+        initControl(this.wrapper, options);
 
-        this.parent.addEventListener('changeSlide', (event: CustomEvent) => {
+        this.wrapper.addEventListener('changeSlide', (event: CustomEvent) => {
             (event.detail.btn === 'prev') ? this.prevSlide() : this.nextSlide();
             this.autoPlay(null);
         })
+
+        // eventScroll(this.wrapper)
 
         if (options.autoPlay) this.autoPlay(options.autoPlay);
     }
@@ -90,18 +93,18 @@ class PmGallery {
         this.mainPicture.src = srcImg.src;
     }
 
-    private getElements(parent: string, options: Options): boolean {
-        this.parent = document.querySelector(parent) as HTMLFormElement;
+    private getElements(wrapper: string, options: Options): boolean {
+        this.wrapper = document.querySelector(wrapper) as HTMLFormElement;
 
-        if (this.parent === null) {
-            console.error('Not found parent element');
+        if (this.wrapper === null) {
+            console.error('Not found wrapper element');
             return false;
         }
 
         if (options.elForPreviews) {
-            this.previews = this.parent.querySelectorAll(options.elForPreviews);
+            this.previews = this.wrapper.querySelectorAll(options.elForPreviews);
         } else {
-            this.previews = this.parent.querySelectorAll(this.previewPictureEl);
+            this.previews = this.wrapper.querySelectorAll(this.previewPictureEl);
         }
 
         if (this.previews.length === 0) {
@@ -110,9 +113,9 @@ class PmGallery {
         }
 
         if (options.elForMainPicture) {
-            this.mainPicture = this.parent.querySelector(options.elForMainPicture);
+            this.mainPicture = this.wrapper.querySelector(options.elForMainPicture);
         } else {
-            this.mainPicture = this.parent.querySelector(this.mainPictureEl);
+            this.mainPicture = this.wrapper.querySelector(this.mainPictureEl);
         }
 
         if (this.mainPicture === null) {
@@ -120,7 +123,7 @@ class PmGallery {
             return false;
         }
 
-        this.parent.classList.add('active-gallery');
+        this.wrapper.classList.add('active-gallery');
         this.init = true;
 
         return true;

@@ -1,4 +1,4 @@
-export default function scroll() {
+export default function eventScroll() {
     console.log('test');
-    
+
 }
