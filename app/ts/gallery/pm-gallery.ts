@@ -3,6 +3,8 @@ import initControl from './init-control';
 type Options = {
     classForPreviews?: string,
     classForMainPicture?: string,
+    classForBtnPrev?: string,
+    classForBtnNext?: string,
     activeSlide?: number,
     autoPlay?: number
 }
@@ -29,7 +31,7 @@ class PmGallery {
         if (!this.getElements(parent, options)) return;
 
         this.initActiveSlide(options);
-        initControl(this.parent);
+        initControl(this.parent, options);
 
         this.parent.addEventListener('changeSlide', (event: CustomEvent) => {
             (event.detail.btn === 'prev') ? this.prevSlide() : this.nextSlide();
@@ -63,7 +65,8 @@ class PmGallery {
     private getActiveSlide(elements: NodeListOf<Element>) {
         elements.forEach((el, index) => {
             el.addEventListener('click', () => {
-                this.setActiveSlide(this.activeSlide, index)
+                this.setActiveSlide(this.activeSlide, index);
+                this.autoPlay(null);
             })
         });
     }
@@ -78,7 +81,6 @@ class PmGallery {
         if (oldSlide.classList.contains(this.activeClass)) oldSlide.classList.remove(this.activeClass);
         if (!newSlide.classList.contains(this.activeClass)) newSlide.classList.add(this.activeClass);
 
-        this.autoPlay(null);
         this.activeSlide = newIndex;
         this.onMainPicture(this.activeSlide)
     }

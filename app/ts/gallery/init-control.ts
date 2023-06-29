@@ -1,4 +1,6 @@
-export default function initControl(wrapper: Element) {
+import { Options } from "html-webpack-plugin";
+
+export default function initControl(wrapper: Element, options: Options) {
     const pmGalleryInnerPicture = wrapper.querySelector('.pm-gallery__inner--picture') as Element;
 
     const controlElements: string = `    
@@ -11,9 +13,19 @@ export default function initControl(wrapper: Element) {
     </div>`;
 
     pmGalleryInnerPicture.insertAdjacentHTML('afterbegin', controlElements);
+    const pmGalleryWrapperControl = wrapper.querySelector('.pm-gallery__control') as Element;
 
-    const btnPrevSlide: Element = wrapper.querySelector('.pm-gallery__arrow--prev');
-    const btnNextSlide: Element = wrapper.querySelector('.pm-gallery__arrow--next');
+    let btnPrevSlide: Element;
+    let btnNextSlide: Element;
+
+    if (options.classForBtnPrev && options.classForBtnNext) {
+        btnPrevSlide = document.querySelector(options.classForBtnPrev);
+        btnNextSlide = document.querySelector(options.classForBtnNext);
+        pmGalleryWrapperControl.classList.add('hide-arrows');
+    } else {
+        btnPrevSlide = wrapper.querySelector('.pm-gallery__arrow--prev');
+        btnNextSlide = wrapper.querySelector('.pm-gallery__arrow--next');
+    }
 
     btnPrevSlide.addEventListener('click', function () {
         wrapper.dispatchEvent(new CustomEvent("changeSlide", {

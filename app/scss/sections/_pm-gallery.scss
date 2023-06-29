@@ -97,6 +97,12 @@
         color: $black;
         overflow: hidden;
 
+        &.hide-arrows {
+            .pm-gallery__arrows {
+                display: none;
+            }
+        }
+
         &:hover {
             .pm-gallery__btn-size {
                 top: 2%;

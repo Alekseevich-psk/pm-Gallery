@@ -194,3 +194,8 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
+img {
+    user-select: none;
+    pointer-events: none;
+}
