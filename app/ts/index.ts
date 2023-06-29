@@ -5,6 +5,7 @@ const gallery = new PmGallery('.pm-gallery', {
     classForMainPicture: '.pm-gallery__main-picture',
     // classForBtnPrev: '.main__btn-slide--prev',
     // classForBtnNext: '.main__btn-slide--next',
+    fullScreenMode: true,
     activeSlide: 0,
     autoPlay: 2000,
 });

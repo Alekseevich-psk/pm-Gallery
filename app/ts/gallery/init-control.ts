@@ -13,7 +13,11 @@ export default function initControl(wrapper: Element, options: Options) {
     </div>`;
 
     pmGalleryInnerPicture.insertAdjacentHTML('afterbegin', controlElements);
+
     const pmGalleryWrapperControl = wrapper.querySelector('.pm-gallery__control') as Element;
+    const pmGalleryBtnSize = wrapper.querySelector('.pm-gallery__btn-size') as Element;
+    
+    if (!options.fullScreenMode) pmGalleryBtnSize.classList.add('hide');
 
     let btnPrevSlide: Element;
     let btnNextSlide: Element;
@@ -37,6 +41,10 @@ export default function initControl(wrapper: Element, options: Options) {
         wrapper.dispatchEvent(new CustomEvent("changeSlide", {
             detail: { btn: "next" }
         }));
+    })
+
+    pmGalleryBtnSize.addEventListener('click', () => {
+        wrapper.classList.toggle('full-screen');
     })
 
 }

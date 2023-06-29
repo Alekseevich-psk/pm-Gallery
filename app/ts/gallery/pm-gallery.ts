@@ -6,7 +6,8 @@ type Options = {
     classForBtnPrev?: string,
     classForBtnNext?: string,
     activeSlide?: number,
-    autoPlay?: number
+    autoPlay?: number,
+    fullScreenMode?: boolean,
 }
 
 class PmGallery {

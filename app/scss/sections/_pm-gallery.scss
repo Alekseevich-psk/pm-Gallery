@@ -3,6 +3,40 @@
     $grey: rgb(168, 168, 168);
     display: none;
 
+    &.full-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+
+        .pm-gallery__inner--picture {
+            padding-left: 0;
+
+            &:after {
+                padding-bottom: 0;
+                height: 100vh;
+            }
+        }
+
+        .pm-gallery__main-picture {
+            object-fit: contain;
+            left: 0;
+            width: 100%;
+        }
+
+        .pm-gallery__inner--previews {
+            display: none;
+        }
+
+        .pm-gallery__btn-size {
+            &:after {
+                background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"%3E%3Cpath stroke="%23fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 15h-4m0 0v4m0-4 4 4M5 9h4m0 0V5m0 4L5 5m14 4h-4m0 0V5m0 4 4-4M5 15h4m0 0v4m0-4-4 4"/%3E%3C/svg%3E');
+            }
+        }
+    }
+
     &.active-gallery {
         display: block;
     }
@@ -161,8 +195,8 @@
             background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36"%3E%3Cg clip-path="url(%23a)"%3E%3Cpath fill="%23fff" d="M2 18a16 16 0 1 1 32 0 16 16 0 0 1-32 0Zm15.57 8a1.43 1.43 0 0 0 0-2L13 19.4h14.14a1.4 1.4 0 0 0 0-2.8h-14l4.43-4.43a1.414 1.414 0 0 0-2-2L7.7 18.08 15.59 26a1.399 1.399 0 0 0 1.98 0Z"/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id="a"%3E%3Cpath fill="%23fff" d="M0 0h36v36H0z" transform="matrix(0 1 1 0 0 0)"/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E');
         }
 
-        &--next{
-             background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36"%3E%3Cg clip-path="url(%23a)"%3E%3Cpath fill="%23fff" d="M34 18a16 16 0 1 0-32 0 16 16 0 0 0 32 0Zm-15.57 8a1.43 1.43 0 0 1 0-2L23 19.4H8.86a1.4 1.4 0 0 1 0-2.8h14l-4.43-4.43a1.414 1.414 0 0 1 2-2l7.87 7.91L20.41 26a1.399 1.399 0 0 1-1.98 0Z"/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id="a"%3E%3Cpath fill="%23fff" d="M0 0h36v36H0z" transform="rotate(90 18 18)"/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E');
+        &--next {
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36"%3E%3Cg clip-path="url(%23a)"%3E%3Cpath fill="%23fff" d="M34 18a16 16 0 1 0-32 0 16 16 0 0 0 32 0Zm-15.57 8a1.43 1.43 0 0 1 0-2L23 19.4H8.86a1.4 1.4 0 0 1 0-2.8h14l-4.43-4.43a1.414 1.414 0 0 1 2-2l7.87 7.91L20.41 26a1.399 1.399 0 0 1-1.98 0Z"/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id="a"%3E%3Cpath fill="%23fff" d="M0 0h36v36H0z" transform="rotate(90 18 18)"/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E');
         }
     }
 
@@ -174,6 +208,10 @@
         right: -52px;
         width: 40px;
         height: 40px;
+
+        &.hide {
+            display: none;
+        }
 
         &:hover {
             &:before {
@@ -195,7 +233,7 @@
             background-color: $grey;
         }
 
-        &:after{
+        &:after {
             position: absolute;
             transition: $transition;
             content: "";
