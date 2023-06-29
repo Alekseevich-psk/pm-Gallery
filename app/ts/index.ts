@@ -9,7 +9,5 @@ const gallery = new PmGallery('.pm-gallery', {
     // },
     fullScreenMode: true,
     activeSlide: 0,
-    autoPlay: 2000,
+    autoPlay: 3000,
 });
-
-// console.log(gallery);

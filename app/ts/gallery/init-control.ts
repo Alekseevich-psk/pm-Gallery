@@ -44,7 +44,13 @@ export default function initControl(wrapper: Element, options: Options) {
     })
 
     pmGalleryBtnSize.addEventListener('click', () => {
-        wrapper.classList.toggle('full-screen');
+        if (wrapper.classList.contains('full-screen')) {
+            wrapper.classList.remove('full-screen');
+            document.body.style.overflow = '';
+        } else {
+            wrapper.classList.add('full-screen');
+            document.body.style.overflow = 'hidden';
+        }
     })
 
 }

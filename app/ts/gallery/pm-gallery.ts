@@ -1,5 +1,4 @@
 import initControl from './init-control';
-import eventScroll from './scroll';
 
 type Options = {
     elForPreviews?: string,
@@ -23,6 +22,7 @@ class PmGallery {
     private wrapper: Element;
     private mainPicture: HTMLImageElement;
     private previews: NodeListOf<Element>;
+    private pmGalleryInnerPreviews: Element;
 
     constructor(wrapper: string, options: Options) {
         this.initGallery(wrapper, options);
@@ -39,8 +39,6 @@ class PmGallery {
             this.autoPlay(null);
         })
 
-        // eventScroll(this.wrapper)
-
         if (options.autoPlay) this.autoPlay(options.autoPlay);
     }
 
@@ -49,12 +47,19 @@ class PmGallery {
         this.timerId = setInterval(() => this.nextSlide(), speed);
     }
 
+    private scrollWrapper(index:number, wrapper: Element) {
+        let el = this.previews[this.activeSlide] as HTMLElement;
+        wrapper.scrollTop = el.offsetHeight * (index - 1);
+    }
+
     private prevSlide() {
         this.setActiveSlide(this.activeSlide, this.activeSlide - 1);
+        this.scrollWrapper(this.activeSlide, this.pmGalleryInnerPreviews);
     }
 
     private nextSlide() {
         this.setActiveSlide(this.activeSlide, this.activeSlide + 1);
+        this.scrollWrapper(this.activeSlide, this.pmGalleryInnerPreviews);
     }
 
     private initActiveSlide(options: Options) {
@@ -122,6 +127,8 @@ class PmGallery {
             console.error('Main picture not found');
             return false;
         }
+
+        this.pmGalleryInnerPreviews = this.wrapper.querySelector('.pm-gallery__inner--previews');
 
         this.wrapper.classList.add('active-gallery');
         this.init = true;
