@@ -1,4 +1,4 @@
-// import scroll from './scroll';
+import initControl from './init-control';
 
 type Options = {
     classForPreviews: string,
@@ -20,12 +20,26 @@ class PmGallery {
     private previews: NodeListOf<Element>;
 
     constructor(parent: string, options: Options) {
-        if (this.initGallery(parent, options)) return;
-        this.initActiveSlide(options);
+        this.initGallery(parent, options);
     }
 
     private initGallery(parent: string, options: Options) {
-        if (!this.getElements(parent, options)) return false;
+        if (!this.getElements(parent, options)) return;
+
+        this.initActiveSlide(options);
+        initControl(this.parent);
+
+        this.parent.addEventListener('changeSlide', (event: CustomEvent) => {
+            (event.detail.btn === 'prev') ? this.prevSlide() : this.nextSlide();
+        })
+    }
+
+    private prevSlide() {
+        this.setActiveSlide(this.activeSlide, this.activeSlide - 1);
+    }
+
+    private nextSlide() {
+        this.setActiveSlide(this.activeSlide, this.activeSlide + 1);
     }
 
     private initActiveSlide(options: Options) {
@@ -45,10 +59,15 @@ class PmGallery {
     }
 
     private setActiveSlide(oldIndex: number, newIndex: number) {
+        if (newIndex < 0) newIndex = this.previews.length - 1;
+        if (newIndex > this.previews.length - 1) newIndex = 0;
+        
         const oldSlide = this.previews[oldIndex];
         const newSlide = this.previews[newIndex];
+
         if (oldSlide.classList.contains(this.activeClass)) oldSlide.classList.remove(this.activeClass);
         if (!newSlide.classList.contains(this.activeClass)) newSlide.classList.add(this.activeClass);
+        
         this.activeSlide = newIndex;
         this.onMainPicture(this.activeSlide)
     }
