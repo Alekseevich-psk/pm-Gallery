@@ -22,7 +22,7 @@ export default function initControl(wrapper: Element, options: Options) {
     let btnPrevSlide: Element;
     let btnNextSlide: Element;
 
-    if (options.navigation.elBtnPrev && options.navigation.elBtnNext) {
+    if (options.navigation?.elBtnPrev && options.navigation?.elBtnNext) {
         btnPrevSlide = document.querySelector(options.navigation.elBtnPrev);
         btnNextSlide = document.querySelector(options.navigation.elBtnNext);
         pmGalleryWrapperControl.classList.add('hide-arrows');
