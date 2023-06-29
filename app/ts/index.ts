@@ -13,6 +13,3 @@ const gallery = new PmGallery('.pm-gallery', {
 });
 
 // console.log(gallery);
-
-
-
