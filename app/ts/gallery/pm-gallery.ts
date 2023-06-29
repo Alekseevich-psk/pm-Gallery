@@ -1,9 +1,10 @@
 import initControl from './init-control';
 
 type Options = {
-    classForPreviews: string,
-    classForMainPicture: string,
-    activeSlide: number
+    classForPreviews?: string,
+    classForMainPicture?: string,
+    activeSlide?: number,
+    autoPlay?: number
 }
 
 class PmGallery {
@@ -14,6 +15,7 @@ class PmGallery {
 
     private init: boolean = false;
     private activeSlide: number = 0;
+    private timerId: ReturnType<typeof setInterval>;
 
     private parent: Element;
     private mainPicture: HTMLImageElement;
@@ -31,7 +33,15 @@ class PmGallery {
 
         this.parent.addEventListener('changeSlide', (event: CustomEvent) => {
             (event.detail.btn === 'prev') ? this.prevSlide() : this.nextSlide();
+            this.autoPlay(null);
         })
+
+        if (options.autoPlay) this.autoPlay(options.autoPlay);
+    }
+
+    private autoPlay(speed: number) {
+        if (speed === null) return clearInterval(this.timerId);
+        this.timerId = setInterval(() => this.nextSlide(), speed);
     }
 
     private prevSlide() {
@@ -61,13 +71,14 @@ class PmGallery {
     private setActiveSlide(oldIndex: number, newIndex: number) {
         if (newIndex < 0) newIndex = this.previews.length - 1;
         if (newIndex > this.previews.length - 1) newIndex = 0;
-        
+
         const oldSlide = this.previews[oldIndex];
         const newSlide = this.previews[newIndex];
 
         if (oldSlide.classList.contains(this.activeClass)) oldSlide.classList.remove(this.activeClass);
         if (!newSlide.classList.contains(this.activeClass)) newSlide.classList.add(this.activeClass);
-        
+
+        this.autoPlay(null);
         this.activeSlide = newIndex;
         this.onMainPicture(this.activeSlide)
     }
