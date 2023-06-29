@@ -2,14 +2,19 @@ import path from "path";
 
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
+// import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import CopyPlugin from "copy-webpack-plugin";
+import FileManagerPlugin from "filemanager-webpack-plugin";
 
 export default {
     context: path.resolve("app"),
     entry: {
         style: "./scss/style.scss",
-        ts: './ts/index.ts'
+        ts: "./ts/index.ts",
+    },
+    devServer: {
+        watchFiles: "app/",
+        port: 9000,
     },
     output: {
         filename: "[name].js",
@@ -22,7 +27,13 @@ export default {
         new HtmlWebpackPlugin({
             template: "./html/index.html",
         }),
-        new CleanWebpackPlugin(),
+        new FileManagerPlugin({
+            events: {
+                onStart: {
+                    delete: ["dist"],
+                },
+            },
+        }),
         new CopyPlugin({
             patterns: [
                 {

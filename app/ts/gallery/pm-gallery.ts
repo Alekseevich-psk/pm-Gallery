@@ -16,7 +16,7 @@ class PmGallery {
     private activeSlide: number = 0;
 
     private parent: Element;
-    private mainPicture: Element;
+    private mainPicture: HTMLImageElement;
     private previews: NodeListOf<Element>;
 
     constructor(parent: string, options: Options) {
