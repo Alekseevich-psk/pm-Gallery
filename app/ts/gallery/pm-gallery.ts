@@ -12,8 +12,8 @@ type Options = {
 class PmGallery {
 
     private activeClass: string = 'active';
-    private previewPictureClass: string = '.pm-gallery__preview-picture';
-    private mainPictureClass: string = '.pm-gallery__main-picture';
+    private previewPictureEl: string = '.pm-gallery__preview-picture';
+    private mainPictureEl: string = '.pm-gallery__main-picture';
 
     private init: boolean = false;
     private activeSlide: number = 0;
@@ -101,7 +101,7 @@ class PmGallery {
         if (options.elForPreviews) {
             this.previews = this.parent.querySelectorAll(options.elForPreviews);
         } else {
-            this.previews = this.parent.querySelectorAll(this.previewPictureClass);
+            this.previews = this.parent.querySelectorAll(this.previewPictureEl);
         }
 
         if (this.previews.length === 0) {
@@ -112,7 +112,7 @@ class PmGallery {
         if (options.elForMainPicture) {
             this.mainPicture = this.parent.querySelector(options.elForMainPicture);
         } else {
-            this.mainPicture = this.parent.querySelector(this.mainPictureClass);
+            this.mainPicture = this.parent.querySelector(this.mainPictureEl);
         }
 
         if (this.mainPicture === null) {
