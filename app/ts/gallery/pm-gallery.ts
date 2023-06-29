@@ -1,10 +1,9 @@
 import initControl from './init-control';
 
 type Options = {
-    classForPreviews?: string,
-    classForMainPicture?: string,
-    classForBtnPrev?: string,
-    classForBtnNext?: string,
+    elForPreviews?: string,
+    elForMainPicture?: string,
+    navigation?: Object,
     activeSlide?: number,
     autoPlay?: number,
     fullScreenMode?: boolean,
@@ -99,8 +98,8 @@ class PmGallery {
             return false;
         }
 
-        if (options.classForPreviews) {
-            this.previews = this.parent.querySelectorAll(options.classForPreviews);
+        if (options.elForPreviews) {
+            this.previews = this.parent.querySelectorAll(options.elForPreviews);
         } else {
             this.previews = this.parent.querySelectorAll(this.previewPictureClass);
         }
@@ -110,8 +109,8 @@ class PmGallery {
             return false;
         }
 
-        if (options.classForMainPicture) {
-            this.mainPicture = this.parent.querySelector(options.classForMainPicture);
+        if (options.elForMainPicture) {
+            this.mainPicture = this.parent.querySelector(options.elForMainPicture);
         } else {
             this.mainPicture = this.parent.querySelector(this.mainPictureClass);
         }

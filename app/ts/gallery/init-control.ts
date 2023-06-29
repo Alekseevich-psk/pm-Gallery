@@ -16,15 +16,15 @@ export default function initControl(wrapper: Element, options: Options) {
 
     const pmGalleryWrapperControl = wrapper.querySelector('.pm-gallery__control') as Element;
     const pmGalleryBtnSize = wrapper.querySelector('.pm-gallery__btn-size') as Element;
-    
+
     if (!options.fullScreenMode) pmGalleryBtnSize.classList.add('hide');
 
     let btnPrevSlide: Element;
     let btnNextSlide: Element;
 
-    if (options.classForBtnPrev && options.classForBtnNext) {
-        btnPrevSlide = document.querySelector(options.classForBtnPrev);
-        btnNextSlide = document.querySelector(options.classForBtnNext);
+    if (options.navigation.elBtnPrev && options.navigation.elBtnNext) {
+        btnPrevSlide = document.querySelector(options.navigation.elBtnPrev);
+        btnNextSlide = document.querySelector(options.navigation.elBtnNext);
         pmGalleryWrapperControl.classList.add('hide-arrows');
     } else {
         btnPrevSlide = wrapper.querySelector('.pm-gallery__arrow--prev');
