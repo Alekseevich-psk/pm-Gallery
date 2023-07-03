@@ -3,6 +3,29 @@
     $grey: rgb(168, 168, 168);
     display: none;
 
+    &.horizontally {
+        .pm-gallery {
+            &__inner--previews {
+                transform: rotate(-90deg) translateY(calc(50% - 60px));
+                top: calc(50% + 60px);
+            }
+
+            &__inner--picture, &__main-picture {
+                padding-left: 0;
+                width: 100%;
+                left: 0;
+            }
+
+            
+
+            &__preview-picture {
+                img {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+
     &.full-screen {
         position: fixed;
         z-index: 9999;
@@ -56,6 +79,8 @@
         &--previews {
             display: block;
             position: absolute;
+            top: 0;
+            left: 0;
             border: 1px solid $grey;
             width: $widthPreviews;
             height: 100%;
@@ -216,8 +241,8 @@
         transition: $transition;
         top: -52px;
         right: -52px;
-        width: 40px;
-        height: 40px;
+        width: 32px;
+        height: 32px;
 
         &.hide {
             display: none;
