@@ -1,11 +1,20 @@
 .pm-gallery {
     &.horizontally-top {
         padding-top: 120px;
-        
+
+        @media (max-width: 768px) {
+            padding-top: 80px;
+        }
+
         .pm-gallery {
             &__inner--previews {
                 transform: rotate(-90deg) translateY(calc(50% - 60px));
                 top: calc(-50% - 60px);
+
+                @media (max-width: 768px) {
+                    transform: rotate(-90deg) translateY(calc(50% - 40px));
+                    top: calc(-50% - 40px);
+                }
             }
 
             &__inner--picture,

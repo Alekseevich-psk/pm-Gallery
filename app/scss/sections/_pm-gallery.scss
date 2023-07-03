@@ -4,7 +4,12 @@
 @import "./../mode/full-screen";
 
 .pm-gallery {
-    $widthPreviews: 120px;
+    --widthPreviews: 120px;
+
+    @media(max-width: 768px) {
+        --widthPreviews: 80px;
+    }
+
     $grey: rgb(168, 168, 168);
     display: none;
 
@@ -28,12 +33,11 @@
             top: 0;
             left: 0;
             border: 1px solid $grey;
-            width: $widthPreviews;
+            width: var(--widthPreviews);
             height: 100%;
             z-index: 2;
             overflow-y: scroll;
             scroll-behavior: smooth;
-            // overflow: hidden;
 
             & {
                 -ms-overflow-style: none;
@@ -46,7 +50,7 @@
 
         &--picture {
             position: relative;
-            padding-left: $widthPreviews;
+            padding-left: var(--widthPreviews);
 
             &:after {
                 position: relative;
@@ -59,8 +63,8 @@
             img {
                 position: absolute;
                 top: 0;
-                left: $widthPreviews;
-                width: calc(100% - $widthPreviews);
+                left: var(--widthPreviews);
+                width: calc(100% - var(--widthPreviews));
                 height: 100%;
                 object-fit: cover;
             }
