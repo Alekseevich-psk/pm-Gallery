@@ -9,6 +9,14 @@
         height: 100%;
         background-color: #fff;
 
+        .hide-arrows {
+            .pm-gallery__arrows {
+                opacity: 1;
+                visibility: visible;
+                height: auto;
+            }
+        }
+
         .pm-gallery {
             &__inner--picture {
                 padding-left: 0;

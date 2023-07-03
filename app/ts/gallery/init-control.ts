@@ -19,29 +19,30 @@ export default function initControl(wrapper: Element, options: Options) {
 
     if (!options.fullScreenMode) pmGalleryBtnSize.classList.add('hide');
 
-    let btnPrevSlide: Element;
-    let btnNextSlide: Element;
-
     if (options.navigation?.elBtnPrev && options.navigation?.elBtnNext) {
-        btnPrevSlide = document.querySelector(options.navigation.elBtnPrev);
-        btnNextSlide = document.querySelector(options.navigation.elBtnNext);
+        addEventPrevSlide(options.navigation.elBtnPrev);
+        addEventNextSlide(options.navigation.elBtnNext);
         pmGalleryWrapperControl.classList.add('hide-arrows');
-    } else {
-        btnPrevSlide = wrapper.querySelector('.pm-gallery__arrow--prev');
-        btnNextSlide = wrapper.querySelector('.pm-gallery__arrow--next');
     }
 
-    btnPrevSlide.addEventListener('click', function () {
-        wrapper.dispatchEvent(new CustomEvent("changeSlide", {
-            detail: { btn: "prev" }
-        }));
-    })
+    addEventPrevSlide('.pm-gallery__arrow--prev');
+    addEventNextSlide('.pm-gallery__arrow--next');
 
-    btnNextSlide.addEventListener('click', function () {
-        wrapper.dispatchEvent(new CustomEvent("changeSlide", {
-            detail: { btn: "next" }
-        }));
-    })
+    function addEventPrevSlide(el: string) {
+        document.querySelector(el).addEventListener('click', function () {
+            wrapper.dispatchEvent(new CustomEvent("changeSlide", {
+                detail: { btn: "prev" }
+            }));
+        });
+    }
+
+    function addEventNextSlide(el: string) {
+        document.querySelector(el).addEventListener('click', function () {
+            wrapper.dispatchEvent(new CustomEvent("changeSlide", {
+                detail: { btn: "next" }
+            }));
+        });
+    }
 
     pmGalleryBtnSize.addEventListener('click', () => {
         if (wrapper.classList.contains('full-screen')) {
