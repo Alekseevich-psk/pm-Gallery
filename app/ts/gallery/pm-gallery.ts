@@ -1,5 +1,6 @@
 import { Options } from './types/options';
-import initControl from './init-control';
+import initControl from './common/init-control';
+import swipe from './common/swipe';
 import orientationPreviews from './mode/orientation-previews';
 
 class PmGallery {
@@ -25,8 +26,10 @@ class PmGallery {
         if (!this.getElements(wrapper, options)) return;
 
         this.initActiveSlide(options);
+        
         initControl(this.wrapper, options);
         orientationPreviews(this.wrapper, options);
+        swipe(this.wrapper, options);
 
         this.wrapper.addEventListener('changeSlide', (event: CustomEvent) => {
             (event.detail.btn === 'prev') ? this.prevSlide() : this.nextSlide();
