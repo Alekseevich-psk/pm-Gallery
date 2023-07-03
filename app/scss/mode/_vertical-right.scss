@@ -1,0 +1,20 @@
+.pm-gallery {
+    &.vertical-right {
+        .pm-gallery {
+            &__inner--previews {
+                right: 0;
+                left: auto;
+            }
+
+            &__inner--picture,
+            &__main-picture {
+                padding-left: 0;
+                left: 0;
+            }
+
+            &__inner--picture {
+                padding-right: 120px;
+            }
+        }
+    }
+}

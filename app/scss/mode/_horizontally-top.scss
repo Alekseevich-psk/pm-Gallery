@@ -1,0 +1,25 @@
+.pm-gallery {
+    &.horizontally-top {
+        padding-top: 120px;
+        
+        .pm-gallery {
+            &__inner--previews {
+                transform: rotate(-90deg) translateY(calc(50% - 60px));
+                top: calc(-50% - 60px);
+            }
+
+            &__inner--picture,
+            &__main-picture {
+                padding-left: 0;
+                width: 100%;
+                left: 0;
+            }
+
+            &__preview-picture {
+                img {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+}
