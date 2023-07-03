@@ -1,8 +1,9 @@
 import path from "path";
 
+// import TerserPlugin from "terser-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
-// import { CleanWebpackPlugin } from "clean-webpack-plugin";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import CopyPlugin from "copy-webpack-plugin";
 import FileManagerPlugin from "filemanager-webpack-plugin";
 
@@ -10,7 +11,9 @@ export default {
     context: path.resolve("app"),
     entry: {
         style: "./scss/style.scss",
-        ts: "./ts/index.ts",
+        "pm-gallery-style": "./scss/pm-gallery.scss",
+        "pm-gallery": "./ts/gallery/pm-gallery.ts",
+        main: "./scripts/index.js",
     },
     devServer: {
         watchFiles: "app/",
@@ -19,6 +22,11 @@ export default {
     output: {
         filename: "[name].js",
         path: path.resolve("dist"),
+        library: {
+            name: "PmGallery",
+            type: "umd",
+            export: "default",
+        },
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -42,6 +50,7 @@ export default {
                 },
             ],
         }),
+        new CleanWebpackPlugin()
     ],
     resolve: {
         extensions: [".tsx", ".ts", ".js"],

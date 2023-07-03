@@ -26,7 +26,7 @@ class PmGallery {
         if (!this.getElements(wrapper, options)) return;
 
         this.initActiveSlide(options);
-        
+
         initControl(this.wrapper, options);
         orientationPreviews(this.wrapper, options);
         swipe(this.wrapper, options);

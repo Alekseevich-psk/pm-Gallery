@@ -24,6 +24,7 @@
         "webpack-dev-server": "^4.15.1"
     },
     "dependencies": {
-        "normalize.css": "^8.0.1"
+        "normalize.css": "^8.0.1",
+        "terser-webpack-plugin": "^5.3.9"
     }
 }
