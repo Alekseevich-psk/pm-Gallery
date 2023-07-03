@@ -1,4 +1,4 @@
-import { Options } from "html-webpack-plugin";
+import { Options } from './types/options';
 
 export default function initControl(wrapper: Element, options: Options) {
     const pmGalleryInnerPicture = wrapper.querySelector('.pm-gallery__inner--picture') as Element;

@@ -1,13 +1,6 @@
+import { Options } from './types/options';
 import initControl from './init-control';
-
-type Options = {
-    elForPreviews?: string,
-    elForMainPicture?: string,
-    navigation?: Object,
-    activeSlide?: number,
-    autoPlay?: number,
-    fullScreenMode?: boolean,
-}
+import orientationPreviews from './mode/orientation-previews';
 
 class PmGallery {
 
@@ -33,6 +26,7 @@ class PmGallery {
 
         this.initActiveSlide(options);
         initControl(this.wrapper, options);
+        orientationPreviews(this.wrapper, options);
 
         this.wrapper.addEventListener('changeSlide', (event: CustomEvent) => {
             (event.detail.btn === 'prev') ? this.prevSlide() : this.nextSlide();
@@ -47,7 +41,7 @@ class PmGallery {
         this.timerId = setInterval(() => this.nextSlide(), speed);
     }
 
-    private scrollWrapper(index:number, wrapper: Element) {
+    private scrollWrapper(index: number, wrapper: Element) {
         let el = this.previews[this.activeSlide] as HTMLElement;
         wrapper.scrollTop = el.offsetHeight * (index - 1);
     }
