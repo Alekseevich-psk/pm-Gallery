@@ -1,7 +1,7 @@
 .pm-gallery {
     &.full-screen {
         position: fixed;
-        z-index: 9999;
+        z-index: 9998;
         overflow: hidden;
         top: 0;
         left: 0;
@@ -9,28 +9,41 @@
         height: 100%;
         background-color: #fff;
 
-        .pm-gallery__inner--picture {
-            padding-left: 0;
+        .pm-gallery {
+            &__inner--picture {
+                padding-left: 0;
 
-            &:after {
-                padding-bottom: 0;
-                height: 100vh;
+                &:after {
+                    padding-bottom: 0;
+                    height: 100vh;
+                }
             }
-        }
 
-        .pm-gallery__main-picture {
-            object-fit: contain;
-            left: 0;
-            width: 100%;
-        }
+            &__main-picture {
+                object-fit: contain;
+                left: 0;
+                width: 100%;
+            }
 
-        .pm-gallery__inner--previews {
-            display: none;
-        }
+            &__inner--previews {
+                // z-index: 99999;
+                // position: fixed;
+                // left: 50%;
+                // transform: rotate(-90deg);
+                // top: calc(50% - 120px);
+                display: none;
+            }
 
-        .pm-gallery__btn-size {
-            &:after {
-                background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"%3E%3Cpath stroke="%23fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 15h-4m0 0v4m0-4 4 4M5 9h4m0 0V5m0 4L5 5m14 4h-4m0 0V5m0 4 4-4M5 15h4m0 0v4m0-4-4 4"/%3E%3C/svg%3E');
+            &__preview-picture {
+                img {
+                    transform: rotate(90deg);
+                }
+            }
+
+            &__btn-size {
+                &:after {
+                    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"%3E%3Cpath stroke="%23fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 15h-4m0 0v4m0-4 4 4M5 9h4m0 0V5m0 4L5 5m14 4h-4m0 0V5m0 4 4-4M5 15h4m0 0v4m0-4-4 4"/%3E%3C/svg%3E');
+                }
             }
         }
     }
