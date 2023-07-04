@@ -8,7 +8,7 @@
 
             &__inner--picture,
             &__main-picture {
-                padding-left: 0;
+                padding-left: 0 !important;
                 left: 0;
             }
 
@@ -16,7 +16,7 @@
                 padding-right: 120px;
 
                 @media (max-width: 768px) {
-                    padding-right: 80px;
+                    padding-right: 80px !important;
                 }
             }
         }

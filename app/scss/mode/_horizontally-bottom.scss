@@ -1,11 +1,19 @@
 .pm-gallery {
+    --widthPreviews: 120px;
+
+    @media (max-width: 768px) {
+        --widthPreviews: 80px;
+    }
+
     &.horizontally-bottom {
+        margin-bottom: var(--widthPreviews) !important;
+
         .pm-gallery {
             &__inner--previews {
                 transform: rotate(-90deg) translateY(calc(50% - 60px));
                 top: calc(50% + 60px);
 
-                @media(max-width: 768px) {
+                @media (max-width: 768px) {
                     transform: rotate(-90deg) translateY(calc(50% - 40px));
                     top: calc(50% + 40px);
                 }
@@ -13,7 +21,7 @@
 
             &__inner--picture,
             &__main-picture {
-                padding-left: 0;
+                padding-left: 0 !important;
                 width: 100%;
                 left: 0;
             }

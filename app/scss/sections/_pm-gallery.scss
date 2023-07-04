@@ -1,9 +1,5 @@
-@import "./../mode/horizontally-top";
-@import "./../mode/horizontally-bottom";
-@import "./../mode/vertical-right";
-@import "./../mode/full-screen";
-
 .pm-gallery {
+    position: relative;
     --widthPreviews: 120px;
 
     @media(max-width: 768px) {
@@ -50,7 +46,7 @@
 
         &--picture {
             position: relative;
-            padding-left: var(--widthPreviews);
+            padding-left: var(--widthPreviews) !important;
 
             &:after {
                 position: relative;
@@ -115,6 +111,7 @@
         z-index: 2;
         color: $black;
         overflow: hidden;
+
 
         &.hide-arrows {
             .pm-gallery__arrows {
@@ -234,3 +231,8 @@
         }
     }
 }
+
+@import "./../mode/horizontally-top";
+@import "./../mode/horizontally-bottom";
+@import "./../mode/vertical-right";
+@import "./../mode/full-screen";

@@ -3,8 +3,8 @@ const gallery1 = new PmGallery(".pm-gallery--1", {
     elForMainPicture: ".pm-gallery__main-picture",
     orientationPreviews: "horizontallyBottom",
     navigation: {
-        elBtnPrev: '.main__btn-slide--prev',
-        elBtnNext: '.main__btn-slide--next',
+        elBtnPrev: ".main__btn-slide--prev",
+        elBtnNext: ".main__btn-slide--next",
     },
     fullScreenMode: true,
     activeSlide: 0,
@@ -12,7 +12,16 @@ const gallery1 = new PmGallery(".pm-gallery--1", {
 });
 
 const gallery2 = new PmGallery(".pm-gallery--2", {
-    orientationPreviews: "horizontallyBottom",
     fullScreenMode: true,
     autoPlay: 3000,
+});
+
+const gallery3 = new PmGallery(".pm-gallery--3", {
+    orientationPreviews: "horizontallyTop",
+    activeSlide: 2,
+});
+
+const gallery4 = new PmGallery(".pm-gallery--4", {
+    orientationPreviews: "verticalRight",
+    autoPlay: 5000,
 });

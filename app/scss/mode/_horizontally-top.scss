@@ -1,9 +1,15 @@
 .pm-gallery {
+    --widthPreviews: 120px;
+
+    @media(max-width: 768px) {
+        --widthPreviews: 80px;
+    }
+
     &.horizontally-top {
-        padding-top: 120px;
+        padding-top: var(--widthPreviews) !important;
 
         @media (max-width: 768px) {
-            padding-top: 80px;
+            padding-top: var(--widthPreviews) !important;
         }
 
         .pm-gallery {
@@ -19,7 +25,7 @@
 
             &__inner--picture,
             &__main-picture {
-                padding-left: 0;
+                padding-left: 0 !important;
                 width: 100%;
                 left: 0;
             }
