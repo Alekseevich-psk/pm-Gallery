@@ -12,7 +12,7 @@ export default {
     entry: {
         style: "./scss/style.scss",
         "pm-gallery-style": "./scss/pm-gallery.scss",
-        "pm-gallery": "./ts/gallery/pm-gallery.ts",
+        "pm-gallery": "./ts/pm-gallery.ts",
         main: "./scripts/index.js",
     },
     devServer: {

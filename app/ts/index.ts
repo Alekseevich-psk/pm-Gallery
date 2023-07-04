@@ -1,1 +1,0 @@
-import PmGallery from './gallery/pm-gallery';
