@@ -27,17 +27,9 @@ export default function swipe(wrapper: Element, options: Options) {
     function changeSwipe(xStart: number, xEnd: number) {
         if ((Math.abs(xStart - xEnd)) <= minDistance) return;
 
-        if (xStart < xEnd) {
-            wrapper.dispatchEvent(new CustomEvent("changeSlide", {
-                detail: { btn: "prev" }
-            }));
-        }
-
-        if (xStart > xEnd) {
-            wrapper.dispatchEvent(new CustomEvent("changeSlide", {
-                detail: { btn: "next" }
-            }));
-        }
+        wrapper.dispatchEvent(new CustomEvent("changeSlide", {
+            detail: { btn: xStart < xEnd ? "prev" : "next" }
+        }));
     }
 
 
