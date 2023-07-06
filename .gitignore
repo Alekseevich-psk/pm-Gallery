@@ -3,3 +3,5 @@ node_modules
 .idea
 quest
 psd
+dist/pm-gallery-style.js
+dist/style.js

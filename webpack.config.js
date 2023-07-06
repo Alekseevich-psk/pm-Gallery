@@ -30,7 +30,7 @@ export default {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css",
+            filename: "[name].css",
         }),
         new HtmlWebpackPlugin({
             template: "./html/index.html",
