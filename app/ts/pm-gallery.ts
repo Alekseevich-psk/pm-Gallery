@@ -23,7 +23,7 @@ class PmGallery {
     }
 
     private initGallery(wrapper: string, options: Options) {
-        if (!this.getElements(wrapper, options)) return;
+        if (!this.hasElements(wrapper, options)) return;
 
         this.initActiveSlide(options);
 
@@ -95,7 +95,7 @@ class PmGallery {
         this.mainPicture.src = srcImg.src;
     }
 
-    private getElements(wrapper: string, options: Options): boolean {
+    private hasElements(wrapper: string, options: Options): boolean {
         this.wrapper = document.querySelector(wrapper) as HTMLFormElement;
 
         if (this.wrapper === null) {
@@ -103,8 +103,8 @@ class PmGallery {
             return false;
         }
 
-        if (options.elForPreviews) {
-            this.previews = this.wrapper.querySelectorAll(options.elForPreviews);
+        if (options.elementForPreviews) {
+            this.previews = this.wrapper.querySelectorAll(options.elementForPreviews);
         } else {
             this.previews = this.wrapper.querySelectorAll(this.previewPictureEl);
         }
@@ -114,8 +114,8 @@ class PmGallery {
             return false;
         }
 
-        if (options.elForMainPicture) {
-            this.mainPicture = this.wrapper.querySelector(options.elForMainPicture);
+        if (options.elementForMainPicture) {
+            this.mainPicture = this.wrapper.querySelector(options.elementForMainPicture);
         } else {
             this.mainPicture = this.wrapper.querySelector(this.mainPictureEl);
         }

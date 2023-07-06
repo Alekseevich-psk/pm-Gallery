@@ -1,1 +1,0 @@
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.PmGallery=t():e.PmGallery=t()}(self,(()=>(()=>{"use strict";var e={};return e.default})()));
