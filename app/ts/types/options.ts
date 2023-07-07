@@ -5,6 +5,7 @@ export type Options = {
         elBtnNext: string,
     },
     activeSlide?: number,
+    pagination?: boolean,
     autoPlay?: number,
     fullScreenMode?: boolean,
     orientationPreviews?: string

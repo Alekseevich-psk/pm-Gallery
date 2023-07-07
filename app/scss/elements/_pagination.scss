@@ -1,0 +1,51 @@
+.pm-gallery {
+    .pagination {
+        --widthPreviews: 120px;
+
+        @media (max-width: 768px) {
+            --widthPreviews: 80px;
+        }
+
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        z-index: 9999;
+
+        &__list {
+            position: relative;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+
+        &__item {
+            cursor: pointer;
+            transition: $transition;
+            position: relative;
+            display: block;
+            margin: 0 8px;
+            width: 14px;
+            height: 14px;
+            background-color: rgba(0, 0, 0, 0.13);
+            border-radius: 50%;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+
+            &.active {
+                &:after {
+                    position: absolute;
+                    content: "";
+                    border-radius: 50%;
+                    width: 16px;
+                    height: 16px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: $active;
+                }
+            }
+        }
+    }
+}

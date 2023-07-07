@@ -5,6 +5,7 @@ const gallery1 = new PmGallery(".pm-gallery--1", {
         elBtnPrev: ".main__btn-slide--prev",
         elBtnNext: ".main__btn-slide--next",
     },
+    pagination: true,
     fullScreenMode: true,
     activeSlide: 0,
     autoPlay: 3000,
@@ -13,6 +14,7 @@ const gallery1 = new PmGallery(".pm-gallery--1", {
 const gallery2 = new PmGallery(".pm-gallery--2", {
     fullScreenMode: true,
     autoPlay: 3000,
+    pagination: true,
 });
 
 const gallery3 = new PmGallery(".pm-gallery--3", {

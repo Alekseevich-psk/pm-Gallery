@@ -1,23 +1,33 @@
 import { Options } from './types/options';
 import initControl from './common/init-control';
 import createMainPicture from './common/create-main-picture';
+import createPagination from './common/create-pagination';
 import swipe from './common/swipe';
 import orientationPreviews from './mode/orientation-previews';
 
 class PmGallery {
 
     private activeClass: string = 'active';
-    private previewPictureEl: string = '.pm-gallery__preview-picture';
-    private mainPictureEl: string = '.pm-gallery__main-picture';
-
     private init: boolean = false;
     private activeSlide: number = 0;
     private timerId: ReturnType<typeof setInterval>;
 
+    private pmGalleryWrapperEl: string = '.pm-gallery__wrapper';
+    private pmGalleryInnerPictureEl: string = '.pm-gallery__inner--picture';
+    private pmGalleryInnerPreviewsEl: string = '.pm-gallery__inner--previews';
+
+    private previewPictureEl: string = '.pm-gallery__preview-picture';
+    private mainPictureEl: string = '.pm-gallery__main-picture';
+
     private wrapper: Element;
+    private pmGalleryWrapper: Element;
     private mainPicture: HTMLImageElement;
     private previews: NodeListOf<Element>;
+    private pmGalleryInnerPicture: Element;
     private pmGalleryInnerPreviews: Element;
+    private paginationItems: NodeListOf<Element>;
+
+    private flagPagination: boolean = false;
 
     constructor(wrapper: string, options: Options) {
         this.initGallery(wrapper, options);
@@ -37,6 +47,11 @@ class PmGallery {
             this.autoPlay(null);
         })
 
+        this.pmGalleryInnerPicture.addEventListener('changeSlide', (event: CustomEvent) => {
+            this.setActiveSlide(this.activeSlide, event.detail.activeSlide);
+            this.autoPlay(null);
+        })
+
         if (options.autoPlay) this.autoPlay(options.autoPlay);
     }
 
@@ -52,12 +67,10 @@ class PmGallery {
 
     private prevSlide() {
         this.setActiveSlide(this.activeSlide, this.activeSlide - 1);
-        this.scrollWrapper(this.activeSlide, this.pmGalleryInnerPreviews);
     }
 
     private nextSlide() {
         this.setActiveSlide(this.activeSlide, this.activeSlide + 1);
-        this.scrollWrapper(this.activeSlide, this.pmGalleryInnerPreviews);
     }
 
     private initActiveSlide(options: Options) {
@@ -85,11 +98,17 @@ class PmGallery {
         const oldSlide = this.previews[oldIndex];
         const newSlide = this.previews[newIndex];
 
+        if (this.flagPagination) {
+            this.paginationItems[oldIndex].classList.remove(this.activeClass);
+            this.paginationItems[newIndex].classList.add(this.activeClass);
+        }
+
         if (oldSlide.classList.contains(this.activeClass)) oldSlide.classList.remove(this.activeClass);
         if (!newSlide.classList.contains(this.activeClass)) newSlide.classList.add(this.activeClass);
 
         this.activeSlide = newIndex;
         this.onMainPicture(this.activeSlide);
+        this.scrollWrapper(this.activeSlide, this.pmGalleryInnerPreviews);
     }
 
     private onMainPicture(index: number) {
@@ -99,9 +118,15 @@ class PmGallery {
 
     private hasElements(wrapper: string, options: Options): boolean {
         this.wrapper = document.querySelector(wrapper) as HTMLFormElement;
+        this.pmGalleryWrapper = this.wrapper.querySelector(this.pmGalleryWrapperEl);
 
         if (this.wrapper === null) {
             console.error('Not found wrapper element');
+            return false;
+        }
+
+        if(this.pmGalleryWrapper === null) {
+            console.error('Not found ".main__wrapper" element');
             return false;
         }
 
@@ -116,10 +141,21 @@ class PmGallery {
             return false;
         }
 
-        createMainPicture(this.wrapper, this.mainPictureEl);
+        this.pmGalleryInnerPicture = this.wrapper.querySelector(this.pmGalleryInnerPictureEl);
+        this.pmGalleryInnerPreviews = this.wrapper.querySelector(this.pmGalleryInnerPreviewsEl);
 
+        // Create main picture for gallery
+        createMainPicture(this.wrapper, this.mainPictureEl);
         this.mainPicture = this.wrapper.querySelector(this.mainPictureEl);
-        this.pmGalleryInnerPreviews = this.wrapper.querySelector('.pm-gallery__inner--previews');
+
+        // Pagination
+        if (options.pagination) {
+            this.paginationItems = createPagination(this.pmGalleryInnerPicture, this.previews.length, options.activeSlide);
+            this.flagPagination = true;
+        };
+
+
+
         this.wrapper.classList.add('active-gallery');
         return this.init = true;
     }
