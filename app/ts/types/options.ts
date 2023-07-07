@@ -1,6 +1,5 @@
 export type Options = {
     elementForPreviews?: string,
-    elementForMainPicture?: string,
     navigation?: {
         elBtnPrev: string,
         elBtnNext: string,

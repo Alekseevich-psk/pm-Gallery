@@ -1,5 +1,6 @@
 import { Options } from './types/options';
 import initControl from './common/init-control';
+import createMainPicture from './common/create-main-picture';
 import swipe from './common/swipe';
 import orientationPreviews from './mode/orientation-previews';
 
@@ -65,6 +66,7 @@ class PmGallery {
             this.activeSlide = options.activeSlide;
         this.previews[this.activeSlide].classList.add(this.activeClass);
         this.getActiveSlide(this.previews);
+        this.onMainPicture(this.activeSlide);
     }
 
     private getActiveSlide(elements: NodeListOf<Element>) {
@@ -87,7 +89,7 @@ class PmGallery {
         if (!newSlide.classList.contains(this.activeClass)) newSlide.classList.add(this.activeClass);
 
         this.activeSlide = newIndex;
-        this.onMainPicture(this.activeSlide)
+        this.onMainPicture(this.activeSlide);
     }
 
     private onMainPicture(index: number) {
@@ -114,23 +116,12 @@ class PmGallery {
             return false;
         }
 
-        if (options.elementForMainPicture) {
-            this.mainPicture = this.wrapper.querySelector(options.elementForMainPicture);
-        } else {
-            this.mainPicture = this.wrapper.querySelector(this.mainPictureEl);
-        }
+        createMainPicture(this.wrapper, this.mainPictureEl);
 
-        if (this.mainPicture === null) {
-            console.error('Main picture not found');
-            return false;
-        }
-
+        this.mainPicture = this.wrapper.querySelector(this.mainPictureEl);
         this.pmGalleryInnerPreviews = this.wrapper.querySelector('.pm-gallery__inner--previews');
-
         this.wrapper.classList.add('active-gallery');
-        this.init = true;
-
-        return true;
+        return this.init = true;
     }
 
 

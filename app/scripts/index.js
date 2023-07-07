@@ -1,6 +1,5 @@
 const gallery1 = new PmGallery(".pm-gallery--1", {
     elementForPreviews: ".pm-gallery__preview-picture",
-    elementForMainPicture: ".pm-gallery__main-picture",
     orientationPreviews: "horizontallyBottom",
     navigation: {
         elBtnPrev: ".main__btn-slide--prev",
