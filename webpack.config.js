@@ -1,69 +1,53 @@
-import path from "path";
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
-// import TerserPlugin from "terser-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
-import CopyPlugin from "copy-webpack-plugin";
-import FileManagerPlugin from "filemanager-webpack-plugin";
-
-export default {
-    context: path.resolve("app"),
+module.exports = {
     entry: {
-        style: "./scss/style.scss",
-        "pm-gallery-style": "./scss/pm-gallery.scss",
-        "pm-gallery": "./ts/pm-gallery.ts",
-        main: "./scripts/index.js",
-    },
-    devServer: {
-        watchFiles: "app/",
-        port: 9000,
+        style: "./app/scss/style.scss",
+        "pm-gallery-style": "./app/scss/pm-gallery.scss",
+        "pm-gallery": "./app/ts/pm-gallery.ts",
+        index: "./app/scripts/index.js",
     },
     output: {
-        filename: "[name].js",
-        path: path.resolve("dist"),
         library: {
             name: "PmGallery",
             type: "umd",
             export: "default",
         },
+        path: path.resolve(__dirname, "dist"),
+        clean: true,
+    },
+    devServer: {
+        watchFiles: "app/",
+        port: 9000,
+    },
+    resolve: {
+        extensions: [".tsx", ".ts", ".js"],
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: "./app/html/index.html",
+            minify: false,
+        }),
         new MiniCssExtractPlugin({
             filename: "[name].css",
-        }),
-        new HtmlWebpackPlugin({
-            template: "./html/index.html",
-        }),
-        new FileManagerPlugin({
-            events: {
-                onStart: {
-                    delete: ["dist"],
-                },
-            },
         }),
         new CopyPlugin({
             patterns: [
                 {
-                    from: "images/",
-                    to: "images/",
+                    from: "./app/images/",
+                    to: "./images/",
                 },
             ],
         }),
-        new CleanWebpackPlugin()
     ],
-    resolve: {
-        extensions: [".tsx", ".ts", ".js"],
-    },
     module: {
         rules: [
             {
-                test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, "css-loader"],
-            },
-            {
                 test: /\.s[ac]ss$/i,
-                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
             },
             {
                 test: /\.tsx?$/,
