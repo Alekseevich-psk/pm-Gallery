@@ -1,11 +1,5 @@
 .pm-gallery {
     .pagination {
-        --widthPreviews: 120px;
-
-        @media (max-width: 768px) {
-            --widthPreviews: 80px;
-        }
-
         position: absolute;
         bottom: 20px;
         width: 100%;
@@ -14,8 +8,12 @@
         &__list {
             position: relative;
             display: flex;
-            width: 100%;
+            width: calc(100% - $widthPreviewPicture);
             justify-content: center;
+
+            @media(max-width: 768px) {
+                width: calc(100% - $widthPreviewPictureMobile);
+            }
         }
 
         &__item {

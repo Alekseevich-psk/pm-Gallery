@@ -1,10 +1,5 @@
 .pm-gallery {
     position: relative;
-    --widthPreviews: 120px;
-
-    @media(max-width: 768px) {
-        --widthPreviews: 80px;
-    }
 
     $grey: rgb(168, 168, 168);
     display: none;
@@ -29,7 +24,7 @@
             top: 0;
             left: 0;
             border: 1px solid $grey;
-            width: var(--widthPreviews);
+            width: $widthPreviewPicture;
             height: 100%;
             z-index: 2;
             overflow-y: scroll;
@@ -46,7 +41,7 @@
 
         &--picture {
             position: relative;
-            padding-left: var(--widthPreviews) !important;
+            padding-left: $widthPreviewPicture !important;
 
             &:after {
                 position: relative;
@@ -59,8 +54,8 @@
             img {
                 position: absolute;
                 top: 0;
-                left: var(--widthPreviews);
-                width: calc(100% - var(--widthPreviews));
+                left: $widthPreviewPicture;
+                width: calc(100% - $widthPreviewPicture);
                 height: 100%;
                 object-fit: cover;
             }

@@ -6,7 +6,6 @@ export default function createPagination(wrapper: Element, count: number, active
     for (let index = 0; index < count; index++) {
         paginationList.insertAdjacentHTML('afterbegin', `<li class="pagination__item"></li>`);
     }
-    console.log(activeSlide);
     
     const items = wrapper.querySelectorAll('.pagination__item');
     items[activeSlide].classList.add('active');
