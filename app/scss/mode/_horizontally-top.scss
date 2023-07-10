@@ -31,5 +31,11 @@
                 }
             }
         }
+
+        .pm-gallery__pagination {
+            .pagination__list {
+                width: 100% !important;
+            }
+        }
     }
 }

@@ -30,10 +30,15 @@
             overflow-y: scroll;
             scroll-behavior: smooth;
 
+            @media (max-width: 768px) {
+                width: $widthPreviewPictureMobile;
+            }
+
             & {
                 -ms-overflow-style: none;
                 scrollbar-width: none;
             }
+
             &::-webkit-scrollbar {
                 display: none;
             }
@@ -42,6 +47,10 @@
         &--picture {
             position: relative;
             padding-left: $widthPreviewPicture !important;
+
+            @media (max-width: 768px) {
+                padding-left: $widthPreviewPictureMobile !important;
+            }
 
             &:after {
                 position: relative;
@@ -58,6 +67,11 @@
                 width: calc(100% - $widthPreviewPicture);
                 height: 100%;
                 object-fit: cover;
+
+                @media (max-width: 768px) {
+                    left: $widthPreviewPictureMobile;
+                    width: calc(100% - $widthPreviewPictureMobile);
+                }
             }
         }
     }
@@ -106,7 +120,6 @@
         z-index: 2;
         color: $black;
         overflow: hidden;
-
 
         &.hide-arrows {
             .pm-gallery__arrows {
