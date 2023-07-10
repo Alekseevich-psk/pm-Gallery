@@ -13,14 +13,18 @@ export default function initControl(wrapper: Element, options: Options) {
 
     const pmGalleryInnerPicture = wrapper.querySelector('.pm-gallery__inner--picture') as Element;
     if (!pmGalleryInnerPicture) return;
-    
+
     pmGalleryInnerPicture.insertAdjacentHTML('afterbegin', controlElements);
 
     const pmGalleryWrapperControl = wrapper.querySelector('.pm-gallery__control') as Element;
     const pmGalleryBtnSize = wrapper.querySelector('.pm-gallery__btn-size') as Element;
 
     if (!options.fullScreenMode) pmGalleryBtnSize.classList.add('hide');
-    pmGalleryBtnSize.addEventListener('click', onFullScreen);
+    pmGalleryBtnSize.addEventListener('click', openFullScreen);
+
+    window.addEventListener("keydown", (event) => {
+        if (event.key === 'Escape') closeFullScreen();
+    });
 
     if (options.navigation?.elBtnPrev && options.navigation?.elBtnNext) {
         let elemPrev = document.querySelector(options.navigation.elBtnPrev);
@@ -44,13 +48,17 @@ export default function initControl(wrapper: Element, options: Options) {
         }));
     }
 
-    function onFullScreen() {
+    function openFullScreen() {
+        if (wrapper.classList.contains('full-screen')) return closeFullScreen();
+        wrapper.classList.add('full-screen');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeFullScreen() {
         if (wrapper.classList.contains('full-screen')) {
             wrapper.classList.remove('full-screen');
             return document.body.style.overflow = '';
         }
-        wrapper.classList.add('full-screen');
-        document.body.style.overflow = 'hidden';
     }
 
 }
