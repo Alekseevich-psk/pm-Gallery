@@ -25,7 +25,8 @@ class PmGallery {
     private wrapper: Element;
     private pmGalleryWrapper: Element;
     private mainPicture: HTMLImageElement;
-    private previews: NodeListOf<Element>;
+    private previewsElements: NodeListOf<Element>;
+    private previewsElementsArraySrcImg: string[] = [];
     private pmGalleryInnerPicture: Element;
     private pmGalleryInnerPreviews: Element;
     private paginationItems: NodeListOf<Element>;
@@ -65,7 +66,7 @@ class PmGallery {
     }
 
     private scrollWrapper(index: number, wrapper: Element) {
-        let el = this.previews[this.activeSlide] as HTMLElement;
+        let el = this.previewsElements[this.activeSlide] as HTMLElement;
         wrapper.scrollTop = el.offsetHeight * (index - 1);
     }
 
@@ -79,10 +80,10 @@ class PmGallery {
 
     private initActiveSlide(options: Options) {
         if (options.activeSlide &&
-            options.activeSlide < this.previews.length)
+            options.activeSlide < this.previewsElements.length)
             this.activeSlide = options.activeSlide;
-        this.previews[this.activeSlide].classList.add(this.activeClass);
-        this.getActiveSlide(this.previews);
+        this.previewsElements[this.activeSlide].classList.add(this.activeClass);
+        this.getActiveSlide(this.previewsElements);
         this.onMainPicture(this.activeSlide);
     }
 
@@ -96,11 +97,11 @@ class PmGallery {
     }
 
     private setActiveSlide(oldIndex: number, newIndex: number) {
-        if (newIndex < 0) newIndex = this.previews.length - 1;
-        if (newIndex > this.previews.length - 1) newIndex = 0;
+        if (newIndex < 0) newIndex = this.previewsElements.length - 1;
+        if (newIndex > this.previewsElements.length - 1) newIndex = 0;
 
-        const oldSlide = this.previews[oldIndex];
-        const newSlide = this.previews[newIndex];
+        const oldSlide = this.previewsElements[oldIndex];
+        const newSlide = this.previewsElements[newIndex];
 
         if (this.flagPagination) {
             this.paginationItems[oldIndex].classList.remove(this.activeClass);
@@ -116,8 +117,10 @@ class PmGallery {
     }
 
     private onMainPicture(index: number) {
-        const srcImg = this.previews[index].querySelector('img');
-        this.mainPicture.src = srcImg.src;
+        this.mainPicture.src = this.previewsElementsArraySrcImg[index];
+        this.mainPicture.style.animation = 'none';
+        this.mainPicture.offsetHeight;
+        this.mainPicture.style.animation = null;
     }
 
     private hasElements(wrapper: string, options: Options): boolean {
@@ -135,26 +138,29 @@ class PmGallery {
         }
 
         if (options.elementForPreviews) {
-            this.previews = this.wrapper.querySelectorAll(options.elementForPreviews);
+            this.previewsElements = this.wrapper.querySelectorAll(options.elementForPreviews);
         } else {
-            this.previews = this.wrapper.querySelectorAll(this.previewPictureEl);
+            this.previewsElements = this.wrapper.querySelectorAll(this.previewPictureEl);
         }
 
-        if (this.previews.length === 0) {
+        if (this.previewsElements.length === 0) {
             console.error('Not found previews elements');
             return false;
         }
+
+        // get src previews pictures
+        this.previewsElements.forEach(el => this.previewsElementsArraySrcImg.push(el.querySelector('img').src));
 
         this.pmGalleryInnerPicture = this.wrapper.querySelector(this.pmGalleryInnerPictureEl);
         this.pmGalleryInnerPreviews = this.wrapper.querySelector(this.pmGalleryInnerPreviewsEl);
 
         // Create main picture for gallery
-        createMainPicture(this.wrapper, this.mainPictureEl);
+        createMainPicture(this.wrapper, this.mainPictureEl, options);
         this.mainPicture = this.wrapper.querySelector(this.mainPictureEl);
 
         // Pagination
         if (options.pagination) {
-            this.paginationItems = createPagination(this.pmGalleryInnerPicture, this.previews.length, options.activeSlide);
+            this.paginationItems = createPagination(this.pmGalleryInnerPicture, this.previewsElements.length, options.activeSlide);
             this.flagPagination = true;
         };
 

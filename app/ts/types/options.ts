@@ -9,5 +9,6 @@ export type Options = {
     objectFit?: string,
     autoPlay?: number,
     fullScreenMode?: boolean,
-    orientationPreviews?: string
+    orientationPreviews?: string,
+    animationSlide?: string 
 }

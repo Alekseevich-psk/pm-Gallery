@@ -47,6 +47,7 @@
         &--picture {
             position: relative;
             padding-left: $widthPreviewPicture !important;
+            overflow: hidden;
 
             @media (max-width: 768px) {
                 padding-left: $widthPreviewPictureMobile !important;
@@ -264,4 +265,5 @@
 @import "./../mode/horizontally-bottom";
 @import "./../mode/vertical-right";
 @import "./../mode/full-screen";
+@import "./../mode/animation-slide";
 @import "./../elements/pagination";
