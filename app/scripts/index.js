@@ -9,6 +9,7 @@ const gallery1 = new PmGallery(".pm-gallery--1", {
     fullScreenMode: true,
     activeSlide: 0,
     autoPlay: 3000,
+    objectFit: 'cover'
 });
 
 const gallery2 = new PmGallery(".pm-gallery--2", {

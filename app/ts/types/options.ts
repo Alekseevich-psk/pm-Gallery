@@ -6,6 +6,7 @@ export type Options = {
     },
     activeSlide?: number,
     pagination?: boolean,
+    objectFit?: string,
     autoPlay?: number,
     fullScreenMode?: boolean,
     orientationPreviews?: string

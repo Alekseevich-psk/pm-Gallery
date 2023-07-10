@@ -62,11 +62,11 @@
 
             img {
                 position: absolute;
+                object-fit: cover;
                 top: 0;
                 left: $widthPreviewPicture;
                 width: calc(100% - $widthPreviewPicture);
                 height: 100%;
-                object-fit: cover;
 
                 @media (max-width: 768px) {
                     left: $widthPreviewPictureMobile;
@@ -110,6 +110,26 @@
 
     &__main-picture {
         border: 1px solid gray;
+
+        &.fill {
+            object-fit: fill;
+        }
+
+        &.contain {
+            object-fit: contain;
+        }
+
+        &.cover {
+            object-fit: cover;
+        }
+
+        &.scaleDown {
+            object-fit: scale-down;
+        }
+
+        &.none {
+            object-fit: none;
+        }
     }
 
     &__control {

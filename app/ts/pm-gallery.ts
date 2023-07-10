@@ -1,9 +1,12 @@
 import { Options } from './types/options';
+
 import initControl from './common/init-control';
 import createMainPicture from './common/create-main-picture';
 import createPagination from './common/create-pagination';
 import swipe from './common/swipe';
+
 import orientationPreviews from './mode/orientation-previews';
+import objectFit from './mode/object-fit';
 
 class PmGallery {
 
@@ -53,6 +56,7 @@ class PmGallery {
         })
 
         if (options.autoPlay) this.autoPlay(options.autoPlay);
+        if (options.objectFit) objectFit(this.wrapper, options)
     }
 
     private autoPlay(speed: number) {
@@ -125,7 +129,7 @@ class PmGallery {
             return false;
         }
 
-        if(this.pmGalleryWrapper === null) {
+        if (this.pmGalleryWrapper === null) {
             console.error('Not found ".main__wrapper" element');
             return false;
         }
