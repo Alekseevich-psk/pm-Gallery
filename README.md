@@ -51,7 +51,7 @@ new PmGallery(".pm-gallery", {});
 | Name          |  type  | Default |                            Value                             | Description                                                                   |
 | :------------ | :----: | :-----: | :----------------------------------------------------------: | :---------------------------------------------------------------------------- |
 | **objectFit** | string | 'cover' | cover &#124; contain &#124; none &#124; fill &#124; scaleDown | The 'object-fit' CSS property sets how the content of a replaced main picture |
-| **orientationPreviews** | string | 'verticalLeft' | horizontalBottom &#124; horizontalTop &#124; verticalRight | managing the position of preview images relative to the main picture|
+| **positionPreviews** | string | 'verticalLeft' | horizontalBottom &#124; horizontalTop &#124; verticalRight | managing the position of preview images relative to the main picture|
 | **animationSlide** | string | 'none' | zoom &#124; fade &#124; slide &#124; flip | Add animation for slide|
 | **pagination** | boolean | false | false &#124; true | Parameter add pagination |
 | **fullScreenMode** | boolean | false | false &#124; true | Parameter add fullScreen mode. Preview main picture on all screen |

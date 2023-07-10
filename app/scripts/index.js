@@ -1,6 +1,6 @@
 const gallery1 = new PmGallery(".pm-gallery--1", {
     elementForPreviews: ".pm-gallery__preview-picture",
-    orientationPreviews: "horizontallyBottom",
+    positionPreviews: "horizontallyBottom",
     navigation: {
         elBtnPrev: ".main__btn-slide--prev",
         elBtnNext: ".main__btn-slide--next",
@@ -20,13 +20,13 @@ const gallery2 = new PmGallery(".pm-gallery--2", {
 });
 
 const gallery3 = new PmGallery(".pm-gallery--3", {
-    orientationPreviews: "horizontallyTop",
+    positionPreviews: "horizontallyTop",
     activeSlide: 2,
     pagination: true,
 });
 
 const gallery4 = new PmGallery(".pm-gallery--4", {
-    orientationPreviews: "verticalRight",
+    positionPreviews: "verticalRight",
     autoPlay: 5000,
     pagination: true,
 });

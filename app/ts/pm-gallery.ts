@@ -5,7 +5,7 @@ import createMainPicture from './common/create-main-picture';
 import createPagination from './common/create-pagination';
 import swipe from './common/swipe';
 
-import orientationPreviews from './mode/orientation-previews';
+import positionPreviews from './mode/orientation-previews';
 import objectFit from './mode/object-fit';
 
 class PmGallery {
@@ -43,7 +43,7 @@ class PmGallery {
         this.initActiveSlide(options);
 
         initControl(this.wrapper, options);
-        orientationPreviews(this.wrapper, options);
+        positionPreviews(this.wrapper, options);
         swipe(this.wrapper, options);
 
         this.wrapper.addEventListener('changeSlide', (event: CustomEvent) => {
