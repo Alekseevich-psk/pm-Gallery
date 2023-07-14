@@ -9,9 +9,10 @@ const gallery1 = new PmGallery(".pm-gallery--1", {
     fullScreenMode: true,
     activeSlide: 0,
     autoPlay: 3000,
-    // loop: true,
+    loop: true,
     objectFit: 'contain',
     animationSlide: 'fade',
+    swipeOnMainPicture: true,
 });
 
 // const gallery2 = new PmGallery(".pm-gallery--2", {

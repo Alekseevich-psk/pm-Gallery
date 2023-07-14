@@ -1,6 +1,8 @@
 import { Options } from '../types/options';
 
 export default function swipe(wrapper: Element, options: Options) {
+   
+    if (options.swipeOnMainPicture === false) return;
 
     const minDistance = 100;
     let xTouchStart: number = null;
@@ -31,6 +33,5 @@ export default function swipe(wrapper: Element, options: Options) {
             detail: { btn: xStart < xEnd ? "prev" : "next" }
         }));
     }
-
 
 }

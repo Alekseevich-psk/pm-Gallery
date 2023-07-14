@@ -11,5 +11,6 @@ export type Options = {
     fullScreenMode?: boolean,
     positionPreviews?: string,
     animationSlide?: string,
-    loop?: boolean
+    loop?: boolean,
+    swipeOnMainPicture?: boolean | undefined
 }

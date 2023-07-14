@@ -56,5 +56,6 @@ new PmGallery(".pm-gallery", {});
 | **pagination** | boolean | false | false &#124; true | Parameter add pagination |
 | **loop** | boolean | false | false &#124; true | Set to 'true' to enable continuous loop mode |
 | **fullScreenMode** | boolean | false | false &#124; true | Parameter add fullScreen mode. Preview main picture on all screen |
+| **swipeOnMainPicture** | boolean | true | false &#124; true | Add the ability to switch slides by swipe on the main picture |
 | **autoPlay** | number | false | >1000 | Parameter add autoPlay. |
 | **activeSlide** | number | 0 | number > 0 &#124; number < arr.count | Active slide by the set value |
