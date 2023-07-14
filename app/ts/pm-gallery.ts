@@ -8,6 +8,8 @@ import swipe from './common/swipe';
 import positionPreviews from './mode/orientation-previews';
 import objectFit from './mode/object-fit';
 
+import { ArrowsGallery } from './types/arrows-gallery';
+
 class PmGallery {
 
     private activeClass: string = 'active';
@@ -30,10 +32,13 @@ class PmGallery {
     private pmGalleryInnerPicture: Element;
     private pmGalleryInnerPreviews: Element;
     private paginationItems: NodeListOf<Element>;
+    private arrowsGallery: ArrowsGallery;
 
     private flagPagination: boolean = false;
+    private optionGallery: Options;
 
     constructor(wrapper: string, options: Options) {
+        this.optionGallery = options;
         this.initGallery(wrapper, options);
     }
 
@@ -42,22 +47,19 @@ class PmGallery {
 
         this.initActiveSlide(options);
 
-        initControl(this.wrapper, options);
+        this.arrowsGallery = initControl(this.wrapper, options);
         positionPreviews(this.wrapper, options);
         swipe(this.wrapper, options);
 
         this.wrapper.addEventListener('changeSlide', (event: CustomEvent) => {
-            (event.detail.btn === 'prev') ? this.prevSlide() : this.nextSlide();
-            this.autoPlay(null);
-        })
-
-        this.pmGalleryInnerPicture.addEventListener('changeSlide', (event: CustomEvent) => {
-            this.setActiveSlide(this.activeSlide, event.detail.activeSlide);
+            if ((event.detail.btn === 'prev')) this.changeSlide(this.activeSlide, (this.activeSlide - 1));
+            if ((event.detail.btn === 'next')) this.changeSlide(this.activeSlide, (this.activeSlide + 1));
+            if (event.detail.activeSlide) this.changeSlide(this.activeSlide, event.detail.activeSlide);
             this.autoPlay(null);
         })
 
         if (options.autoPlay) this.autoPlay(options.autoPlay);
-        if (options.objectFit) objectFit(this.wrapper, options)
+        if (options.objectFit) objectFit(this.wrapper, options);
     }
 
     private autoPlay(speed: number) {
@@ -71,11 +73,11 @@ class PmGallery {
     }
 
     private prevSlide() {
-        this.setActiveSlide(this.activeSlide, this.activeSlide - 1);
+        this.changeSlide(this.activeSlide, this.activeSlide - 1);
     }
 
     private nextSlide() {
-        this.setActiveSlide(this.activeSlide, this.activeSlide + 1);
+        this.changeSlide(this.activeSlide, this.activeSlide + 1);
     }
 
     private initActiveSlide(options: Options) {
@@ -90,15 +92,21 @@ class PmGallery {
     private getActiveSlide(elements: NodeListOf<Element>) {
         elements.forEach((el, index) => {
             el.addEventListener('click', () => {
-                this.setActiveSlide(this.activeSlide, index);
+                this.changeSlide(this.activeSlide, index);
                 this.autoPlay(null);
             })
         });
     }
 
-    private setActiveSlide(oldIndex: number, newIndex: number) {
-        if (newIndex < 0) newIndex = this.previewsElements.length - 1;
-        if (newIndex > this.previewsElements.length - 1) newIndex = 0;
+    private changeSlide(oldIndex: number, newIndex: number) {
+
+        if (this.optionGallery.loop) {
+            if (newIndex < 0) newIndex = this.previewsElements.length - 1;
+            if (newIndex > this.previewsElements.length - 1) newIndex = 0;
+        } else {
+            if (newIndex > this.previewsElements.length - 1) return;
+            if (newIndex < 0) return;
+        }
 
         const oldSlide = this.previewsElements[oldIndex];
         const newSlide = this.previewsElements[newIndex];
@@ -160,11 +168,9 @@ class PmGallery {
 
         // Pagination
         if (options.pagination) {
-            this.paginationItems = createPagination(this.pmGalleryInnerPicture, this.previewsElements.length, options.activeSlide);
+            this.paginationItems = createPagination(this.pmGalleryInnerPicture, this.previewsElements.length, options.activeSlide, this.wrapper);
             this.flagPagination = true;
         };
-
-
 
         this.wrapper.classList.add('active-gallery');
         return this.init = true;

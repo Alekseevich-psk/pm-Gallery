@@ -8,25 +8,26 @@ const gallery1 = new PmGallery(".pm-gallery--1", {
     pagination: true,
     fullScreenMode: true,
     activeSlide: 0,
-    // autoPlay: 3000,
-    objectFit: 'contain',
-    // animationSlide: 'fade',
-});
-
-const gallery2 = new PmGallery(".pm-gallery--2", {
-    fullScreenMode: true,
     autoPlay: 3000,
-    pagination: true,
+    // loop: true,
+    objectFit: 'contain',
+    animationSlide: 'fade',
 });
 
-const gallery3 = new PmGallery(".pm-gallery--3", {
-    positionPreviews: "horizontallyTop",
-    activeSlide: 2,
-    pagination: true,
-});
+// const gallery2 = new PmGallery(".pm-gallery--2", {
+//     fullScreenMode: true,
+//     autoPlay: 3000,
+//     pagination: true,
+// });
 
-const gallery4 = new PmGallery(".pm-gallery--4", {
-    positionPreviews: "verticalRight",
-    autoPlay: 5000,
-    pagination: true,
-});
+// const gallery3 = new PmGallery(".pm-gallery--3", {
+//     positionPreviews: "horizontallyTop",
+//     activeSlide: 2,
+//     pagination: true,
+// });
+
+// const gallery4 = new PmGallery(".pm-gallery--4", {
+//     positionPreviews: "verticalRight",
+//     autoPlay: 5000,
+//     pagination: true,
+// });

@@ -1,6 +1,7 @@
 import { Options } from '../types/options';
+import { ArrowsGallery } from '../types/arrows-gallery';
 
-export default function initControl(wrapper: Element, options: Options) {
+export default function initControl(wrapper: Element, options: Options): Object {
 
     const controlElements: string = `    
     <div class="pm-gallery__control">
@@ -13,6 +14,8 @@ export default function initControl(wrapper: Element, options: Options) {
 
     const pmGalleryInnerPicture = wrapper.querySelector('.pm-gallery__inner--picture') as Element;
     if (!pmGalleryInnerPicture) return;
+
+    let arrows: ArrowsGallery = {};
 
     pmGalleryInnerPicture.insertAdjacentHTML('afterbegin', controlElements);
 
@@ -30,8 +33,15 @@ export default function initControl(wrapper: Element, options: Options) {
         let elemPrev = document.querySelector(options.navigation.elBtnPrev);
         let elemNext = document.querySelector(options.navigation.elBtnNext);
 
-        if (elemPrev) elemPrev.addEventListener('click', () => createEventChangeSlide('prev'));
-        if (elemNext) elemNext.addEventListener('click', () => createEventChangeSlide('next'));
+        if (elemPrev) {
+            arrows.userBtnPrev = elemPrev;
+            elemPrev.addEventListener('click', () => createEventChangeSlide('prev'));
+        }
+
+        if (elemNext) {
+            arrows.userBtnNext = elemNext;
+            elemNext.addEventListener('click', () => createEventChangeSlide('next'));
+        }
 
         pmGalleryWrapperControl.classList.add('hide-arrows');
     }
@@ -39,8 +49,15 @@ export default function initControl(wrapper: Element, options: Options) {
     let elemPrevDef = wrapper.querySelector('.pm-gallery__arrow--prev');
     let elemNextDef = wrapper.querySelector('.pm-gallery__arrow--next');
 
-    if (elemPrevDef) elemPrevDef.addEventListener('click', () => createEventChangeSlide('prev'));
-    if (elemNextDef) elemNextDef.addEventListener('click', () => createEventChangeSlide('next'));
+    if (elemPrevDef) {
+        arrows.defBtnPrev = elemPrevDef;
+        elemPrevDef.addEventListener('click', () => createEventChangeSlide('prev'));
+    }
+    
+    if (elemNextDef) {
+        arrows.defBtnNext = elemNextDef;
+        elemNextDef.addEventListener('click', () => createEventChangeSlide('next'));
+    }
 
     function createEventChangeSlide(motion: string) {
         wrapper.dispatchEvent(new CustomEvent("changeSlide", {
@@ -61,4 +78,5 @@ export default function initControl(wrapper: Element, options: Options) {
         }
     }
 
+    return arrows;
 }

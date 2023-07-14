@@ -10,5 +10,6 @@ export type Options = {
     autoPlay?: number,
     fullScreenMode?: boolean,
     positionPreviews?: string,
-    animationSlide?: string 
+    animationSlide?: string,
+    loop?: boolean
 }
