@@ -15,8 +15,9 @@ With pm-Gallery, you can create professional-quality visual content.
 
 ## How install?
 
-1. [**pm-gallery-style.css**](https://github.com/Alekseevich-psk/pm-Gallery/blob/main/dist/pm-gallery-style.css)
-2. [**pm-gallery.js**](https://github.com/Alekseevich-psk/pm-Gallery/blob/main/dist/pm-gallery.js)
+1. npm i pm-gallery
+2. Add files: <br> HEAD - pm-gallery-style.css <br>
+    Scripts - pm-gallery.js
 3. Init
 
 ```js
