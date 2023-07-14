@@ -7,13 +7,13 @@ pm-Gallery - being developed as a test project within the framework of learning 
 With pm-Gallery, you can create professional-quality visual content.
 
 1. [**Demo page**](https://alekseevich-psk.github.io/pm-Gallery/dist)
-2. [**How instal?**](#how-instal)
+2. [**How install?**](#how-install)
 3. [**Example**](#example)
 4. [**Parameters**](#parameters)
 
 ---
 
-## How instal?
+## How install?
 
 1. [**pm-gallery-style.css**](https://github.com/Alekseevich-psk/pm-Gallery/blob/main/dist/pm-gallery-style.css)
 2. [**pm-gallery.js**](https://github.com/Alekseevich-psk/pm-Gallery/blob/main/dist/pm-gallery.js)
