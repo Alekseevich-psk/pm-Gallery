@@ -1,6 +1,6 @@
 import { Options } from '../types/options';
 
-export default function swipe(wrapper: Element, options: Options) {
+export default function swipeOnMainPicture(wrapper: Element, options: Options) {
    
     if (options.swipeOnMainPicture === false) return;
 
