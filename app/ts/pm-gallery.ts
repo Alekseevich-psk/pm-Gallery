@@ -3,7 +3,7 @@ import { Options } from './types/options';
 import initControl from './common/init-control';
 import createMainPicture from './common/create-main-picture';
 import createPagination from './common/create-pagination';
-import swipe from './common/swipe';
+import swipeOnMainPicture from './common/swipe-on-main-picture';
 
 import positionPreviews from './mode/orientation-previews';
 import objectFit from './mode/object-fit';
@@ -49,7 +49,7 @@ class PmGallery {
 
         this.arrowsGallery = initControl(this.wrapper, options);
         positionPreviews(this.wrapper, options);
-        swipe(this.wrapper, options);
+        swipeOnMainPicture(this.wrapper, options);
 
         this.wrapper.addEventListener('changeSlide', (event: CustomEvent) => {
             if ((event.detail.btn === 'prev')) this.changeSlide(this.activeSlide, (this.activeSlide - 1));
