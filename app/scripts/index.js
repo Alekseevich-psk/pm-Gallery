@@ -1,2 +1,1 @@
-const gallery1 = new PmGallery(".pm-gallery", {
-});
+const gallery = new PmGallery(".pm-gallery", {});
