@@ -1,7 +1,7 @@
-@import './normilize/reset';
+@import './plugin/normilize/reset';
 
-@import "./setting/variables";
+@import "./plugin/variables";
+@import "./plugin/pm-gallery";
 
-@import "./sections/pm-gallery";
-
-@import "./elements/controls";
+@import "./plugin/elements/controls";
+// @import "./plugin/elements/pagination";
