@@ -1,0 +1,1 @@
+!function(e,o){"object"==typeof exports&&"object"==typeof module?module.exports=o():"function"==typeof define&&define.amd?define([],o):"object"==typeof exports?exports.PmGallery=o():e.PmGallery=o()}(self,(()=>{return e={},new PmGallery(".pm-gallery",{}),e.default;var e}));

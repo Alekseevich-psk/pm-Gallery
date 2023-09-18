@@ -1,10 +1,10 @@
 .main {
     &__inner {
         &--pm-gallery {
-            max-width: 60%;
+            width: 60%;
 
             @media(max-width: 768px) {
-                max-width: 100%;
+                width: 100%;
             }
         }
     }
