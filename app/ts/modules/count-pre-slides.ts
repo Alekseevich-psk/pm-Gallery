@@ -1,9 +1,10 @@
 function countPreSlides(pmGallery: any) {
     const options = pmGallery.initOptions;
+    const wrapper = pmGallery.wrapper;
     const previews = pmGallery.previews as NodeList;
 
-    const widthWrapper = Math.round(pmGallery.wrapper.getBoundingClientRect().width * 100) / 100;
-    const heightWrapper = Math.round(pmGallery.wrapper.getBoundingClientRect().height * 100) / 100;
+    const widthWrapper = Math.round(wrapper.getBoundingClientRect().width * 100) / 100;
+    const heightWrapper = Math.round(wrapper.getBoundingClientRect().height * 100) / 100;
 
     let countSlides = pmGallery.initOptions.countPreSlides;
 
