@@ -16,21 +16,21 @@ export default function initTemplate(wrapper: string, options: initOptions) {
 
     const mainElement: pmgTemplate['mainElement'] = getWrapper(wrapper);
     const previewPictures: pmgTemplate['previewPictures'] = getImages(mainElement);
+        
+    if (!mainElement || previewPictures.length === 0) return;
 
-    if (mainElement && previewPictures.length !== 0) {
-        result.mainElement = mainElement;
-        result.previewPictures = previewPictures;
+    result.mainElement = mainElement;
+    result.previewPictures = previewPictures;
 
-        initWrapper(mainElement);
+    initWrapper(mainElement);
 
-        initInnerPreviews(mainElement);
-        initPreviews(mainElement, previewPictures);
+    initInnerPreviews(mainElement);
+    initPreviews(mainElement, previewPictures);
 
-        initInnerPicture(mainElement);
-        initMainPicture(mainElement, previewPictures);
+    initInnerPicture(mainElement);
+    initMainPicture(mainElement, previewPictures);
 
-        initControls(mainElement);
-    }
+    initControls(mainElement);
 
     return result;
 }

@@ -1,6 +1,8 @@
 import { preview } from '../types/preview';
 
 export default function getImages(wrapper: HTMLElement) {
+    if(!wrapper) return;
+    
     const previews = wrapper.querySelectorAll('img');
     const result: object[] = [];
 
