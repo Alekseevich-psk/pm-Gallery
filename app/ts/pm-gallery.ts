@@ -1,4 +1,5 @@
 import { initOptions } from './types/pmgOptions';
+import getSizeGallery from './helpers/get-size-gallery';
 
 import initTemplate from './init-template/init';
 
@@ -21,9 +22,9 @@ class PmGallery {
     init(wrapper: string, options: initOptions) {
         const resInitTemplate = initTemplate(wrapper, options);
         if (!resInitTemplate) return;
-        console.log(resInitTemplate);
-        
-        const pmGallery = Object.assign(resInitTemplate, this);
+
+        const pmGallery: object = Object.assign(resInitTemplate, this);
+        console.log(pmGallery);
         
         const modules = [
             positionPreviews,

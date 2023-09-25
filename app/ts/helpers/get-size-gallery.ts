@@ -3,14 +3,11 @@ interface obj {
     height: number,
 }
 
-function getSizeGallery(pmGallery: any) {
+function getSizeGallery(pmGallery: HTMLElement) {
     const res = new Object() as obj;
-    
-    res.width = pmGallery.wrapper.getBoundingClientRect().width;
-    res.height = pmGallery.wrapper.getBoundingClientRect().height;
-
+    res.width = Math.round(pmGallery.getBoundingClientRect().width * 100) / 100;
+    res.height = Math.round(pmGallery.getBoundingClientRect().height * 100) / 100;
     return res;
 }
-
 
 export default getSizeGallery;
