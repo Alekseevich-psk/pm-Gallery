@@ -1,4 +1,5 @@
 import { pmgTemplate } from "../types/pmgTemplate";
+import { initOptions } from "../types/init-options";
 
 import getWrapper from "../get-elements/get-wrapper";
 import getImages from "../get-elements/get-images";
@@ -8,8 +9,9 @@ import initPreviews from "./init-previews";
 import initInnerPreviews from "./init-inner-previews";
 import initInnerPicture from "./init-inner-picture";
 import initMainPicture from "./init-main-picture";
+import initControls from "./init-controls";
 
-export default function initTemplate(wrapper: string) {
+export default function initTemplate(wrapper: string, options: initOptions) {
     const result: pmgTemplate = {};
 
     const mainElement: pmgTemplate['mainElement'] = getWrapper(wrapper);
@@ -26,6 +28,8 @@ export default function initTemplate(wrapper: string) {
 
         initInnerPicture(mainElement);
         initMainPicture(mainElement, previewPictures);
+
+        initControls(mainElement);
     }
 
     return result;

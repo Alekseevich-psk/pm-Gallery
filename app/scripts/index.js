@@ -1,1 +1,3 @@
-const gallery = new PmGallery(".pm-gallery", {});
+const gallery = new PmGallery(".pm-gallery", {
+    countPreSlides: 4
+});

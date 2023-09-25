@@ -1,17 +1,20 @@
 import initTemplate from './init-template/init';
-import { Params } from './types/params';
+import { initOptions } from './types/init-options';
 
 class PmGallery {
 
     private elMsGalleryWrapper: string;
+    private initOptions: initOptions;
 
-    constructor(msGalleryWrapper: string, params: Params) {
+    constructor(msGalleryWrapper: string, options: initOptions) {
         this.elMsGalleryWrapper = msGalleryWrapper;
-        this.init();
+        this.initOptions = options;
+        
+        this.init(this.initOptions);
     }
 
-    private init() {
-        const resInitTemplate = initTemplate(this.elMsGalleryWrapper);
+    private init(options: initOptions) {
+        const resInitTemplate = initTemplate(this.elMsGalleryWrapper, options);
         if (!resInitTemplate) return;
     }
 
