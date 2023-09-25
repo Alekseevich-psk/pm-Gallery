@@ -10,6 +10,7 @@ import initPreviews from "./init-previews";
 import initInnerPreviews from "./init-inner-previews";
 import initInnerPicture from "./init-inner-picture";
 import initMainPicture from "./init-main-picture";
+import initTrack from "./init-track";
 import initControls from "./init-controls";
 
 export default function initTemplate(wrapper: string, options: initOptions) {
@@ -23,6 +24,7 @@ export default function initTemplate(wrapper: string, options: initOptions) {
     result.wrapper = initWrapper(mainElement);
     result.innerPreviews = initInnerPreviews(mainElement);
     result.innerPicture = initInnerPicture(mainElement);
+    result.track = initTrack(result.innerPreviews);
     result.previews = initPreviews(mainElement, previewPictures);
     result.mainPicture = initMainPicture(mainElement, previewPictures);
     result.controls = initControls(mainElement);

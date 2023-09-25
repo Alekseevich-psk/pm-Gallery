@@ -5,15 +5,17 @@ import initTemplate from './init-template/init';
 import defOptions from "./modules/def-options";
 import countPreSlides from "./modules/count-pre-slides";
 import positionPreviews from './modules/position-previews/position-previews';
+import scrollPreviews from './modules/scroll-previews';
 
 class PmGallery {
 
     private elMsGalleryWrapper: string;
     private initOptions: initOptions;
+    private activeIndex: number;
 
     constructor(msGalleryWrapper: string, options: initOptions) {
         this.elMsGalleryWrapper = msGalleryWrapper;
-        this.initOptions = Object.assign(defOptions, options);
+        this.initOptions = Object.assign(defOptions, options, this.activeIndex = 0);
 
         this.init(this.elMsGalleryWrapper, this.initOptions);
     }
@@ -28,6 +30,7 @@ class PmGallery {
         const modules = [
             positionPreviews,
             countPreSlides,
+            scrollPreviews
         ];
 
         modules.forEach(module => {
