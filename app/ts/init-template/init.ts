@@ -1,5 +1,5 @@
 import { pmgTemplate } from "../types/pmgTemplate";
-import { initOptions } from "../types/init-options";
+import { initOptions } from "../types/pmgOptions";
 
 import getWrapper from "../get-elements/get-wrapper";
 import getImages from "../get-elements/get-images";

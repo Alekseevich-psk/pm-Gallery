@@ -1,6 +1,6 @@
-import pmgClasses from "../classes/pmgClasses";
+import pmgClasses from "../types/pmgClasses";
 import { pmgTemplate } from '../types/pmgTemplate';
-import { preview } from '../types/preview';
+import { preview } from '../types/pmgPreview';
 
 function initMainPicture(pmGallery: pmgTemplate['mainElement'], previews: pmgTemplate['previewPictures']) {
     const pictureWrapper = pmGallery.querySelector('.' + pmgClasses['innerMainPicture']);

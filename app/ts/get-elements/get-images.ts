@@ -1,4 +1,4 @@
-import { preview } from '../types/preview';
+import { preview } from '../types/pmgPreview';
 
 export default function getImages(wrapper: HTMLElement) {
     if(!wrapper) return;

@@ -1,5 +1,5 @@
 import initTemplate from './init-template/init';
-import { initOptions } from './types/init-options';
+import { initOptions } from './types/pmgOptions';
 
 class PmGallery {
 

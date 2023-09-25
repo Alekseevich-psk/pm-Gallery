@@ -1,7 +1,7 @@
-import pmgClasses from "../classes/pmgClasses";
+import pmgClasses from "../types/pmgClasses";
 
 import { pmgTemplate } from '../types/pmgTemplate';
-import { preview } from '../types/preview';
+import { preview } from '../types/pmgPreview';
 
 function initPreviews(pmGallery: pmgTemplate['mainElement'], previews: pmgTemplate['previewPictures']) {
     const track = pmGallery.querySelector('.' + pmgClasses['track']);

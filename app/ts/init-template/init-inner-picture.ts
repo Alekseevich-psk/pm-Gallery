@@ -1,4 +1,4 @@
-import pmgClasses from "../classes/pmgClasses";
+import pmgClasses from "../types/pmgClasses";
 import { pmgTemplate } from '../types/pmgTemplate';
 
 function initMainPicture(pmGallery: pmgTemplate['mainElement']) {
