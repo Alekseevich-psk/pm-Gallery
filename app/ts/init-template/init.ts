@@ -16,17 +16,15 @@ export default function initTemplate(wrapper: string, options: initOptions) {
 
     const mainElement: HTMLElement = getWrapper(wrapper);
     const previewPictures: object[] = getImages(mainElement);
-        
+
     if (!mainElement || previewPictures.length === 0) return;
 
-    initWrapper(mainElement);
-    initInnerPreviews(mainElement);
-    initInnerPicture(mainElement);
-    initMainPicture(mainElement, previewPictures);
-    initControls(mainElement);
-
-    result.wrapper = mainElement;
+    result.wrapper = initWrapper(mainElement);
+    result.innerPreviews = initInnerPreviews(mainElement);
+    result.innerPicture = initInnerPicture(mainElement);
     result.previews = initPreviews(mainElement, previewPictures);
-    
+    result.mainPicture = initMainPicture(mainElement, previewPictures);
+    result.controls = initControls(mainElement);
+
     return result;
 }

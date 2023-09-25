@@ -6,10 +6,11 @@ function initMainPicture(pmGallery: HTMLElement, previews: object[]) {
     const preview = previews[0] as preview;
 
     const img = `
-        <img src="${preview.src}" class="pm-gallery__main-picture" data-src="${preview.dataSrc}" alt="${preview.alt}">
+        <img src="${preview.src}" class="${pmgClasses['mainPicture']}" data-src="${preview.dataSrc}" alt="${preview.alt}">
     `;
 
     pictureWrapper.insertAdjacentHTML('beforeend', img);
+    return pmGallery.querySelector('.' + pmgClasses['innerMainPicture']) as HTMLElement;
 };
 
 export default initMainPicture;

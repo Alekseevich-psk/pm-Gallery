@@ -12,6 +12,8 @@ function initWrapper(pmGallery: HTMLElement) {
         </div>`;
 
     pmGallery.querySelector('.' + pmgClasses['innerMainPicture']).insertAdjacentHTML('beforeend', htmlControls);
+
+    return pmGallery.querySelector('.' + pmgClasses['controls']) as HTMLElement;
 }
 
 export default initWrapper;

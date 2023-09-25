@@ -7,4 +7,6 @@ export default function initWrapper(pmGallery: HTMLElement) {
         </div>`;
 
     pmGallery.insertAdjacentHTML('afterbegin', htmlWrapper);
+
+    return pmGallery.querySelector('.' + pmgClasses['wrapper']) as HTMLElement;
 }

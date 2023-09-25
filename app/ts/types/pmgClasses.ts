@@ -6,6 +6,7 @@ interface pmgClasses {
     'inner': string,
     'innerPreviews': string,
     'innerMainPicture': string,
+    'mainPicture': string,
     'track': string,
     'previewPicture': string,
     'controls': string,
@@ -22,14 +23,15 @@ const pmGalleryClasses: pmgClasses = {
     'inner' : pmGallery + '__inner',
     'innerPreviews' : pmGallery + '__inner--previews',
     'innerMainPicture' : pmGallery + '__inner--main-picture',
+    'mainPicture' : pmGallery + '__main-picture',
     'track' : pmGallery + '__track',
     'previewPicture' : pmGallery + '__preview',
     'controls' : pmGallery + '__controls',
     'btnScreen' : pmGallery + '__btn-screen',
-    'btnArrows' : pmGallery + '__arrow',
+    'btnArrows' : pmGallery + '__arrows',
     'btnArrow' : pmGallery + '__arrow',
     'btnPrev' : pmGallery + '__arrow--prev',
-    'btnNext' : pmGallery + 'pm-gallery__arrow--next',
+    'btnNext' : pmGallery + '__arrow--next',
 }
 
 export default pmGalleryClasses;

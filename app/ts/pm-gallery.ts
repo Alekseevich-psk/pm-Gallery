@@ -1,9 +1,10 @@
 import { initOptions } from './types/pmgOptions';
 
 import initTemplate from './init-template/init';
-import defOptions from "./modules/def-options/def-options";
 
-import countPreSlides from "./modules/width-slides/count-pre-slides";
+import defOptions from "./modules/def-options";
+import countPreSlides from "./modules/count-pre-slides";
+import positionPreviews from './modules/position-previews';
 
 class PmGallery {
 
@@ -22,9 +23,10 @@ class PmGallery {
         if (!resInitTemplate) return;
         console.log(resInitTemplate);
         
-        const pmGallery = Object.assign(this, resInitTemplate);
+        const pmGallery = Object.assign(resInitTemplate, this);
         
         const modules = [
+            positionPreviews,
             countPreSlides,
         ];
 
