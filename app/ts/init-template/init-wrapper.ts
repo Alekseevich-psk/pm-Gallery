@@ -1,10 +1,10 @@
 import pmgClasses from "../types/pmgClasses";
 
-export default function initWrapper(wrapper: HTMLElement) {
+export default function initWrapper(pmGallery: HTMLElement) {
     const htmlWrapper = `
         <div class="${pmgClasses['wrapper']}">
             <div class="${pmgClasses['overlay']}"></div>
         </div>`;
 
-    wrapper.insertAdjacentHTML('afterbegin', htmlWrapper);
+    pmGallery.insertAdjacentHTML('afterbegin', htmlWrapper);
 }

@@ -1,14 +1,13 @@
 import pmgClasses from "../types/pmgClasses";
-import { pmgTemplate } from '../types/pmgTemplate';
 
-function initWrapper(pmGallery: pmgTemplate['mainElement']) {
+function initWrapper(pmGallery: HTMLElement) {
 
     const htmlControls = `
-            <div class="pm-gallery__controls">
-            <div class="pm-gallery__btn-screen"></div>
-            <div class="pm-gallery__arrows">
-                <div class="pm-gallery__arrow pm-gallery__arrow--prev"></div>
-                <div class="pm-gallery__arrow pm-gallery__arrow--next"></div>
+            <div class="${pmgClasses['controls']}">
+            <div class="${pmgClasses['btnScreen']}"></div>
+            <div class="${pmgClasses['btnArrows']}">
+                <div class="${pmgClasses['btnArrow']} ${pmgClasses['btnPrev']}"></div>
+                <div class="${pmgClasses['btnArrow']} ${pmgClasses['btnNext']}"></div>
             </div>
         </div>`;
 

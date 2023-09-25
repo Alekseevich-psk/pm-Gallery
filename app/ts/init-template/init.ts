@@ -14,23 +14,19 @@ import initControls from "./init-controls";
 export default function initTemplate(wrapper: string, options: initOptions) {
     const result: pmgTemplate = {};
 
-    const mainElement: pmgTemplate['mainElement'] = getWrapper(wrapper);
-    const previewPictures: pmgTemplate['previewPictures'] = getImages(mainElement);
+    const mainElement: HTMLElement = getWrapper(wrapper);
+    const previewPictures: object[] = getImages(mainElement);
         
     if (!mainElement || previewPictures.length === 0) return;
 
-    result.mainElement = mainElement;
-    result.previewPictures = previewPictures;
-
     initWrapper(mainElement);
-
     initInnerPreviews(mainElement);
-    initPreviews(mainElement, previewPictures);
-
     initInnerPicture(mainElement);
     initMainPicture(mainElement, previewPictures);
-
     initControls(mainElement);
 
+    result.wrapper = mainElement;
+    result.previews = initPreviews(mainElement, previewPictures);
+    
     return result;
 }

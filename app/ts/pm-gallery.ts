@@ -1,5 +1,9 @@
-import initTemplate from './init-template/init';
 import { initOptions } from './types/pmgOptions';
+
+import initTemplate from './init-template/init';
+import defOptions from "./modules/def-options/def-options";
+
+import countPreSlides from "./modules/width-slides/count-pre-slides";
 
 class PmGallery {
 
@@ -8,14 +12,25 @@ class PmGallery {
 
     constructor(msGalleryWrapper: string, options: initOptions) {
         this.elMsGalleryWrapper = msGalleryWrapper;
-        this.initOptions = options;
-        
-        this.init(this.initOptions);
+        this.initOptions = Object.assign(defOptions, options);
+
+        this.init(this.elMsGalleryWrapper, this.initOptions);
     }
 
-    private init(options: initOptions) {
-        const resInitTemplate = initTemplate(this.elMsGalleryWrapper, options);
+    init(wrapper: string, options: initOptions) {
+        const resInitTemplate = initTemplate(wrapper, options);
         if (!resInitTemplate) return;
+        console.log(resInitTemplate);
+        
+        const pmGallery = Object.assign(this, resInitTemplate);
+        
+        const modules = [
+            countPreSlides,
+        ];
+
+        modules.forEach(module => {
+            module(pmGallery);
+        });
     }
 
 }

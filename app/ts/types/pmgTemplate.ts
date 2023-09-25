@@ -1,4 +1,4 @@
 export type pmgTemplate = {
-    mainElement?: HTMLElement,
-    previewPictures?: object[]
+    wrapper?: HTMLElement,
+    previews?: NodeListOf<Element>,
 }

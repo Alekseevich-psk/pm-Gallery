@@ -2,7 +2,7 @@ import pmgClasses from "../types/pmgClasses";
 
 import { pmgTemplate } from '../types/pmgTemplate';
 
-function initPreviews(pmGallery: pmgTemplate['mainElement']) {
+function initPreviews(pmGallery: HTMLElement) {
 
     const htmlInnerPreviews = `
         <div class="${pmgClasses['inner']} ${pmgClasses['innerPreviews']}">
