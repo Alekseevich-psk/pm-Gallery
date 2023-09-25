@@ -1,19 +1,10 @@
-import pmGalleryClasses from "../classes/pmGalleryClasses";
+import pmgClasses from "../classes/pmgClasses";
 
-import { msGalleryTemplate } from '../types/pmGalleryTemplate';
+import { pmgTemplate } from '../types/pmgTemplate';
 import { preview } from '../types/preview';
 
-function initPreviews(pmGallery: msGalleryTemplate['mainElement'], previews: msGalleryTemplate['previewPictures']) {
-    const wrapper = pmGallery.querySelector('.' + pmGalleryClasses['wrapper']);
-
-    const htmlInnerPreviews = `
-        <div class="${pmGalleryClasses['inner']} ${pmGalleryClasses['wrapperForPreviews']}">
-            <div class="${pmGalleryClasses['track']}"></div>
-        </div>`;
-
-    wrapper.insertAdjacentHTML('beforeend', htmlInnerPreviews);
-
-    const track = pmGallery.querySelector('.' + pmGalleryClasses['track']);
+function initPreviews(pmGallery: pmgTemplate['mainElement'], previews: pmgTemplate['previewPictures']) {
+    const track = pmGallery.querySelector('.' + pmgClasses['track']);
 
     const img = (img: preview) => `
         <div class="pm-gallery__preview">

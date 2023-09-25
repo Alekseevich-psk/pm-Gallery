@@ -1,15 +1,9 @@
-import pmGalleryClasses from "../classes/pmGalleryClasses";
-import { msGalleryTemplate } from '../types/pmGalleryTemplate';
+import pmgClasses from "../classes/pmgClasses";
+import { pmgTemplate } from '../types/pmgTemplate';
 import { preview } from '../types/preview';
 
-function initMainPicture(pmGallery: msGalleryTemplate['mainElement'], previews: msGalleryTemplate['previewPictures']) {
-    const wrapper = pmGallery.querySelector('.' + pmGalleryClasses['wrapper']);
-
-    const htmlWrapperForMainPicture = `
-    <div class="${pmGalleryClasses['inner']} ${pmGalleryClasses['wrapperForMainPicture']}"></div>`;
-    wrapper.insertAdjacentHTML('beforeend', htmlWrapperForMainPicture);
-
-    const pictureWrapper = pmGallery.querySelector('.' + pmGalleryClasses['wrapperForMainPicture']);
+function initMainPicture(pmGallery: pmgTemplate['mainElement'], previews: pmgTemplate['previewPictures']) {
+    const pictureWrapper = pmGallery.querySelector('.' + pmgClasses['innerMainPicture']);
     const preview = previews[0] as preview;
 
     const img = `

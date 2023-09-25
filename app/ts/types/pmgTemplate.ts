@@ -1,4 +1,4 @@
-export type msGalleryTemplate = {
+export type pmgTemplate = {
     mainElement?: HTMLElement,
     previewPictures?: object[]
 }

@@ -4,8 +4,8 @@ interface pmGalleryClasses {
     'wrapper': string,
     'overlay': string,
     'inner': string,
-    'wrapperForPreviews': string,
-    'wrapperForMainPicture': string,
+    'innerPreviews': string,
+    'innerMainPicture': string,
     'track': string,
     'previewPicture': string,
 }
@@ -14,8 +14,8 @@ const pmGalleryClasses: pmGalleryClasses = {
     'wrapper' : pmGallery + '__wrapper',
     'overlay' : pmGallery + '__overlay',
     'inner' : pmGallery + '__inner',
-    'wrapperForPreviews' : pmGallery + '__inner--previews',
-    'wrapperForMainPicture' : pmGallery + '__inner--main-picture',
+    'innerPreviews' : pmGallery + '__inner--previews',
+    'innerMainPicture' : pmGallery + '__inner--main-picture',
     'track' : pmGallery + '__track',
     'previewPicture' : pmGallery + '__preview',
 }
