@@ -1,4 +1,5 @@
 const gallery = new PmGallery(".pm-gallery", {
-    countPreSlides: 6,
-    positionPreviews: 'right'
+    countPreSlides: 3,
+    // positionPreviews: 'top',
+    heightSlide: 80
 });

@@ -1,11 +1,10 @@
 import { initOptions } from './types/pmgOptions';
-import getSizeGallery from './helpers/get-size-gallery';
 
 import initTemplate from './init-template/init';
 
 import defOptions from "./modules/def-options";
 import countPreSlides from "./modules/count-pre-slides";
-import positionPreviews from './modules/position-previews';
+import positionPreviews from './modules/position-previews/position-previews';
 
 class PmGallery {
 
