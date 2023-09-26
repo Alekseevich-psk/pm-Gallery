@@ -15,6 +15,7 @@ const pmGalleryClasses = {
     'btnArrow' : pmGallery + '__arrow',
     'btnPrev' : pmGallery + '__arrow--prev',
     'btnNext' : pmGallery + '__arrow--next',
+    'previewActive' : 'active',
 }
 
 export default pmGalleryClasses;
