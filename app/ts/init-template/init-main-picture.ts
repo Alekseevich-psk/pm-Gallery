@@ -10,7 +10,7 @@ function initMainPicture(pmGallery: HTMLElement, previews: object[]) {
     `;
 
     pictureWrapper.insertAdjacentHTML('beforeend', img);
-    return pmGallery.querySelector('.' + pmgClasses['innerMainPicture']) as HTMLElement;
+    return pmGallery.querySelector('.' + pmgClasses['mainPicture']) as HTMLElement;
 };
 
 export default initMainPicture;

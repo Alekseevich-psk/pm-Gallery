@@ -6,13 +6,14 @@ import defOptions from "./modules/def-options";
 import countPreSlides from "./modules/count-pre-slides";
 import positionPreviews from './modules/position-previews/position-previews';
 import scrollPreviews from './modules/scroll-previews';
+import activeIndex from './modules/change-item/active-index';
 
 class PmGallery {
 
     private elMsGalleryWrapper: string;
     private initOptions: initOptions;
     private activeIndex: number;
-    private pmGallery: object;
+    private pmGallery: any;
 
     constructor(msGalleryWrapper: string, options: initOptions) {
         this.elMsGalleryWrapper = msGalleryWrapper;
@@ -30,14 +31,19 @@ class PmGallery {
         const modules = [
             countPreSlides,
             positionPreviews,
-            scrollPreviews
+            scrollPreviews,
+            activeIndex,
         ];
 
         modules.forEach(module => {
             this.pmGallery = Object.assign(this.pmGallery, module(this.pmGallery));
         });
 
-        console.log(this.pmGallery);
+        this.pmGallery.wrapper.addEventListener('changeActiveIndex', (event: CustomEvent) => {
+            this.pmGallery = Object.assign(this.pmGallery, event.detail);
+            // console.log(this.pmGallery);
+        });
+        
     }
 
 }
