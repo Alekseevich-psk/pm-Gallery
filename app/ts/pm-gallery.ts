@@ -28,8 +28,8 @@ class PmGallery {
         this.pmGallery = Object.assign(resInitTemplate, this);
         
         const modules = [
-            positionPreviews,
             countPreSlides,
+            positionPreviews,
             scrollPreviews
         ];
 

@@ -1,23 +1,6 @@
 const pmGallery = 'pm-gallery';
 
-interface pmgClasses {
-    'wrapper': string,
-    'overlay': string,
-    'inner': string,
-    'innerPreviews': string,
-    'innerMainPicture': string,
-    'mainPicture': string,
-    'track': string,
-    'previewPicture': string,
-    'controls': string,
-    'btnScreen': string,
-    'btnArrows': string,
-    'btnArrow': string,
-    'btnPrev': string,
-    'btnNext': string,
-}
-
-const pmGalleryClasses: pmgClasses = {
+const pmGalleryClasses = {
     'wrapper' : pmGallery + '__wrapper',
     'overlay' : pmGallery + '__overlay',
     'inner' : pmGallery + '__inner',
