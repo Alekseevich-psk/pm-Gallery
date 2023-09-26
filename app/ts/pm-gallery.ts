@@ -12,6 +12,7 @@ class PmGallery {
     private elMsGalleryWrapper: string;
     private initOptions: initOptions;
     private activeIndex: number;
+    private pmGallery: object;
 
     constructor(msGalleryWrapper: string, options: initOptions) {
         this.elMsGalleryWrapper = msGalleryWrapper;
@@ -24,8 +25,7 @@ class PmGallery {
         const resInitTemplate = initTemplate(wrapper, options);
         if (!resInitTemplate) return;
 
-        const pmGallery: object = Object.assign(resInitTemplate, this);
-        console.log(pmGallery);
+        this.pmGallery = Object.assign(resInitTemplate, this);
         
         const modules = [
             positionPreviews,
@@ -34,8 +34,10 @@ class PmGallery {
         ];
 
         modules.forEach(module => {
-            module(pmGallery);
+            this.pmGallery = Object.assign(this.pmGallery, module(this.pmGallery));
         });
+
+        console.log(this.pmGallery);
     }
 
 }

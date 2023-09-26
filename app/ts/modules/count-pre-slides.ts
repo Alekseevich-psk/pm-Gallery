@@ -8,19 +8,40 @@ function countPreSlides(pmGallery: any) {
         countSlides = 4;
     }
 
+    const result = {
+        slideWidth: 0,
+        slideHeight: 0,
+        trackWidth: 0,
+        trackHeight: 0,
+        posPreviews: 'horizontal'
+    }
+
     previews.forEach(element => {
         const el = element as HTMLElement;
 
+        const height = Math.round(pmGallery.wrapperHeight / countSlides);
+        const width = Math.round(pmGallery.wrapperWidth / countSlides);
+
+        result.slideHeight = height;
+        result.slideWidth = width
+
         if (options.positionPreviews === 'left' || options.positionPreviews === 'right') {
-            return el.style.height = pmGallery.wrapperHeight / countSlides + 'px';
-        } 
-        
-        if (options.positionPreviews === 'top' || options.positionPreviews === 'bottom') {            
-            return el.style.flexBasis = pmGallery.wrapperWidth / countSlides + 'px';
+            el.style.height = height + 'px';
+            result.trackHeight = previews.length * height;
+            result.trackWidth = pmGallery.innerPreviewsWidth;
+            result.posPreviews = 'vertical';
         }
 
-        return el.style.height = pmGallery.wrapperHeight / countSlides + 'px';
+        if (options.positionPreviews === 'top' || options.positionPreviews === 'bottom') {
+            el.style.flexBasis = width + 'px';
+            result.trackHeight = pmGallery.innerPreviewsHeight;
+            result.trackWidth = previews.length * width;
+            result.posPreviews = 'horizontal'
+        }
+
     });
+
+    return result;
 }
 
 export default countPreSlides;

@@ -1,6 +1,6 @@
 import { pmgTemplate } from "../types/pmgTemplate";
 import { initOptions } from "../types/pmgOptions";
-import getSizeGallery from "../helpers/get-size-gallery";
+import getSizeElement from "../helpers/get-size-element";
 
 import getWrapper from "../get-elements/get-wrapper";
 import getImages from "../get-elements/get-images";
@@ -29,9 +29,14 @@ export default function initTemplate(wrapper: string, options: initOptions) {
     result.mainPicture = initMainPicture(mainElement, previewPictures);
     result.controls = initControls(mainElement);
     
-    const sizeGallery = getSizeGallery(mainElement);
+    const sizeInnerPreviews = getSizeElement(result.innerPreviews);
+    const sizeGallery = getSizeElement(result.wrapper);
+    
     result.wrapperHeight = sizeGallery.height;
     result.wrapperWidth = sizeGallery.width;
+
+    result.innerPreviewsHeight = sizeInnerPreviews.height;
+    result.innerPreviewsWidth = sizeInnerPreviews.width;
     
     return result;
 }
