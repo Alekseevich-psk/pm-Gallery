@@ -5,7 +5,7 @@ import initTemplate from './init-template/init';
 import defOptions from "./modules/def-options";
 import countPreSlides from "./modules/count-pre-slides";
 import positionPreviews from './modules/position-previews/position-previews';
-import scrollPreviews from './modules/scroll-previews';
+import wheelScrollPreviews from './modules/wheel-scroll-previews';
 import activeItem from './modules/change-item/active-item';
 
 class PmGallery {
@@ -31,7 +31,7 @@ class PmGallery {
         const modules = [
             countPreSlides,
             positionPreviews,
-            scrollPreviews,
+            wheelScrollPreviews,
             activeItem,
         ];
 

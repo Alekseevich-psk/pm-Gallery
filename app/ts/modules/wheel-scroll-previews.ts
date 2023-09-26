@@ -1,4 +1,4 @@
-function scrollPreviews(pmGallery: any) {
+function wheelScrollPreviews(pmGallery: any) {
     const innerPreviews = pmGallery.innerPreviews;
     const track = pmGallery.track;
 
@@ -36,4 +36,4 @@ function scrollPreviews(pmGallery: any) {
 
 }
 
-export default scrollPreviews;
+export default wheelScrollPreviews;
