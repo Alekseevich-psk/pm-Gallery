@@ -2,7 +2,7 @@ import pmGalleryClasses from "../../types/pmgClasses";
 import changeMainPicture from "./change-main-picture";
 import changeActivePreview from "./change-active-preview";
 
-function activeIndex(pmGallery: any) {
+function activeItem(pmGallery: any) {
     const controls = pmGallery.controls;
     const previews = pmGallery.previews;
 
@@ -54,4 +54,4 @@ function activeIndex(pmGallery: any) {
     return { activeIndex: index };
 }
 
-export default activeIndex;
+export default activeItem;
