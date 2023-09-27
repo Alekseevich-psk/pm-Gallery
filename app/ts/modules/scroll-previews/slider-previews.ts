@@ -1,8 +1,9 @@
 function sliderPreviews(pmGallery: any) {
     const wrapper = pmGallery.wrapper;
+    const track = pmGallery.track;
+    
     const countSlides = pmGallery.countSlides;
     const countPreSlides = pmGallery.initOptions.countPreSlides;
-    const track = pmGallery.track;
     const countHideSlides = pmGallery.countHideSlides;
 
     const speedAnim = 100;
@@ -21,31 +22,30 @@ function sliderPreviews(pmGallery: any) {
         if (pmGallery.activeIndex === index) return;
 
         let direction = (pmGallery.activeIndex < index) ? 'next' : 'prev';
-        let disStart = 0;
-        let disEnd = 0;
-        let distance = 0;
+        let disStart: number = 0;
+        let disEnd: number = 0;
+        let distance: number = 0;
+        let disCut: number = 0;
 
         if (pmGallery.posPreviews == 'vertical') {
             distance = pmGallery.slideHeight;
+            disCut = pmGallery.countHideSlides * pmGallery.slideHeight;
         } else {
             distance = pmGallery.slideWidth;
+            disCut = pmGallery.countHideSlides * pmGallery.slideWidth;
         }
 
         if (pmGallery.activeIndex < index) {
-            disStart = (pmGallery.activeIndex * distance) - distance;
-            disEnd = (index * distance) - distance;
-            console.log(disStart, disEnd);
-            if (index <= 1 || (index - 1) > countHideSlides) return;
+            disStart = (pmGallery.activeIndex * distance);
+            disEnd = (index * distance);
         }
 
         if (pmGallery.activeIndex > index) {
-            disStart = (pmGallery.activeIndex * distance) - distance;
-            disEnd = (index * distance) - distance;
-            console.log(disStart, disEnd);
-            if (pmGallery.activeIndex == countSlides - 1 || disEnd < 0) return;
+            disStart = (pmGallery.activeIndex * distance);
+            disEnd = (index * distance);
         }
 
-  
+        if (disEnd > disCut || disStart > disCut) return;
 
         timerId = setInterval(() => {
             if (direction === 'next') {
@@ -54,7 +54,6 @@ function sliderPreviews(pmGallery: any) {
                 if (disStart >= disEnd) {
                     offAnim();
                 }
-                
             }
 
             if (direction === 'prev') {
@@ -65,22 +64,18 @@ function sliderPreviews(pmGallery: any) {
                 }
             }
 
-
-
             if (pmGallery.posPreviews == 'vertical') {
                 track.style.transform = `translate(0, ${(-1 * disStart) + 'px'})`;
             } else {
                 track.style.transform = `translate(${(-1 * disStart) + 'px'}, 0)`;
             }
 
-            console.log(disStart);
-            
         }, speedAnim);
 
         function offAnim() {
             animFlag = false;
-            disStart = distance;
             clearInterval(timerId);
+            disStart = disEnd;
         }
     }
 
