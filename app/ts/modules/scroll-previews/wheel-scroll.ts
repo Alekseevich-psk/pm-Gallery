@@ -1,11 +1,18 @@
-function wheelScrollPreviews(pmGallery: any) {
+function wheelScroll(pmGallery: any) {
     const innerPreviews = pmGallery.innerPreviews;
     const track = pmGallery.track;
-
     const speedScroll = 30;
 
-    let distance = 0;
-    let hideTrackLength = 0;
+    let distance: number = 0;
+    let hideTrackLength: number = 0;
+
+    if (pmGallery.posPreviews == 'vertical') {
+        hideTrackLength = Math.abs(pmGallery.wrapperHeight - pmGallery.trackHeight);
+    }
+
+    if (pmGallery.posPreviews == 'horizontal') {
+        hideTrackLength = Math.abs(pmGallery.wrapperWidth - pmGallery.trackWidth);
+    }
 
     innerPreviews.addEventListener('wheel', (event: any) => {
         event.preventDefault();
@@ -23,17 +30,14 @@ function wheelScrollPreviews(pmGallery: any) {
         }
 
         if (pmGallery.posPreviews == 'vertical') {
-            hideTrackLength = Math.abs(pmGallery.wrapperHeight - pmGallery.trackHeight);
             return track.style.transform = `translate(0, ${distance + 'px'})`;
         }
 
         if (pmGallery.posPreviews == 'horizontal') {
-            hideTrackLength = Math.abs(pmGallery.wrapperWidth - pmGallery.trackWidth);
             return track.style.transform = `translate(${distance + 'px'}, 0)`;
         }
 
     });
-
 }
 
-export default wheelScrollPreviews;
+export default wheelScroll;

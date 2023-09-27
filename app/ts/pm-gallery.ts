@@ -5,7 +5,7 @@ import initTemplate from './init-template/init';
 import defOptions from "./modules/def-options";
 import countPreSlides from "./modules/count-pre-slides";
 import positionPreviews from './modules/position-previews/position-previews';
-import wheelScrollPreviews from './modules/wheel-scroll-previews';
+import scrollPreviews from './modules/scroll-previews/scroll-previews';
 import activeItem from './modules/change-item/active-item';
 
 class PmGallery {
@@ -31,7 +31,7 @@ class PmGallery {
         const modules = [
             countPreSlides,
             positionPreviews,
-            wheelScrollPreviews,
+            scrollPreviews,
             activeItem,
         ];
 
@@ -41,9 +41,9 @@ class PmGallery {
 
         this.pmGallery.wrapper.addEventListener('changeActiveIndex', (event: CustomEvent) => {
             this.pmGallery = Object.assign(this.pmGallery, event.detail);
-            console.log(this.pmGallery);
         });
         
+        console.log(this.pmGallery);
     }
 
 }
