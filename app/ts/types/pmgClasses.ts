@@ -16,6 +16,8 @@ const pmGalleryClasses = {
     'btnPrev' : pmGallery + '__arrow--prev',
     'btnNext' : pmGallery + '__arrow--next',
     'previewActive' : 'active',
+    'horizontal' : 'horizontal',
+    'vertical' : 'vertical',
 }
 
 export default pmGalleryClasses;

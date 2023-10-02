@@ -5,19 +5,26 @@ import initTemplate from './init-template/init';
 import defOptions from "./modules/def-options";
 import countPreSlides from "./modules/count-pre-slides";
 import positionPreviews from './modules/position-previews/position-previews';
-import scrollPreviews from './modules/scroll-previews/scroll-previews';
 import activeItem from './modules/change-item/active-item';
+import wheelScrollPreviews from './modules/scroll-previews/wheel-scroll-previews';
+import sliderScrollPreviews from './modules/scroll-previews/slider-scroll-previews';
 
 class PmGallery {
 
     private elMsGalleryWrapper: string;
     private initOptions: initOptions;
-    private activeIndex: number;
     private pmGallery: any;
+
+    private activeIndex: number = 0;
+    private scrollDistanceTrack: number = 0;
 
     constructor(msGalleryWrapper: string, options: initOptions) {
         this.elMsGalleryWrapper = msGalleryWrapper;
-        this.initOptions = Object.assign(defOptions, options, this.activeIndex = 0);
+
+        this.initOptions = Object.assign(defOptions, options, {
+            activeIndex: this.activeIndex,
+            scrollDistanceTrack: this.scrollDistanceTrack
+        });
 
         this.init(this.elMsGalleryWrapper, this.initOptions);
     }
@@ -27,22 +34,25 @@ class PmGallery {
         if (!resInitTemplate) return;
 
         this.pmGallery = Object.assign(resInitTemplate, this);
-        
+
+        this.pmGallery.wrapper.addEventListener('changeActiveIndex', (event: CustomEvent) => {
+            this.pmGallery = Object.assign(this.pmGallery, {
+                activeIndex: event.detail.activeIndex,
+                scrollDistanceTrack: sliderScrollPreviews(this.pmGallery, event.detail.activeIndex)
+            });
+        });
+
         const modules = [
             countPreSlides,
             positionPreviews,
-            scrollPreviews,
             activeItem,
+            wheelScrollPreviews,
         ];
 
         modules.forEach(module => {
             this.pmGallery = Object.assign(this.pmGallery, module(this.pmGallery));
         });
 
-        this.pmGallery.wrapper.addEventListener('changeActiveIndex', (event: CustomEvent) => {
-            this.pmGallery = Object.assign(this.pmGallery, event.detail);
-        });
-        
         console.log(this.pmGallery);
     }
 

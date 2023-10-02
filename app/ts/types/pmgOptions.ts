@@ -3,4 +3,5 @@ export type initOptions = {
     positionPreviews?: 'left' | 'right' | 'top' | 'bottom',
     widthSlide?: number,
     heightSlide?: number,
+    speedAnim?: number,
 }

@@ -69,6 +69,7 @@
         position: relative;
         height: 100%;
         width: 100%;
+        transition-duration: 0ms;
 
         &.horizontal {
             display: inline-flex;

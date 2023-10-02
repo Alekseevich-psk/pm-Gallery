@@ -13,7 +13,7 @@ function positionPreviewsBottom(pmGallery: any, innerPreviews: HTMLElement, inne
     innerPicture.style.width = 100 + '%';
     innerPicture.style.height = pmGallery.wrapperHeight - defOptions.heightSlide + 'px';
 
-    pmGallery.track.classList.add('horizontal');
+    pmGallery.track.classList.add(pmGalleryClasses['horizontal']);
 }
 
 export default positionPreviewsBottom;

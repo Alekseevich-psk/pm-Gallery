@@ -12,6 +12,11 @@ function activeItem(pmGallery: any) {
     let index: number = 0;
     let oldIndex: number = 0;
 
+    // swipe
+    const minDistance = 30;
+    let xTouchStart: number = null;
+    let xTouchEnd: number = null;
+
     for (let i = 0; i < previews.length; i++) {
         const element = previews[i];
 
@@ -21,7 +26,7 @@ function activeItem(pmGallery: any) {
         })
     };
 
-    btnArrowPrev.addEventListener('click', () => {
+    function prevIndex() {
         if (index >= 1) {
             index--;
         } else {
@@ -29,9 +34,9 @@ function activeItem(pmGallery: any) {
         }
 
         eventChangeIndex();
-    });
+    }
 
-    btnArrowNext.addEventListener('click', () => {
+    function nextIndex() {
         if (index < pmGallery.previews.length - 1) {
             index++;
         } else {
@@ -39,7 +44,7 @@ function activeItem(pmGallery: any) {
         }
 
         eventChangeIndex();
-    });
+    }
 
     function eventChangeIndex() {
         pmGallery.wrapper.dispatchEvent(new CustomEvent("changeActiveIndex", {
@@ -50,6 +55,21 @@ function activeItem(pmGallery: any) {
         changeActivePreview(pmGallery, index, oldIndex);
         oldIndex = index;
     }
+
+    btnArrowPrev.addEventListener('click', prevIndex);
+    btnArrowNext.addEventListener('click', nextIndex);
+
+    pmGallery.innerPreviews.addEventListener('touchstart', function (e: TouchEvent) {
+        xTouchStart = e.targetTouches[0].clientX;
+    });
+
+    pmGallery.innerPreviews.addEventListener('touchend', (e: TouchEvent) => {
+        xTouchEnd = e.changedTouches[0].clientX;
+        if ((Math.abs(xTouchStart - xTouchEnd)) <= minDistance) return;
+
+        if(xTouchStart < xTouchEnd) prevIndex();
+        if(xTouchStart > xTouchEnd) nextIndex();
+    });
 
     return { activeIndex: index };
 }

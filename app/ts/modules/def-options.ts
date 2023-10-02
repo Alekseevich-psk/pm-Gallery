@@ -5,6 +5,7 @@ const defOptions: initOptions = {
     positionPreviews: 'left',
     widthSlide: 120,
     heightSlide: 120,
+    speedAnim: 300
 }
 
 export default defOptions;
