@@ -41,7 +41,7 @@ function fullScreen(pmGallery: any) {
         flagFullScreen = false;
 
         if (body.classList.contains(pmgClasses['overflow'])) {
-            body.classList.add(pmgClasses['overflow']);
+            body.classList.remove(pmgClasses['overflow']);
         }
     }
 
