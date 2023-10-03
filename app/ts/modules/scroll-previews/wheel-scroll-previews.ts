@@ -14,11 +14,11 @@ function wheelScrollPreviews(pmGallery: any) {
             let transformValue = track.style.transform;
 
             if (pmGallery.posPreviews == pmGalleryClasses['vertical']) {
-                distance = transformValue.replace(/[A-Za-z()]/g, '').split(' ')[1];
+                distance = transformValue.replace(/[A-Za-z(),]/g, '').split(' ')[1];
             }
 
             if (pmGallery.posPreviews == pmGalleryClasses['horizontal']) {
-                distance = transformValue.replace(/[A-Za-z()]/g, '').split(' ')[0];
+                distance = transformValue.replace(/[A-Za-z(),]/g, '').split(' ')[0];
             }
         }
     });
