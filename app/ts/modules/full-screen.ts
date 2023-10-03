@@ -5,7 +5,8 @@ import getCountPreSlide from "./count-pre-slides";
 function fullScreen(pmGallery: any) {
     const wrapper = pmGallery.wrapper;
     const initCountPreSlides = pmGallery.initOptions.countPreSlides;
-    const initPositionPreviews = pmGallery.initOptions.positionPreviews
+    const initPositionPreviews = pmGallery.initOptions.positionPreviews;
+    const body = document.querySelector('body');
 
     const btnScreen = wrapper.querySelector('.' + pmgClasses['btnScreen']);
     let flagFullScreen = false;
@@ -27,6 +28,10 @@ function fullScreen(pmGallery: any) {
         pmGallery.initOptions.positionPreviews = pmgClasses['posPreviewsBottom'];
         pmGallery.posPreviews = pmgClasses['horizontal'];
         flagFullScreen = true;
+
+        if (!body.classList.contains(pmgClasses['overflow'])) {
+            body.classList.add(pmgClasses['overflow']);
+        }
     }
 
     function offFullScreen() {
@@ -34,6 +39,10 @@ function fullScreen(pmGallery: any) {
         pmGallery.initOptions.positionPreviews = initPositionPreviews;
         pmGallery.posPreviews = pmgClasses['vertical'];
         flagFullScreen = false;
+
+        if (body.classList.contains(pmgClasses['overflow'])) {
+            body.classList.add(pmgClasses['overflow']);
+        }
     }
 
 }

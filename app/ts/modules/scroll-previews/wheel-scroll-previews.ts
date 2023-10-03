@@ -14,13 +14,14 @@ function wheelScrollPreviews(pmGallery: any) {
             let transformValue = track.style.transform;
 
             if (pmGallery.posPreviews == pmGalleryClasses['vertical']) {
-                distance = transformValue.replace(/[A-Za-z(),]/g, '').split(' ')[1];
+                distance = Number(transformValue.replace(/[A-Za-z(),]/g, '').split(' ')[1]);
             }
 
             if (pmGallery.posPreviews == pmGalleryClasses['horizontal']) {
-                distance = transformValue.replace(/[A-Za-z(),]/g, '').split(' ')[0];
+                distance = Number(transformValue.replace(/[A-Za-z(),]/g, '').split(' ')[0]);
             }
         }
+
     });
 
     pmGallery.wrapper.addEventListener('fullScreen', (event: CustomEvent) => {
@@ -28,10 +29,12 @@ function wheelScrollPreviews(pmGallery: any) {
         del = hideTrackLength / newHideTrackLength;
         distance = Math.round(distance / del);
 
-        if (event.detail.fullScreen) {
-            track.style.transform = `translate(${distance + 'px'}, 0)`;
-        } else {
+        if (pmGallery.posPreviews == pmGalleryClasses['vertical']) {
             track.style.transform = `translate(0, ${distance + 'px'})`;
+        }
+
+        if (pmGallery.posPreviews == pmGalleryClasses['horizontal']) {
+            track.style.transform = `translate(${distance + 'px'}, 0)`;
         }
 
         hideTrackLength = newHideTrackLength;
@@ -39,7 +42,7 @@ function wheelScrollPreviews(pmGallery: any) {
 
     innerPreviews.addEventListener('wheel', (event: any) => {
         event.preventDefault();
-
+    
         if (event.wheelDeltaY < 0) {
             distance -= speedScroll;
         } else {
