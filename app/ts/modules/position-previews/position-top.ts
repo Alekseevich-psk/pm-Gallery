@@ -1,7 +1,11 @@
 import defOptions from "../def-options";
 import pmGalleryClasses from "../../types/pmgClasses";
 
-function positionPreviewsTop(pmGallery: any, innerPreviews: HTMLElement, innerPicture: HTMLElement) {
+function positionPreviewsTop(pmGallery: any) {
+    const innerPreviews = pmGallery.innerPreviews;
+    const innerPicture = pmGallery.innerPicture;
+    const track = pmGallery.track;
+
     innerPreviews.style.left = 0 + 'px';
     innerPreviews.style.top = 0 + 'px';
     innerPreviews.style.width = 100 + '%';
@@ -12,7 +16,7 @@ function positionPreviewsTop(pmGallery: any, innerPreviews: HTMLElement, innerPi
     innerPicture.style.width = 100 + '%';
     innerPicture.style.height = pmGallery.wrapperHeight - defOptions.slideHeight + 'px';
 
-    pmGallery.track.classList.add(pmGalleryClasses['horizontal']);
+    track.classList.add(pmGalleryClasses['horizontal']);
 }
 
 export default positionPreviewsTop;

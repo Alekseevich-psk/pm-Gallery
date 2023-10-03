@@ -10,20 +10,20 @@ function positionPreviews(pmGallery: any) {
 
     switch (positionPreviews) {
         case 'left':
-            positionPreviewsLeft(pmGallery, innerPreviews, innerPicture);
+            positionPreviewsLeft(pmGallery);
             break;
         case 'right':
-            positionPreviewsRight(pmGallery, innerPreviews, innerPicture);
+            positionPreviewsRight(pmGallery);
             break;
         case 'top':
-            positionPreviewsTop(pmGallery, innerPreviews, innerPicture);
+            positionPreviewsTop(pmGallery);
             break;
         case 'bottom':
-            positionPreviewsBottom(pmGallery, innerPreviews, innerPicture);
+            positionPreviewsBottom(pmGallery);
             break;
 
         default:
-            positionPreviewsLeft(pmGallery, innerPreviews, innerPicture);
+            positionPreviewsLeft(pmGallery);
             break;
     }
 

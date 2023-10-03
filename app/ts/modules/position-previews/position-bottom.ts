@@ -1,19 +1,22 @@
-import defOptions from "../def-options";
 import pmGalleryClasses from "../../types/pmgClasses";
 
-function positionPreviewsBottom(pmGallery: any, innerPreviews: HTMLElement, innerPicture: HTMLElement) {
+function positionPreviewsBottom(pmGallery: any) {
+    const innerPreviews = pmGallery.innerPreviews;
+    const innerPicture = pmGallery.innerPicture;
+    const track = pmGallery.track;
+
     innerPreviews.style.left = 0 + 'px';
     innerPreviews.style.bottom = 0 + 'px';
     innerPreviews.style.top = 'auto';
     innerPreviews.style.width = 100 + '%';
-    innerPreviews.style.height = defOptions.slideHeight + 'px';
+    innerPreviews.style.height = pmGallery.slideHeight + 'px';
 
     innerPicture.style.left = 0 + 'px';
     innerPicture.style.top = 0 + 'px';
     innerPicture.style.width = 100 + '%';
-    innerPicture.style.height = pmGallery.wrapperHeight - defOptions.slideHeight + 'px';
+    innerPicture.style.height = pmGallery.wrapperHeight - pmGallery.slideHeight + 'px';
 
-    pmGallery.track.classList.add(pmGalleryClasses['horizontal']);
+    track.classList.add(pmGalleryClasses['horizontal']);
 }
 
 export default positionPreviewsBottom;
