@@ -8,6 +8,7 @@ import positionPreviews from './modules/position-previews/position-previews';
 import activeItem from './modules/change-item/active-item';
 import wheelScrollPreviews from './modules/scroll-previews/wheel-scroll-previews';
 import sliderScrollPreviews from './modules/scroll-previews/slider-scroll-previews';
+import fullScreen from './modules/full-screen';
 
 class PmGallery {
 
@@ -47,6 +48,7 @@ class PmGallery {
             positionPreviews,
             activeItem,
             wheelScrollPreviews,
+            fullScreen
         ];
 
         modules.forEach(module => {
