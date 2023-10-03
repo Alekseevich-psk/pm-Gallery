@@ -1,29 +1,38 @@
 import pmgClasses from "../types/pmgClasses";
-import getSizeElement from "../helpers/get-size-element";
+import getPositionPreviews from "./position-previews/position-previews";
+import getCountPreSlide from "./count-pre-slides";
 
 function fullScreen(pmGallery: any) {
     const wrapper = pmGallery.wrapper;
+    const initCountPreSlides = pmGallery.initOptions.countPreSlides;
+    const initPositionPreviews = pmGallery.initOptions.positionPreviews
+
     const btnScreen = wrapper.querySelector('.' + pmgClasses['btnScreen']);
     let flagFullScreen = false;
 
     btnScreen.addEventListener('click', () => {
         wrapper.classList.toggle(pmgClasses['fullScreen']);
-        (!flagFullScreen) ? onFullScreen() : offFullScreen();
+        (flagFullScreen) ? offFullScreen() : onFullScreen();
+
+        pmGallery = Object.assign(pmGallery, getCountPreSlide(pmGallery));
+        getPositionPreviews(pmGallery);
+
+        pmGallery.wrapper.dispatchEvent(new CustomEvent("fullScreen", {
+            detail: { fullScreen: flagFullScreen }
+        }));
     });
 
     function onFullScreen() {
-        let sizeWrapper = getSizeElement(wrapper);
-        console.log(sizeWrapper);
-        
-        // pmGallery.innerPicture.style.width = sizeWrapper.width - pmGallery.initOptions.widthSlide + 'px';
-        // pmGallery.innerPicture.style.left = pmGallery.initOptions.widthSlide + 'px';
+        pmGallery.initOptions.countPreSlides = 8;
+        pmGallery.initOptions.positionPreviews = pmgClasses['posPreviewsBottom'];
+        pmGallery.posPreviews = pmgClasses['horizontal'];
         flagFullScreen = true;
     }
 
     function offFullScreen() {
-        let sizeWrapper = getSizeElement(wrapper);
-        // pmGallery.innerPicture.style.width = sizeWrapper.width - pmGallery.initOptions.widthSlide + 'px';
-        // pmGallery.innerPicture.style.left = pmGallery.initOptions.widthSlide + 'px';
+        pmGallery.initOptions.countPreSlides = initCountPreSlides;
+        pmGallery.initOptions.positionPreviews = initPositionPreviews;
+        pmGallery.posPreviews = pmgClasses['vertical'];
         flagFullScreen = false;
     }
 

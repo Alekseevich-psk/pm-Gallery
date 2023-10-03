@@ -17,7 +17,8 @@ const result = {
 
 function countPreSlides(pmGallery: any) {
     const options = pmGallery.initOptions;
-    const previews = pmGallery.previews as NodeList;
+    const previews = pmGallery.previews as NodeList; 
+    
     const countSlides: number = previews.length;
     const countHideSlides: number = countSlides - (options.countPreSlides);
     const sizeWrapper = getSizeElement(pmGallery.wrapper);
@@ -38,12 +39,17 @@ function countPreSlides(pmGallery: any) {
     result.countSlides = countSlides;
     result.countHideSlides = countHideSlides;
 
+    if (countHideSlides < 0) {
+        result.countHideSlides = 0
+    }
+
     if (countPreSlides <= 0) {
         console.error('"countPreSlides" - cannot be less than "1"');
         countPreSlides = 4;
     }
 
-    if (options.positionPreviews === 'left' || options.positionPreviews === 'right') {
+    if (options.positionPreviews === pmgClasses['posPreviewsLeft'] 
+    || options.positionPreviews === pmgClasses['posPreviewsRight']) {
         slideHeight = Math.abs(sizeWrapper.height / countPreSlides);
 
         result.trackHeight = Math.abs(countSlides * slideHeight);
@@ -51,7 +57,8 @@ function countPreSlides(pmGallery: any) {
         result.posPreviews = pmgClasses['vertical'];
     }
 
-    if (options.positionPreviews === 'top' || options.positionPreviews === 'bottom') {
+    if (options.positionPreviews === pmgClasses['posPreviewsTop'] 
+    || options.positionPreviews === pmgClasses['posPreviewsBottom']) {
         slideWidth = Math.abs(sizeWrapper.width / countPreSlides);
 
         result.trackWidth = Math.abs(countSlides * slideWidth);
@@ -61,20 +68,13 @@ function countPreSlides(pmGallery: any) {
 
     previews.forEach(element => {
         const el = element as HTMLElement;
-
-        if (options.positionPreviews === 'left' || options.positionPreviews === 'right') {
-            el.style.height = slideHeight + 'px';
-        }
-
-        if (options.positionPreviews === 'top' || options.positionPreviews === 'bottom') {
-            el.style.flexBasis = slideWidth + 'px';
-        }
-
+        el.style.height = slideHeight + 'px';
+        el.style.width = slideWidth + 'px';
     });
 
     result.slideWidth = slideWidth;
     result.slideHeight = slideHeight;
-
+    
     return result;
 }
 

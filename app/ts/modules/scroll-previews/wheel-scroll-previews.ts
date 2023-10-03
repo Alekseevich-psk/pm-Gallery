@@ -2,35 +2,39 @@ import pmGalleryClasses from "../../types/pmgClasses";
 
 function wheelScrollPreviews(pmGallery: any) {
     const innerPreviews = pmGallery.innerPreviews;
-    const countHideSlides = pmGallery.countHideSlides;
     const track = pmGallery.track;
     const speedScroll = 30;
 
     let distance: number = 0;
-    let hideTrackLength: number = 0;
-
-    if (pmGallery.posPreviews == pmGalleryClasses['vertical']) {
-        hideTrackLength = Math.abs(countHideSlides * pmGallery.slideHeight);
-    }
-
-    if (pmGallery.posPreviews == pmGalleryClasses['horizontal']) {
-        hideTrackLength = Math.abs(countHideSlides * pmGallery.slideWidth);
-    }
+    let hideTrackLength: number = getHideTrackLength();
+    let del: number = 0;
 
     pmGallery.wrapper.addEventListener('changeActiveIndex', (event: CustomEvent) => {
         if (track.style.transform !== '') {
             let transformValue = track.style.transform;
 
             if (pmGallery.posPreviews == pmGalleryClasses['vertical']) {
-                transformValue = transformValue.replace(/\D/g, '').slice(1);
-            } 
-            
-            if (pmGallery.posPreviews == pmGalleryClasses['horizontal']) {
-                transformValue = transformValue.replace(/\D/g, '').slice(0, -1);
+                distance = transformValue.replace(/[A-Za-z()]/g, '').split(' ')[1];
             }
 
-            distance = transformValue * -1;
+            if (pmGallery.posPreviews == pmGalleryClasses['horizontal']) {
+                distance = transformValue.replace(/[A-Za-z()]/g, '').split(' ')[0];
+            }
         }
+    });
+
+    pmGallery.wrapper.addEventListener('fullScreen', (event: CustomEvent) => {
+        let newHideTrackLength = getHideTrackLength();
+        del = hideTrackLength / newHideTrackLength;
+        distance = Math.round(distance / del);
+
+        if (event.detail.fullScreen) {
+            track.style.transform = `translate(${distance + 'px'}, 0)`;
+        } else {
+            track.style.transform = `translate(0, ${distance + 'px'})`;
+        }
+
+        hideTrackLength = newHideTrackLength;
     });
 
     innerPreviews.addEventListener('wheel', (event: any) => {
@@ -57,6 +61,20 @@ function wheelScrollPreviews(pmGallery: any) {
         }
 
     });
+
+    function getHideTrackLength() {
+        let hideTrackLength = 0;
+
+        if (pmGallery.posPreviews == pmGalleryClasses['vertical']) {
+            hideTrackLength = pmGallery.countHideSlides * pmGallery.slideHeight;
+        }
+
+        if (pmGallery.posPreviews == pmGalleryClasses['horizontal']) {
+            hideTrackLength = pmGallery.countHideSlides * pmGallery.slideWidth;
+        }
+
+        return hideTrackLength;
+    }
 }
 
 export default wheelScrollPreviews;

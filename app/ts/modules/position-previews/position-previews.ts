@@ -1,29 +1,25 @@
-import positionPreviewsRight from "./position-right";
-import positionPreviewsLeft from "./position-left";
-import positionPreviewsTop from "./position-top";
-import positionPreviewsBottom from "./position-bottom";
+import pmGalleryClasses from "../../types/pmgClasses";
+import positionHorizontal from "./position-horizontal";
+import positionVertical from "./position-vertical";
 
-function positionPreviews(pmGallery: any) {
-    const positionPreviews = pmGallery.initOptions.positionPreviews;
-    const innerPreviews = pmGallery.innerPreviews as HTMLElement;
-    const innerPicture = pmGallery.innerPicture as HTMLElement;
+function positionPreviews(pmGallery: any, position: string = pmGallery.initOptions.positionPreviews) {
 
-    switch (positionPreviews) {
-        case 'left':
-            positionPreviewsLeft(pmGallery);
+    switch (position) {
+        case pmGalleryClasses['posPreviewsLeft']:
+            positionHorizontal(pmGallery, pmGalleryClasses['posPreviewsLeft']);
             break;
-        case 'right':
-            positionPreviewsRight(pmGallery);
+        case pmGalleryClasses['posPreviewsRight']:
+            positionHorizontal(pmGallery, pmGalleryClasses['posPreviewsRight']);
             break;
-        case 'top':
-            positionPreviewsTop(pmGallery);
+        case pmGalleryClasses['posPreviewsTop']:
+            positionVertical(pmGallery, pmGalleryClasses['posPreviewsTop']);
             break;
-        case 'bottom':
-            positionPreviewsBottom(pmGallery);
+        case pmGalleryClasses['posPreviewsBottom']:
+            positionVertical(pmGallery, pmGalleryClasses['posPreviewsBottom']);
             break;
 
         default:
-            positionPreviewsLeft(pmGallery);
+            positionHorizontal(pmGallery);
             break;
     }
 

@@ -18,7 +18,11 @@ const pmGalleryClasses = {
     'previewActive' : 'active',
     'horizontal' : 'horizontal',
     'vertical' : 'vertical',
-    'fullScreen' : 'fullscreen'
+    'fullScreen' : 'fullscreen',
+    'posPreviewsTop' : 'top',
+    'posPreviewsBottom' : 'bottom',
+    'posPreviewsLeft' : 'left',
+    'posPreviewsRight' : 'right',
 }
 
 export default pmGalleryClasses;

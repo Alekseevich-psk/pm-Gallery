@@ -1,0 +1,42 @@
+import pmGalleryClasses from "../../types/pmgClasses";
+import getSizeElement from "../../helpers/get-size-element";
+
+function positionHorizontal(pmGallery: any, position: string = pmGalleryClasses['posPreviewsLeft']) {
+    const sizeWrapper = getSizeElement(pmGallery.wrapper);
+    const innerPreviews = pmGallery.innerPreviews;
+    const innerPicture = pmGallery.innerPicture;
+    const track = pmGallery.track;
+
+    if (position === pmGalleryClasses['posPreviewsLeft']) {
+        innerPreviews.style.left = 0;
+        innerPreviews.style.right = 'auto';
+
+        innerPicture.style.left = pmGallery.slideWidth + 'px';
+        innerPicture.style.right = 'auto';
+    }
+
+    if (position === pmGalleryClasses['posPreviewsRight']) {
+        innerPreviews.style.left = 'auto';
+        innerPreviews.style.right = 0;
+
+        innerPicture.style.left = 0;
+    }
+
+    innerPreviews.style.top = '0';
+    innerPreviews.style.bottom = 'auto';
+
+    innerPreviews.style.width = pmGallery.slideWidth + 'px';
+    innerPreviews.style.height = sizeWrapper.height + 'px';
+
+    innerPicture.style.top = 0;
+    innerPicture.style.bottom = 'auto';
+
+    innerPicture.style.width = sizeWrapper.width - pmGallery.slideWidth + 'px';
+    innerPicture.style.height = sizeWrapper.height + 'px';
+
+    track.className = '';
+    track.classList.add(pmGalleryClasses["track"]);
+    track.classList.add(pmGalleryClasses["vertical"]);
+}
+
+export default positionHorizontal;
