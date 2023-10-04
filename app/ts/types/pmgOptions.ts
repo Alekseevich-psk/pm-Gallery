@@ -4,4 +4,5 @@ export type initOptions = {
     slideWidth?: number,
     slideHeight?: number,
     speedAnim?: number,
+    breakpoint?: object
 }

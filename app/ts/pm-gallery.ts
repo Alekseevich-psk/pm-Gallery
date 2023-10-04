@@ -1,9 +1,6 @@
 import { initOptions } from './types/pmgOptions';
-
 import initTemplate from './init-template/init';
-
 import getPosPreviews from './helpers/get-pos-previews';
-
 import defOptions from "./modules/def-options";
 import countPreSlides from "./modules/count-pre-slides";
 import positionPreviews from './modules/position-previews/position-previews';
@@ -14,18 +11,16 @@ import fullScreen from './modules/full-screen';
 
 class PmGallery {
 
-    private elMsGalleryWrapper: string;
     private initOptions: initOptions;
     private pmGallery: any;
 
     constructor(msGalleryWrapper: string, options: initOptions) {
-        this.elMsGalleryWrapper = msGalleryWrapper;
         this.initOptions = Object.assign(defOptions, options);
-        this.init(this.elMsGalleryWrapper, this.initOptions);
+        this.init(msGalleryWrapper);
     }
 
-    init(wrapper: string, options: initOptions) {
-        const resInitTemplate = initTemplate(wrapper, options);
+    init(wrapper: string) {
+        const resInitTemplate = initTemplate(wrapper);
         if (!resInitTemplate) return;
 
         this.pmGallery = Object.assign(resInitTemplate, this);

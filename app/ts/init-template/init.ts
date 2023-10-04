@@ -1,9 +1,6 @@
 import { pmgTemplate } from "../types/pmgTemplate";
-import { initOptions } from "../types/pmgOptions";
-
 import getWrapper from "../get-elements/get-wrapper";
 import getImages from "../get-elements/get-images";
-
 import initWrapper from "./init-wrapper";
 import initPreviews from "./init-previews";
 import initInnerPreviews from "./init-inner-previews";
@@ -12,7 +9,7 @@ import initMainPicture from "./init-main-picture";
 import initTrack from "./init-track";
 import initControls from "./init-controls";
 
-export default function initTemplate(wrapper: string, options: initOptions) {
+export default function initTemplate(wrapper: string) {
     const result: pmgTemplate = {};
 
     const mainElement: HTMLElement = getWrapper(wrapper);
@@ -23,7 +20,7 @@ export default function initTemplate(wrapper: string, options: initOptions) {
     result.wrapper = initWrapper(mainElement);
     result.innerPreviews = initInnerPreviews(mainElement);
     result.innerPicture = initInnerPicture(mainElement);
-    result.track = initTrack(result.innerPreviews);
+    result.track = initTrack(mainElement);
     result.previews = initPreviews(mainElement, previewPictures);
     result.mainPicture = initMainPicture(mainElement, previewPictures);
     result.controls = initControls(mainElement);
