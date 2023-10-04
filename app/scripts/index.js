@@ -1,7 +1,7 @@
 const gallery = new PmGallery(".pm-gallery", {
-    // countPreSlides: 3,
-    // positionPreviews: 'right',
+    countPreSlides: 4,
+    // positionPreviews: 'top',
     slideHeight: 80,
     slideWidth: 80,
-    speedAnim: 100
+    speedAnim: 300
 });

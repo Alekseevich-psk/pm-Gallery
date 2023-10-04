@@ -4,9 +4,9 @@ function wheelScrollPreviews(pmGallery: any) {
     const innerPreviews = pmGallery.innerPreviews;
     const track = pmGallery.track;
     const speedScroll = 30;
-
+    
     let distance: number = 0;
-    let hideTrackLength: number = getHideTrackLength();
+    let hideTrackLength: number = pmGallery.hideTrackLength;
     let del: number = 0;
 
     pmGallery.wrapper.addEventListener('changeActiveIndex', (event: CustomEvent) => {
@@ -25,7 +25,8 @@ function wheelScrollPreviews(pmGallery: any) {
     });
 
     pmGallery.wrapper.addEventListener('fullScreen', (event: CustomEvent) => {
-        let newHideTrackLength = getHideTrackLength();
+        let newHideTrackLength = pmGallery.hideTrackLength;
+        
         del = hideTrackLength / newHideTrackLength;
         distance = Math.round(distance / del);
 
@@ -42,7 +43,7 @@ function wheelScrollPreviews(pmGallery: any) {
 
     innerPreviews.addEventListener('wheel', (event: any) => {
         event.preventDefault();
-    
+
         if (event.wheelDeltaY < 0) {
             distance -= speedScroll;
         } else {
@@ -64,20 +65,6 @@ function wheelScrollPreviews(pmGallery: any) {
         }
 
     });
-
-    function getHideTrackLength() {
-        let hideTrackLength = 0;
-
-        if (pmGallery.posPreviews == pmGalleryClasses['vertical']) {
-            hideTrackLength = pmGallery.countHideSlides * pmGallery.slideHeight;
-        }
-
-        if (pmGallery.posPreviews == pmGalleryClasses['horizontal']) {
-            hideTrackLength = pmGallery.countHideSlides * pmGallery.slideWidth;
-        }
-
-        return hideTrackLength;
-    }
 }
 
 export default wheelScrollPreviews;

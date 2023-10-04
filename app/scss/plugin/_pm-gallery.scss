@@ -1,4 +1,5 @@
 .pm-gallery {
+    position: relative;
     width: 100%;
 
     --widthPreview: 120px;
@@ -33,7 +34,7 @@
         height: auto;
         left: 0;
         top: 0;
-        padding-bottom: calc(4 * var(--widthPreview)) !important;
+        padding-bottom: 65.7% !important;
     }
 
     &__inner {

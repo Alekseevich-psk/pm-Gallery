@@ -2,6 +2,8 @@ import { initOptions } from './types/pmgOptions';
 
 import initTemplate from './init-template/init';
 
+import getPosPreviews from './helpers/get-pos-previews';
+
 import defOptions from "./modules/def-options";
 import countPreSlides from "./modules/count-pre-slides";
 import positionPreviews from './modules/position-previews/position-previews';
@@ -43,6 +45,10 @@ class PmGallery {
             });
         });
 
+        const helpers = [
+            getPosPreviews
+        ];
+
         const modules = [
             countPreSlides,
             positionPreviews,
@@ -51,11 +57,16 @@ class PmGallery {
             fullScreen
         ];
 
+        helpers.forEach(helper => {
+            this.pmGallery = Object.assign(this.pmGallery, helper(this.pmGallery));
+        });
+
         modules.forEach(module => {
             this.pmGallery = Object.assign(this.pmGallery, module(this.pmGallery));
         });
 
-        // console.log(this.pmGallery);
+        console.log(this.pmGallery);
+
     }
 
 }

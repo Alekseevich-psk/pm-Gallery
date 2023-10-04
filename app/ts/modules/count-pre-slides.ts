@@ -1,69 +1,76 @@
 import getSizeElement from "../helpers/get-size-element";
 import pmgClasses from "../types/pmgClasses";
 
-const result = {
+const res = {
     slideWidth: 0,
     slideHeight: 0,
     trackWidth: 0,
     trackHeight: 0,
-    posPreviews: '',
     countSlides: 0,
     countHideSlides: 0,
     wrapperHeight: 0,
     wrapperWidth: 0,
     innerPreviewsHeight: 0,
-    innerPreviewsWidth: 0
+    innerPreviewsWidth: 0,
+    hideTrackLength: 0
 };
 
 function countPreSlides(pmGallery: any) {
+
     const options = pmGallery.initOptions;
-    const previews = pmGallery.previews as NodeList; 
-    
-    const countSlides: number = previews.length;
-    const countHideSlides: number = countSlides - (options.countPreSlides);
+    const previews = pmGallery.previews as NodeList;
+    const posPreviews = pmGallery.posPreviews;
+    const countSlides = previews.length;
     const sizeWrapper = getSizeElement(pmGallery.wrapper);
 
-    let countPreSlides: number = options.countPreSlides;
+    let countPreSlides: number | string = options.countPreSlides;
     let slideHeight: number = options.slideHeight;
     let slideWidth: number = options.slideWidth;
 
-    result.trackHeight = options.slideHeight;
-    result.trackWidth = options.slideWidth;
+    if (typeof (countPreSlides) === "number") {
+        res.countHideSlides = countSlides - countPreSlides;
 
-    result.innerPreviewsHeight = options.slideHeight;
-    result.innerPreviewsWidth = options.slideWidth;
-
-    result.wrapperHeight = sizeWrapper.height;
-    result.wrapperWidth = sizeWrapper.width;
-
-    result.countSlides = countSlides;
-    result.countHideSlides = countHideSlides;
-
-    if (countHideSlides < 0) {
-        result.countHideSlides = 0
+        if (countPreSlides === 0) {
+            countPreSlides = 4;
+        }
     }
 
-    if (countPreSlides <= 0) {
-        console.error('"countPreSlides" - cannot be less than "1"');
-        countPreSlides = 4;
+    if (posPreviews === pmgClasses['vertical']) {
+
+        if (typeof (countPreSlides) === "number") {
+            slideHeight = Math.abs(sizeWrapper.height / countPreSlides);
+        }
+
+        res.innerPreviewsHeight = sizeWrapper.height;
+        res.innerPreviewsWidth = options.slideWidth;
+
+        res.trackWidth = slideWidth;
+
+        res.trackHeight = (countSlides * slideHeight);
+        res.hideTrackLength = (res.trackHeight - sizeWrapper.height);
+
+        if (res.hideTrackLength > 0) {
+            res.countHideSlides = Math.ceil(res.hideTrackLength / slideHeight);
+        }
     }
 
-    if (options.positionPreviews === pmgClasses['posPreviewsLeft'] 
-    || options.positionPreviews === pmgClasses['posPreviewsRight']) {
-        slideHeight = Math.abs(sizeWrapper.height / countPreSlides);
+    if (posPreviews === pmgClasses['horizontal']) {
 
-        result.trackHeight = Math.abs(countSlides * slideHeight);
-        result.innerPreviewsHeight = Math.abs(countPreSlides * slideHeight);
-        result.posPreviews = pmgClasses['vertical'];
-    }
+        if (typeof (countPreSlides) === "number") {
+            slideWidth = Math.abs(sizeWrapper.width / countPreSlides);
+        }
 
-    if (options.positionPreviews === pmgClasses['posPreviewsTop'] 
-    || options.positionPreviews === pmgClasses['posPreviewsBottom']) {
-        slideWidth = Math.abs(sizeWrapper.width / countPreSlides);
+        res.innerPreviewsHeight = options.slideHeight;
+        res.innerPreviewsWidth = sizeWrapper.width;
 
-        result.trackWidth = Math.abs(countSlides * slideWidth);
-        result.innerPreviewsWidth = Math.abs(countPreSlides * slideWidth);
-        result.posPreviews = pmgClasses['horizontal'];
+        res.trackHeight = slideHeight;
+
+        res.trackWidth = (countSlides * slideWidth);
+        res.hideTrackLength = (res.trackWidth - sizeWrapper.width);
+
+        if (res.hideTrackLength > 0) {
+            res.countHideSlides = Math.ceil(res.hideTrackLength / slideWidth);
+        }
     }
 
     previews.forEach(element => {
@@ -72,10 +79,13 @@ function countPreSlides(pmGallery: any) {
         el.style.width = slideWidth + 'px';
     });
 
-    result.slideWidth = slideWidth;
-    result.slideHeight = slideHeight;
-    
-    return result;
+    res.wrapperHeight = sizeWrapper.height;
+    res.wrapperWidth = sizeWrapper.width;
+    res.countSlides = countSlides;
+    res.slideWidth = slideWidth;
+    res.slideHeight = slideHeight;
+
+    return res;
 }
 
 export default countPreSlides;
