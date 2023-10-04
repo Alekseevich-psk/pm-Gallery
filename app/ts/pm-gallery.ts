@@ -9,6 +9,7 @@ import wheelScrollPreviews from './modules/scroll-previews/wheel-scroll-previews
 import sliderScrollPreviews from './modules/scroll-previews/slider-scroll-previews';
 import fullScreen from './modules/full-screen';
 import getOptionsBreakpoints from './helpers/get-options-breakpoints';
+import resizeWindow from './modules/resize-window';
 
 class PmGallery {
 
@@ -35,8 +36,8 @@ class PmGallery {
         });
 
         const helpers = [
-            getPosPreviews,
-            getOptionsBreakpoints
+            getOptionsBreakpoints,
+            getPosPreviews
         ];
 
         const modules = [
@@ -44,7 +45,8 @@ class PmGallery {
             positionPreviews,
             activeItem,
             wheelScrollPreviews,
-            fullScreen
+            fullScreen,
+            resizeWindow
         ];
 
         helpers.forEach(helper => {

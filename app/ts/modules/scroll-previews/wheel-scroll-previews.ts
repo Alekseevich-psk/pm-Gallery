@@ -21,7 +21,6 @@ function wheelScrollPreviews(pmGallery: any) {
                 distance = Number(transformValue.replace(/[A-Za-z(),]/g, '').split(' ')[0]);
             }
         }
-
     });
 
     pmGallery.wrapper.addEventListener('fullScreen', (event: CustomEvent) => {

@@ -16,7 +16,6 @@ const res = {
 };
 
 function countPreSlides(pmGallery: any) {
-
     const options = pmGallery.initOptions;
     const previews = pmGallery.previews as NodeList;
     const posPreviews = pmGallery.posPreviews;

@@ -15,9 +15,10 @@ const defOptions: initOptions = {
             slideWidth: 80,
             countPreSlides: 4,
         },
-        960: {
+        1024: {
             slideHeight: 100,
             slideWidth: 100,
+            countPreSlides: 5,
         },
     },
 }
