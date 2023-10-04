@@ -18,17 +18,9 @@ class PmGallery {
     private initOptions: initOptions;
     private pmGallery: any;
 
-    private activeIndex: number = 0;
-    private scrollDistanceTrack: number = 0;
-
     constructor(msGalleryWrapper: string, options: initOptions) {
         this.elMsGalleryWrapper = msGalleryWrapper;
-
-        this.initOptions = Object.assign(defOptions, options, {
-            activeIndex: this.activeIndex,
-            scrollDistanceTrack: this.scrollDistanceTrack
-        });
-
+        this.initOptions = Object.assign(defOptions, options);
         this.init(this.elMsGalleryWrapper, this.initOptions);
     }
 
@@ -41,8 +33,9 @@ class PmGallery {
         this.pmGallery.wrapper.addEventListener('changeActiveIndex', (event: CustomEvent) => {
             this.pmGallery = Object.assign(this.pmGallery, {
                 activeIndex: event.detail.activeIndex,
-                scrollDistanceTrack: sliderScrollPreviews(this.pmGallery, event.detail.activeIndex)
             });
+
+            sliderScrollPreviews(this.pmGallery);
         });
 
         const helpers = [

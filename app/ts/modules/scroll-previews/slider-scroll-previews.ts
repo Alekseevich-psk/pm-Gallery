@@ -1,9 +1,10 @@
 import pmGalleryClasses from "../../types/pmgClasses";
 
-function sliderScrollPreviews(pmGallery: any, index: number) {
+function sliderScrollPreviews(pmGallery: any) {
     const track = pmGallery.track;
     const speedAnim = pmGallery.initOptions.speedAnim;
     const countHideSlides = pmGallery.countHideSlides;
+    const index = pmGallery.activeIndex;
     let distance: number = 0;
 
     if (pmGallery.posPreviews == pmGalleryClasses['vertical']) {
