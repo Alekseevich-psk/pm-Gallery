@@ -2,8 +2,6 @@ function getOptionsBreakpoints(pmGallery: any) {
     const windowInnerWidth = document.documentElement.clientWidth;
     const breakpointOptions = pmGallery.initOptions.breakpoint;
 
-    if (!breakpointOptions) return;
-
     getOptionsOnScreenWidth(windowInnerWidth, breakpointOptions);
 
     function getOptionsOnScreenWidth(screenWidth: number, options: any) {
