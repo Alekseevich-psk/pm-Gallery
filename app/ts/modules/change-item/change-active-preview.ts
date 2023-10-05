@@ -1,10 +1,9 @@
-import pmGalleryClasses from "../../types/pmgClasses";
+import pmgClasses from "../../types/pmgClasses";
 
-function changeActivePreview(pmGallery: any, newIndex: number, oldIndex: number) {
+function changeActivePreview(pmGallery: any, index: number) {
     const previews = pmGallery.previews;
-    
-    previews[oldIndex].classList.remove(pmGalleryClasses['previewActive']);
-    previews[newIndex].classList.add(pmGalleryClasses['previewActive']);
+    previews[pmGallery.activeIndex].classList.remove(pmgClasses['previewActive']);
+    previews[index].classList.add(pmgClasses['previewActive']);
 }
 
 export default changeActivePreview;

@@ -4,7 +4,7 @@ import getPosPreviews from './helpers/get-pos-previews';
 import defOptions from "./modules/def-options";
 import countPreSlides from "./modules/count-pre-slides";
 import positionPreviews from './modules/position-previews/position-previews';
-import activeItem from './modules/change-item/active-item';
+import changeItem from './modules/change-item/change-item';
 import wheelScrollPreviews from './modules/scroll-previews/wheel-scroll-previews';
 import sliderScrollPreviews from './modules/scroll-previews/slider-scroll-previews';
 import fullScreen from './modules/full-screen';
@@ -13,9 +13,10 @@ import resizeWindow from './modules/resize-window';
 
 class PmGallery {
 
+    private pmGallery: any;
     private options: object;
     private initOptions: initOptions;
-    private pmGallery: any;
+    private activeIndex: number;
 
     constructor(msGalleryWrapper: string, options: initOptions) {
         this.options = Object.assign(defOptions, options);
@@ -48,7 +49,7 @@ class PmGallery {
         const modules = [
             countPreSlides,
             positionPreviews,
-            activeItem,
+            changeItem,
             wheelScrollPreviews,
             fullScreen,
         ];
