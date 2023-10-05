@@ -31,9 +31,6 @@ const defOptions: initOptions = {
                 slideWidth: 80,
                 countPreSlides: 3.4,
             },
-            960: {
-                positionPreviews: pmgClasses['posPreviewsTop'],
-            },
             1024: {
                 slideHeight: 100,
                 slideWidth: 320,
