@@ -21,7 +21,7 @@ function countPreSlides(pmGallery: any) {
     const posPreviews = pmGallery.posPreviews;
     const countSlides = previews.length;
     const sizeWrapper = getSizeElement(pmGallery.wrapper);
-
+    
     let countPreSlides: number | string = options.countPreSlides;
     let slideHeight: number = options.slideHeight;
     let slideWidth: number = options.slideWidth;

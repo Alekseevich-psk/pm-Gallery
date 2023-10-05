@@ -9,13 +9,11 @@ function resizeWindow(pmGallery: any) {
         getOptionsBreakpoints,
         getPosPreviews,
         countPreSlides,
-        positionPreviews
+        positionPreviews,
     ];
 
-    window.addEventListener('resize', () => {
-        updateModules.forEach(module => {
-            pmGallery = Object.assign(pmGallery, module(pmGallery));
-        });
+    updateModules.forEach(module => {
+        pmGallery = Object.assign(pmGallery, module(pmGallery));
     });
 }
 

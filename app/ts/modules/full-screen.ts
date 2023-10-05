@@ -1,16 +1,14 @@
 import pmgClasses from "../types/pmgClasses";
-import getPositionPreviews from "./position-previews/position-previews";
-import getCountPreSlide from "./count-pre-slides";
+import resizeWindow from "./resize-window";
 
 function fullScreen(pmGallery: any) {
-    return;
+
     const wrapper = pmGallery.wrapper;
     const body = document.querySelector('body');
 
-    const btnScreen = wrapper.querySelector('.' + pmgClasses['btnScreen']);
     let flagFullScreen = false;
 
-    btnScreen.addEventListener('click', () => {
+    pmGallery.btnScreen.addEventListener('click', () => {
         wrapper.classList.toggle(pmgClasses['fullScreen']);
         body.classList.toggle(pmgClasses['overflow']);
 
@@ -22,12 +20,12 @@ function fullScreen(pmGallery: any) {
     });
 
     function onFullScreen() {
-
+        resizeWindow(pmGallery);
         flagFullScreen = true;
     }
 
     function offFullScreen() {
-
+        resizeWindow(pmGallery);
         flagFullScreen = false;
     }
 

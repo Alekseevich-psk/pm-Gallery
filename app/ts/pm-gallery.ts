@@ -36,6 +36,10 @@ class PmGallery {
             sliderScrollPreviews(this.pmGallery);
         });
 
+        window.addEventListener('resize', () => {
+            resizeWindow(this.pmGallery);
+        });
+
         const helpers = [
             getOptionsBreakpoints,
             getPosPreviews

@@ -10,7 +10,7 @@ function initArrowsSlider(pmGallery: HTMLElement) {
 
     pmGallery.querySelector('.' + pmgClasses['controls']).insertAdjacentHTML('beforeend', html);
 
-    return pmGallery.querySelector('.' + pmgClasses['controls']) as HTMLElement;
+    return pmGallery.querySelector('.' + pmgClasses['btnArrows']) as HTMLElement;
 }
 
 export default initArrowsSlider;
