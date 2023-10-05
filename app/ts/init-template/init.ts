@@ -8,6 +8,8 @@ import initInnerPicture from "./init-inner-picture";
 import initMainPicture from "./init-main-picture";
 import initTrack from "./init-track";
 import initControls from "./init-controls";
+import initBtnScreen from "./init-btn-screen";
+import initArrowsSlider from "./init-arrows-slider";
 
 export default function initTemplate(wrapper: string) {
     const result: pmgTemplate = {};
@@ -24,6 +26,8 @@ export default function initTemplate(wrapper: string) {
     result.previews = initPreviews(mainElement, previewPictures);
     result.mainPicture = initMainPicture(mainElement, previewPictures);
     result.controls = initControls(mainElement);
+    result.btnScreen = initBtnScreen(mainElement);
+    result.arrowsSlider = initArrowsSlider(mainElement);
 
     return result;
 }

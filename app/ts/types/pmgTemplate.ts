@@ -9,5 +9,7 @@ export type pmgTemplate = {
     innerPicture?: HTMLElement,
     mainPicture?: HTMLElement,
     controls?: HTMLElement,
+    btnScreen?: HTMLElement,
+    arrowsSlider?: HTMLElement,
     previews?: NodeListOf<Element>,
 }

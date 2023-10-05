@@ -4,10 +4,16 @@ function wheelScrollPreviews(pmGallery: any) {
     const innerPreviews = pmGallery.innerPreviews;
     const track = pmGallery.track;
     const speedScroll = 30;
-    
+
     let distance: number = 0;
     let hideTrackLength: number = pmGallery.hideTrackLength;
     let del: number = 0;
+
+    window.addEventListener('resize', () => {
+        hideTrackLength = pmGallery.hideTrackLength;
+        distance = 0;
+        track.style.transform = `translate(0, 0)`;
+    })
 
     pmGallery.wrapper.addEventListener('changeActiveIndex', (event: CustomEvent) => {
         if (track.style.transform !== '') {
@@ -25,7 +31,7 @@ function wheelScrollPreviews(pmGallery: any) {
 
     pmGallery.wrapper.addEventListener('fullScreen', (event: CustomEvent) => {
         let newHideTrackLength = pmGallery.hideTrackLength;
-        
+
         del = hideTrackLength / newHideTrackLength;
         distance = Math.round(distance / del);
 

@@ -13,11 +13,12 @@ import resizeWindow from './modules/resize-window';
 
 class PmGallery {
 
+    private options: object;
     private initOptions: initOptions;
     private pmGallery: any;
 
     constructor(msGalleryWrapper: string, options: initOptions) {
-        this.initOptions = Object.assign(defOptions, options);
+        this.options = Object.assign(defOptions, options);
         this.init(msGalleryWrapper);
     }
 
