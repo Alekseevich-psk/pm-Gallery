@@ -2,28 +2,45 @@ import { initOptions } from "../types/pmgOptions";
 import pmgClasses from "../types/pmgClasses";
 
 const defOptions: initOptions = {
-    positionPreviews: pmgClasses['posPreviewsLeft'],
-    countPreSlidesFullScreen: 12,
-    breakpoint: {
+    breakpoints: {
         320: {
             slideHeight: 60,
             slideWidth: 60,
             countPreSlides: 3.6,
             speedAnim: 300,
+            positionPreviews: pmgClasses['posPreviewsBottom'],
         },
         768: {
             slideHeight: 60,
             slideWidth: 80,
             countPreSlides: 4,
-            positionPreviews: pmgClasses['posPreviewsTop'],
+            positionPreviews: pmgClasses['posPreviewsLeft'],
         },
         1024: {
-            positionPreviews: pmgClasses['posPreviewsLeft'],
             slideHeight: 100,
-            slideWidth: 100,
+            slideWidth: 82,
             countPreSlides: 5,
         },
     },
+    fullScreen: {
+        speedAnim: 300,
+        breakpoints: {
+            320: {
+                positionPreviews: pmgClasses['posPreviewsBottom'],
+                slideHeight: 80,
+                slideWidth: 80,
+                countPreSlides: 3.4,
+            },
+            960: {
+                positionPreviews: pmgClasses['posPreviewsTop'],
+            },
+            1024: {
+                slideHeight: 100,
+                slideWidth: 320,
+                countPreSlides: 'auto',
+            },
+        },
+    }
 }
 
 export default defOptions;

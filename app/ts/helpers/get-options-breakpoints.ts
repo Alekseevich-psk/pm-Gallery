@@ -1,13 +1,19 @@
 function getOptionsBreakpoints(pmGallery: any) {
     pmGallery.initOptions = Object.assign({}, pmGallery.options);
-    const windowInnerWidth = document.documentElement.clientWidth;
-    const breakpointOptions = pmGallery.initOptions.breakpoint;
 
-    for (const option of Object.keys(breakpointOptions)) {
+    if (pmGallery.fullScreen) {
+        pmGallery.initOptions = Object.assign({}, pmGallery.initOptions.fullScreen);
+    }
+
+    const windowInnerWidth = document.documentElement.clientWidth;
+    const breakpointsOptions = pmGallery.initOptions.breakpoints;
+
+    for (const option of Object.keys(breakpointsOptions)) {
         if (Number(option) <= windowInnerWidth) {
-            pmGallery.initOptions = Object.assign(pmGallery.initOptions, breakpointOptions[option]);
+            pmGallery.initOptions = Object.assign(pmGallery.initOptions, breakpointsOptions[option]);
         }
     }
+    
 }
 
 export default getOptionsBreakpoints;
