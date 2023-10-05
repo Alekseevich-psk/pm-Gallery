@@ -4,7 +4,7 @@ import getPosPreviews from './helpers/get-pos-previews';
 import defOptions from "./modules/def-options";
 import countPreSlides from "./modules/count-pre-slides";
 import positionPreviews from './modules/position-previews/position-previews';
-import changeItem from './modules/change-item/change-item';
+import controlsItem from './modules/controls-item/controls-item';
 import wheelScrollPreviews from './modules/scroll-previews/wheel-scroll-previews';
 import sliderScrollPreviews from './modules/scroll-previews/slider-scroll-previews';
 import fullScreen from './modules/full-screen';
@@ -49,7 +49,7 @@ class PmGallery {
         const modules = [
             countPreSlides,
             positionPreviews,
-            changeItem,
+            controlsItem,
             wheelScrollPreviews,
             fullScreen,
         ];
