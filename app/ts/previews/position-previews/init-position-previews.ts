@@ -1,6 +1,6 @@
-import getCountPreviews from "../get-count-previews";
-import getPosPreviews from "../get-pos-previews";
-import setPosPreviews from "./set-position-previews";
+import getCountPreviews from "../helpers/get-count-previews";
+import getPosPreviews from "../helpers/get-pos-previews";
+import setPosPreviews from "../helpers/set-position-previews";
 
 function initPosPreviews(pmGallery: any) {
 

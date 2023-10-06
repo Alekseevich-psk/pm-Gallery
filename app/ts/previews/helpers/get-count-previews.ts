@@ -1,5 +1,5 @@
-import getSizeElement from "../helpers/get-size-element";
-import pmgClasses from "../setting/pmgClasses";
+import getSizeElement from "../../helpers/get-size-element";
+import pmgClasses from "../../setting/pmgClasses";
 
 const res = {
     slideWidth: 0,

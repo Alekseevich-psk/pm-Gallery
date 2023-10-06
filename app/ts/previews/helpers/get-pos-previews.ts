@@ -1,4 +1,4 @@
-import pmgClasses from "../setting/pmgClasses";
+import pmgClasses from "../../setting/pmgClasses";
 
 function getPosPreviews(pmGallery: any) {
     const posPreviews = pmGallery.initOptions.positionPreviews;
