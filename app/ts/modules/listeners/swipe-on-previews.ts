@@ -5,10 +5,10 @@ function swipeOnPreviews(pmGallery: any) {
     const previews = pmGallery.innerPreviews;
     const minDistance = 30;
 
-    let xTouchStart: number = null;
-    let xTouchEnd: number = null;
-    let yTouchStart: number = null;
-    let yTouchEnd: number = null;
+    let xTouchStart: number = 0;
+    let xTouchEnd: number = 0;
+    let yTouchStart: number = 0;
+    let yTouchEnd: number = 0;
 
     previews.addEventListener('touchstart', function (e: TouchEvent) {
         xTouchStart = e.targetTouches[0].clientX;
