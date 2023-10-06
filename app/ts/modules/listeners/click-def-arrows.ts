@@ -2,7 +2,7 @@ import pmgClasses from "../../setting/pmgClasses";
 import prevIndex from "../change-index/prev-index";
 import nextIndex from "../change-index/next-index";
 
-function defArrows(pmGallery: any) {
+function clickDefArrows(pmGallery: any) {
     const controls = pmGallery.controls;
     const btnArrowPrev = controls.querySelector('.' + pmgClasses['btnPrev']);
     const btnArrowNext = controls.querySelector('.' + pmgClasses['btnNext']);
@@ -17,4 +17,4 @@ function defArrows(pmGallery: any) {
 
 }
 
-export default defArrows;
+export default clickDefArrows;

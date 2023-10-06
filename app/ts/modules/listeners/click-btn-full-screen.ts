@@ -1,7 +1,7 @@
 import pmgClasses from "../../setting/pmgClasses";
 import initPosPreviews from "../../previews/position-previews/init-position-previews";
 
-function fullScreen(pmGallery: any) {
+function clickBtnFullScreen(pmGallery: any) {
     const body = document.querySelector('body');
     let flagFullScreen = false;
 
@@ -21,4 +21,4 @@ function fullScreen(pmGallery: any) {
     });
 }
 
-export default fullScreen;
+export default clickBtnFullScreen;
