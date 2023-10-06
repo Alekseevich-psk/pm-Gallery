@@ -7,6 +7,8 @@ function positionHorizontal(pmGallery: any, position: string) {
     const innerPicture = pmGallery.innerPicture;
     const track = pmGallery.track;
 
+    innerPreviews.style.display = 'block';
+
     if (position === pmGalleryClasses['posPreviewsTop']) {
         innerPreviews.style.top = 0;
         innerPreviews.style.bottom = 'auto';

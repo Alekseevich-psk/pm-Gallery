@@ -2,6 +2,7 @@ import { initOptions } from "../types/pmgOptions";
 import pmgClasses from "../types/pmgClasses";
 
 const defOptions: initOptions = {
+    visiblePreviews: false,
     breakpoints: {
         320: {
             slideHeight: 60,
@@ -17,12 +18,14 @@ const defOptions: initOptions = {
             positionPreviews: pmgClasses['posPreviewsLeft'],
         },
         1024: {
+            positionPreviews: pmgClasses['posPreviewsBottom'],
             slideHeight: 100,
             slideWidth: 82,
             countPreSlides: 5,
         },
     },
     fullScreen: {
+        visiblePreviews: true,
         speedAnim: 300,
         breakpoints: {
             320: {

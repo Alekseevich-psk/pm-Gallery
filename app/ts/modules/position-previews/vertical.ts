@@ -2,10 +2,13 @@ import pmGalleryClasses from "../../types/pmgClasses";
 import getSizeElement from "../../helpers/get-size-element";
 
 function positionVertical(pmGallery: any, position: string) {
+    const visiblePreviews = pmGallery.visiblePreviews;
     const sizeWrapper = getSizeElement(pmGallery.wrapper);
     const innerPreviews = pmGallery.innerPreviews;
     const innerPicture = pmGallery.innerPicture;
     const track = pmGallery.track;
+
+    innerPreviews.style.display = 'block';
 
     if (position === pmGalleryClasses['posPreviewsLeft']) {
         innerPreviews.style.left = 0;
