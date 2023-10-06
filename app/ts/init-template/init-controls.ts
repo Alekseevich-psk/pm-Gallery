@@ -1,4 +1,4 @@
-import pmgClasses from "../types/pmgClasses";
+import pmgClasses from "../setting/pmgClasses";
 
 function initControls(pmGallery: HTMLElement) {
     const html = `<div class="${pmgClasses['controls']}"></div>`;

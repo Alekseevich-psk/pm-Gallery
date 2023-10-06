@@ -1,4 +1,4 @@
-import pmgClasses from "../types/pmgClasses";
+import pmgClasses from "../setting/pmgClasses";
 
 function initPreviews(pmGallery: HTMLElement) {
     const htmlInnerPreviews = `<div class="${pmgClasses['inner']} ${pmgClasses['innerPreviews']}"></div>`;

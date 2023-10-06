@@ -1,15 +1,11 @@
 import { initOptions } from './types/pmgOptions';
 import initTemplate from './init-template/init';
-import getPosPreviews from './helpers/get-pos-previews';
-import defOptions from "./modules/def-options";
-import countPreSlides from "./modules/count-pre-slides";
-import positionPreviews from './modules/position-previews/position-previews';
-import controlsItem from './modules/controls-item/controls-item';
-import wheelScrollPreviews from './modules/scroll-previews/wheel-scroll-previews';
-import sliderScrollPreviews from './modules/scroll-previews/slider-scroll-previews';
-import fullScreen from './modules/full-screen';
+import defOptions from "./setting/def-options";
+
 import getOptionsBreakpoints from './helpers/get-options-breakpoints';
-import resizeWindow from './modules/resize-window';
+import initListeners from './modules/listeners/init-listeners';
+import initPreviews from './previews/init-previews';
+import initScrollPreviews from './modules/scroll-previews/init-scroll-previews';
 
 class PmGallery {
 
@@ -29,29 +25,14 @@ class PmGallery {
 
         this.pmGallery = Object.assign(resInitTemplate, this);
 
-        this.pmGallery.wrapper.addEventListener('changeActiveIndex', (event: CustomEvent) => {
-            this.pmGallery = Object.assign(this.pmGallery, {
-                activeIndex: event.detail.activeIndex,
-            });
-
-            sliderScrollPreviews(this.pmGallery);
-        });
-
-        window.addEventListener('resize', () => {
-            resizeWindow(this.pmGallery);
-        });
-
         const helpers = [
-            getOptionsBreakpoints,
-            getPosPreviews
+            getOptionsBreakpoints
         ];
 
         const modules = [
-            countPreSlides,
-            positionPreviews,
-            controlsItem,
-            wheelScrollPreviews,
-            fullScreen,
+            initListeners,
+            initPreviews,
+            initScrollPreviews
         ];
 
         helpers.forEach(helper => {
@@ -62,7 +43,7 @@ class PmGallery {
             this.pmGallery = Object.assign(this.pmGallery, module(this.pmGallery));
         });
 
-        // console.log(this.pmGallery);
+        console.log(this.pmGallery);
 
     }
 

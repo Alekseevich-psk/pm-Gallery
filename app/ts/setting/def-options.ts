@@ -1,5 +1,5 @@
 import { initOptions } from "../types/pmgOptions";
-import pmgClasses from "../types/pmgClasses";
+import pmgClasses from "./pmgClasses";
 
 const defOptions: initOptions = {
     visiblePreviews: false,
@@ -10,12 +10,15 @@ const defOptions: initOptions = {
             countPreSlides: 3.6,
             speedAnim: 300,
             positionPreviews: pmgClasses['posPreviewsBottom'],
+            fullScreen: false,
         },
         768: {
             slideHeight: 60,
             slideWidth: 80,
             countPreSlides: 4,
+            fullScreen: true,
             positionPreviews: pmgClasses['posPreviewsLeft'],
+            visiblePreviews: true
         },
         1024: {
             positionPreviews: pmgClasses['posPreviewsBottom'],

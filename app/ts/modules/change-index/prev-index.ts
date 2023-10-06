@@ -1,6 +1,6 @@
-import eventChangeItem from "./event-change-item";
+import eventChangeItem from "./event-change-index";
 
-function prevItem(pmGallery: any) {
+function prevIndex(pmGallery: any) {
     let index = pmGallery.activeIndex;
 
     (index >= 1) ? index-- : index = 0;
@@ -8,4 +8,4 @@ function prevItem(pmGallery: any) {
     eventChangeItem(pmGallery, index);
 }
 
-export default prevItem;
+export default prevIndex;

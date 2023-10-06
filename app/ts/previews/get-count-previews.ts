@@ -1,5 +1,5 @@
 import getSizeElement from "../helpers/get-size-element";
-import pmgClasses from "../types/pmgClasses";
+import pmgClasses from "../setting/pmgClasses";
 
 const res = {
     slideWidth: 0,
@@ -15,7 +15,7 @@ const res = {
     hideTrackLength: 0
 };
 
-function countPreSlides(pmGallery: any) {
+function getCountPreviews(pmGallery: any) {
     const options = pmGallery.initOptions;
     const previews = pmGallery.previews as NodeList;
     const posPreviews = pmGallery.posPreviews;
@@ -87,4 +87,4 @@ function countPreSlides(pmGallery: any) {
     return res;
 }
 
-export default countPreSlides;
+export default getCountPreviews;

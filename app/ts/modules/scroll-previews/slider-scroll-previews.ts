@@ -1,4 +1,4 @@
-import pmGalleryClasses from "../../types/pmgClasses";
+import pmGalleryClasses from "../../setting/pmgClasses";
 
 function sliderScrollPreviews(pmGallery: any) {
     const track = pmGallery.track;

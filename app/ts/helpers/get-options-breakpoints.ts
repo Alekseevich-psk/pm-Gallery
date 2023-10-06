@@ -1,6 +1,6 @@
 function getOptionsBreakpoints(pmGallery: any) {
     pmGallery.initOptions = Object.assign({}, pmGallery.options);
-
+    
     if (pmGallery.fullScreen) {
         pmGallery.initOptions = Object.assign({}, pmGallery.initOptions.fullScreen);
     }
@@ -13,7 +13,6 @@ function getOptionsBreakpoints(pmGallery: any) {
             pmGallery.initOptions = Object.assign(pmGallery.initOptions, breakpointsOptions[option]);
         }
     }
-    
 }
 
 export default getOptionsBreakpoints;

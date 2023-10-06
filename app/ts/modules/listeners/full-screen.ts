@@ -1,5 +1,5 @@
-import pmgClasses from "../types/pmgClasses";
-import resizeWindow from "./resize-window";
+import pmgClasses from "../../setting/pmgClasses";
+import initPosPreviews from "../../previews/position-previews/init-position-previews";
 
 function fullScreen(pmGallery: any) {
     const body = document.querySelector('body');
@@ -13,7 +13,7 @@ function fullScreen(pmGallery: any) {
         body.classList.toggle(pmgClasses['overflow']);
 
         pmGallery.fullScreen = flagFullScreen;
-        resizeWindow(pmGallery);
+        initPosPreviews(pmGallery);
 
         pmGallery.wrapper.dispatchEvent(new CustomEvent("fullScreen", {
             detail: { fullScreen: flagFullScreen }

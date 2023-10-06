@@ -1,4 +1,4 @@
-import pmGalleryClasses from "../../types/pmgClasses";
+import pmgClasses from "../../setting/pmgClasses";
 import getSizeElement from "../../helpers/get-size-element";
 
 function positionHorizontal(pmGallery: any, position: string) {
@@ -9,7 +9,7 @@ function positionHorizontal(pmGallery: any, position: string) {
 
     innerPreviews.style.display = 'block';
 
-    if (position === pmGalleryClasses['posPreviewsTop']) {
+    if (position === pmgClasses['posPreviewsTop']) {
         innerPreviews.style.top = 0;
         innerPreviews.style.bottom = 'auto';
 
@@ -17,7 +17,7 @@ function positionHorizontal(pmGallery: any, position: string) {
         innerPicture.style.bottom = 0;
     }
 
-    if (position === pmGalleryClasses['posPreviewsBottom']) {
+    if (position === pmgClasses['posPreviewsBottom']) {
         innerPreviews.style.top = 'auto';
         innerPreviews.style.bottom = 0;
 
@@ -38,8 +38,8 @@ function positionHorizontal(pmGallery: any, position: string) {
     innerPicture.style.height = sizeWrapper.height - pmGallery.slideHeight + 'px';
 
     track.className = '';
-    track.classList.add(pmGalleryClasses["track"]);
-    track.classList.add(pmGalleryClasses["horizontal"]);
+    track.classList.add(pmgClasses["track"]);
+    track.classList.add(pmgClasses["horizontal"]);
 
 }
 

@@ -1,4 +1,4 @@
-import pmgClasses from "../../types/pmgClasses";
+import pmgClasses from "../../setting/pmgClasses";
 
 function changeActivePreview(pmGallery: any, index: number) {
     const previews = pmGallery.previews;

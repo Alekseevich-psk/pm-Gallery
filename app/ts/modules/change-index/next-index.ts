@@ -1,6 +1,6 @@
-import eventChangeItem from "./event-change-item";
+import eventChangeItem from "./event-change-index";
 
-function nextItem(pmGallery: any) {
+function nextIndex(pmGallery: any) {
     let index = pmGallery.activeIndex;
 
     (index < pmGallery.previews.length - 1) ? 
@@ -9,4 +9,4 @@ function nextItem(pmGallery: any) {
     eventChangeItem(pmGallery, index);
 }
 
-export default nextItem;
+export default nextIndex;

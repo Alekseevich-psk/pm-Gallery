@@ -1,5 +1,5 @@
-import prevItem from "../change-item/prev-item";
-import nextItem from "../change-item/next-item";
+import prevItem from "../change-index/prev-index";
+import nextItem from "../change-index/next-index";
 
 function swipeOnPreviews(pmGallery: any) {
     const previews = pmGallery.innerPreviews;
@@ -13,9 +13,6 @@ function swipeOnPreviews(pmGallery: any) {
     previews.addEventListener('touchstart', function (e: TouchEvent) {
         xTouchStart = e.targetTouches[0].clientX;
         yTouchStart = e.targetTouches[0].clientY;
-
-        console.log(e);
-        
     });
 
     previews.addEventListener('touchend', (e: TouchEvent) => {

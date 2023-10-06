@@ -1,10 +1,10 @@
-import pmGalleryClasses from "../../types/pmgClasses";
+import pmGalleryClasses from "../../setting/pmgClasses";
 import posVertical from "./vertical";
 import posHorizontal from "./horizontal";
 import hidePreviews from "./hide-previews";
 
 
-function positionPreviews(pmGallery: any, position: string = pmGallery.initOptions.positionPreviews) {
+function setPosPreviews(pmGallery: any, position: string = pmGallery.initOptions.positionPreviews) {
 
     const visiblePreviews = pmGallery.initOptions.visiblePreviews;
 
@@ -33,4 +33,4 @@ function positionPreviews(pmGallery: any, position: string = pmGallery.initOptio
 
 }
 
-export default positionPreviews;
+export default setPosPreviews;

@@ -1,6 +1,6 @@
-import pmgClasses from "../../types/pmgClasses";
-import prevItem from "../change-item/prev-item";
-import nextItem from "../change-item/next-item";
+import pmgClasses from "../../setting/pmgClasses";
+import prevIndex from "../change-index/prev-index";
+import nextIndex from "../change-index/next-index";
 
 function defArrows(pmGallery: any) {
     const controls = pmGallery.controls;
@@ -8,11 +8,11 @@ function defArrows(pmGallery: any) {
     const btnArrowNext = controls.querySelector('.' + pmgClasses['btnNext']);
 
     btnArrowPrev.addEventListener('click', () => {
-        prevItem(pmGallery);
+        prevIndex(pmGallery);
     });
 
     btnArrowNext.addEventListener('click', () => {
-        nextItem(pmGallery);
+        nextIndex(pmGallery);
     });
 
 }

@@ -1,4 +1,4 @@
-import pmgClasses from "../types/pmgClasses";
+import pmgClasses from "../setting/pmgClasses";
 
 export default function initWrapper(pmGallery: HTMLElement) {
     const htmlWrapper = `

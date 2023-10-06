@@ -1,4 +1,4 @@
-import pmGalleryClasses from "../../types/pmgClasses";
+import pmGalleryClasses from "../../setting/pmgClasses";
 import getSizeElement from "../../helpers/get-size-element";
 
 function positionVertical(pmGallery: any, position: string) {
