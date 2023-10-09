@@ -1,7 +1,7 @@
 import pmGalleryClasses from "../../setting/pmgClasses";
-import posVertical from "../position-previews/vertical";
-import posHorizontal from "../position-previews/horizontal";
-import hidePreviews from "./hide-previews";
+import posVertical from "./vertical";
+import posHorizontal from "./horizontal";
+import hidePreviews from "../helpers/hide-previews";
 
 
 function setPosPreviews(pmGallery: any, position: string = pmGallery.initOptions.positionPreviews) {
