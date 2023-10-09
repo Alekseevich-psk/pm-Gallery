@@ -6,6 +6,7 @@ import getOptionsBreakpoints from './helpers/get-options-breakpoints';
 import initListeners from './modules/listeners/init-listeners';
 import initPreviews from './previews/init-previews';
 import initScrollPreviews from './modules/scroll-previews/init-scroll-previews';
+import initSwipeOnSliders from './modules/swipe-sliders/init-swipe-sliders';
 
 class PmGallery {
 
@@ -32,7 +33,8 @@ class PmGallery {
         const modules = [
             initListeners,
             initPreviews,
-            initScrollPreviews
+            initScrollPreviews,
+            initSwipeOnSliders
         ];
 
         helpers.forEach(helper => {

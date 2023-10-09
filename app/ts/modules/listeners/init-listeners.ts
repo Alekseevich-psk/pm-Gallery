@@ -4,7 +4,6 @@ import resizeWindow from "./resize-window";
 import clickDefArrows from "./click-def-arrows";
 import clickPreviews from "./click-previews";
 import clickBtnFullScreen from "./click-btn-full-screen";
-import swipeOnPreviews from "./swipe-on-previews";
 
 function initListeners(pmGallery: any) {
 
@@ -13,7 +12,6 @@ function initListeners(pmGallery: any) {
         clickPreviews,
         clickBtnFullScreen,
         changeActiveIndex,
-        swipeOnPreviews,
         resizeWindow,
     ];
 
