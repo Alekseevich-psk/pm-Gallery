@@ -16,7 +16,7 @@ function clickBtnFullScreen(pmGallery: any) {
         body.classList.toggle(pmgClasses['overflow']);
 
         pmGallery.fullScreen = flagFullScreen;
-
+        
         getOptionsBreakpoints(pmGallery);
         initPosPreviews(pmGallery);
 

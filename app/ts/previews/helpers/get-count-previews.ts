@@ -28,7 +28,7 @@ function getCountPreviews(pmGallery: any) {
 
     if (typeof (countPreSlides) === "number") {
         res.countHideSlides = countSlides - countPreSlides;
-
+        
         if (countPreSlides === 0) {
             countPreSlides = 4;
         }
@@ -70,6 +70,11 @@ function getCountPreviews(pmGallery: any) {
         if (res.hideTrackLength > 0) {
             res.countHideSlides = Math.ceil(res.hideTrackLength / slideWidth);
         }
+
+    }
+
+    if (res.hideTrackLength < 0) {
+        res.countHideSlides = 0;
     }
 
     previews.forEach(element => {
@@ -83,7 +88,7 @@ function getCountPreviews(pmGallery: any) {
     res.countSlides = countSlides;
     res.slideWidth = slideWidth;
     res.slideHeight = slideHeight;
-
+    
     return res;
 }
 

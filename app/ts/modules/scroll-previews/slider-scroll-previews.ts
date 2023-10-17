@@ -18,6 +18,8 @@ function sliderScrollPreviews(pmGallery: any) {
     let disEnd = index * distance;
     let disCut = countHideSlides * distance;
 
+    if (countHideSlides === 0) return;
+
     if (index > 1) {
         disEnd = disEnd - distance;
     }
