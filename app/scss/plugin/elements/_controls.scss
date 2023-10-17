@@ -3,10 +3,14 @@
     &__wrapper {
         &.fullscreen {
             .pm-gallery__btn-screen {
-                
+
                 &:after {
                     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3e%3cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 15h-4m0 0v4m0-4 4 4M5 9h4m0 0V5m0 4L5 5m14 4h-4m0 0V5m0 4 4-4M5 15h4m0 0v4m0-4-4 4'/%3e%3c/svg%3e");
                 }
+            }
+
+            .user-hide {
+                display: block;
             }
         }
     }
@@ -51,6 +55,10 @@
         opacity: 0.85;
         background-color: #fff;
 
+        &.user-hide {
+            display: none;
+        }
+
         &:hover {
             opacity: 1;
         }
@@ -72,6 +80,10 @@
         right: -52px;
         width: 32px;
         height: 32px;
+
+        &.user-hide {
+            display: none;
+        }
 
         &.hide {
             display: none;

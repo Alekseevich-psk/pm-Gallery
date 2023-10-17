@@ -7,6 +7,7 @@ import initListeners from './modules/listeners/init-listeners';
 import initPreviews from './previews/init-previews';
 import initScrollPreviews from './modules/scroll-previews/init-scroll-previews';
 import initSwipeOnSliders from './modules/swipe-sliders/init-swipe-sliders';
+import initUserControls from './modules/user-controls/init-user-controls';
 
 class PmGallery {
 
@@ -34,7 +35,8 @@ class PmGallery {
             initListeners,
             initPreviews,
             initScrollPreviews,
-            initSwipeOnSliders
+            initSwipeOnSliders,
+            initUserControls
         ];
 
         helpers.forEach(helper => {
