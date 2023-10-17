@@ -28,18 +28,9 @@ new PmGallery(".pm-gallery", {});
 
 ```html
 <div class="pm-gallery">
-    <div class="pm-gallery__wrapper">
-        <div class="pm-gallery__inner pm-gallery__inner--previews">
-            <div class="pm-gallery__preview-picture">
-                <img src="./images/1.jpg" alt="" />
-            </div>
-            <div class="pm-gallery__preview-picture">
-                <img src="./images/2.jpg" alt="" />
-            </div>
-        </div>
-
-        <div class="pm-gallery__inner pm-gallery__inner--picture"></div>
-    </div>
+    <img src="./images/img-small-1.svg" data-src="./images/img-large-1.svg" alt="img" />
+    <img src="./images/img-small-2.svg" data-src="./images/img-large-2.svg" alt="img" />
+    <img src="./images/img-small-3.svg" data-src="./images/img-large-3.svg" alt="img" />
 </div>
 ```
 
