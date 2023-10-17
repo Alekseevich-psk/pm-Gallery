@@ -1,4 +1,5 @@
 const gallery = new PmGallery(".pm-gallery", {
+    animSlide: 'fade',
     // controls: {
     //     btnPrev: '.main__btn-slide--prev',
     //     btnNext: '.main__btn-slide--next',
