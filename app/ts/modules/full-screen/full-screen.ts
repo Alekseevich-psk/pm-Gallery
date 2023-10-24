@@ -1,6 +1,7 @@
 import pmgClasses from "../../setting/pmgClasses";
 import initPosPreviews from "../../previews/position-previews/init-position-previews";
 import getOptionsBreakpoints from "../../helpers/get-options-breakpoints";
+import eventFullScreen from "../../event/event-full-screen";
 
 function fullScreen(pmGallery: any) {
     const body = document.querySelector('body');
@@ -13,11 +14,7 @@ function fullScreen(pmGallery: any) {
     
     getOptionsBreakpoints(pmGallery);
     initPosPreviews(pmGallery);
-
-    wrapper.dispatchEvent(new CustomEvent("fullScreen", {
-        detail: { fullScreen: pmGallery.fullScreen }
-    }));
-
+    eventFullScreen(pmGallery, pmGallery.fullScreen);
 }
 
 export default fullScreen;

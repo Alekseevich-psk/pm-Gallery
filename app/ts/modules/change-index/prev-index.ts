@@ -1,4 +1,4 @@
-import eventChangeItem from "./event-change-index";
+import eventChangeItem from "../../event/event-change-index";
 
 function prevIndex(pmGallery: any) {
     let index = pmGallery.activeIndex;
