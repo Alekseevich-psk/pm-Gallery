@@ -1,6 +1,6 @@
-import sliderScrollPreviews from "../scroll-previews/slider-scroll-previews";
-import changeActivePreview from "../change-slide/change-active-preview";
-import changeMainPicture from "../change-slide/change-main-picture";
+import sliderScrollPreviews from "../modules/scroll-previews/slider-scroll-previews";
+import changeActivePreview from "../modules/change-slide/change-active-preview";
+import changeMainPicture from "../modules/change-slide/change-main-picture";
 
 function changeActiveIndex(pmGallery: any) {
     pmGallery.wrapper.addEventListener('changeActiveIndex', (event: CustomEvent) => {

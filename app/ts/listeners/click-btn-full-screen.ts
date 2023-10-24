@@ -1,4 +1,4 @@
-import fullScreen from "../full-screen/full-screen";
+import fullScreen from "../modules/full-screen/full-screen";
 
 function clickBtnFullScreen(pmGallery: any) {
     pmGallery.btnScreen.addEventListener('click', () => {

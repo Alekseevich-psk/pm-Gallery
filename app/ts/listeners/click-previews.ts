@@ -1,4 +1,4 @@
-import eventChangeItem from "../change-index/event-change-index";
+import eventChangeItem from "../modules/change-index/event-change-index";
 
 function clickPreviews(pmGallery: any) {
     const previews = pmGallery.previews;

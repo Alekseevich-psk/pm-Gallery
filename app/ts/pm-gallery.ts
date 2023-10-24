@@ -3,7 +3,7 @@ import initTemplate from './init-template/init';
 import defOptions from "./setting/def-options";
 
 import getOptionsBreakpoints from './helpers/get-options-breakpoints';
-import initListeners from './modules/listeners/init-listeners';
+import initListeners from './listeners/init-listeners';
 import initPreviews from './previews/init-previews';
 import initScrollPreviews from './modules/scroll-previews/init-scroll-previews';
 import initSwipeOnSliders from './modules/swipe-sliders/init-swipe-sliders';
