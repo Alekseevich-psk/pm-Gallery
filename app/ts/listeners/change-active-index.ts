@@ -1,4 +1,4 @@
-import sliderScrollPreviews from "../modules/scroll-previews/slider-scroll-previews";
+import sliderScrollPreviews from "../previews/scroll-previews/slider-scroll-previews";
 import changeActivePreview from "../modules/change-slide/change-active-preview";
 import changeMainPicture from "../modules/change-slide/change-main-picture";
 

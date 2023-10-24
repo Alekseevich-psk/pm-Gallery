@@ -5,7 +5,6 @@ import defOptions from "./setting/def-options";
 import getOptionsBreakpoints from './helpers/get-options-breakpoints';
 import initListeners from './listeners/init-listeners';
 import initPreviews from './previews/init-previews';
-import initScrollPreviews from './modules/scroll-previews/init-scroll-previews';
 import initSwipeOnSliders from './modules/swipe-sliders/init-swipe-sliders';
 import initUserControls from './modules/user-controls/init-user-controls';
 
@@ -34,7 +33,6 @@ class PmGallery {
         const modules = [
             initListeners,
             initPreviews,
-            initScrollPreviews,
             initSwipeOnSliders,
             initUserControls
         ];
