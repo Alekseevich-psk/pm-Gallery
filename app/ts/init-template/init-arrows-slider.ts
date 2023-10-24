@@ -1,6 +1,7 @@
 import pmgClasses from "../setting/pmgClasses";
 
 function initArrowsSlider(pmGallery: HTMLElement) {
+    const res: any = {};
 
     const html = `
                 <div class="${pmgClasses['btnArrows']}">
@@ -10,7 +11,10 @@ function initArrowsSlider(pmGallery: HTMLElement) {
 
     pmGallery.querySelector('.' + pmgClasses['controls']).insertAdjacentHTML('beforeend', html);
 
-    return pmGallery.querySelector('.' + pmgClasses['btnArrows']) as HTMLElement;
+    res.defBtnPrev = pmGallery.querySelector('.' + pmgClasses['btnPrev']);
+    res.defBtnNext = pmGallery.querySelector('.' + pmgClasses['btnNext']);
+
+    return res;
 }
 
 export default initArrowsSlider;

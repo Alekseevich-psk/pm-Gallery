@@ -1,5 +1,4 @@
 import pmgClasses from "../setting/pmgClasses";
-import { pmgTemplate } from '../types/pmgTemplate';
 
 function initMainPicture(pmGallery:  HTMLElement) {
     const htmlInnerForMainPicture = `<div class="${pmgClasses['inner']} ${pmgClasses['innerMainPicture']}"></div>`;

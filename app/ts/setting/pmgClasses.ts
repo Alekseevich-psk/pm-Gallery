@@ -25,7 +25,8 @@ const pmGalleryClasses = {
     'posPreviewsBottom' : 'bottom',
     'posPreviewsLeft' : 'left',
     'posPreviewsRight' : 'right',
-    'countPreSlidesAuto': 'auto'
+    'countPreSlidesAuto': 'auto',
+    'disabled' : 'disabled'
 }
 
 export default pmGalleryClasses;

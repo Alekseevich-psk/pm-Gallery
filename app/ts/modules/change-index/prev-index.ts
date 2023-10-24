@@ -3,9 +3,10 @@ import eventChangeItem from "./event-change-index";
 function prevIndex(pmGallery: any) {
     let index = pmGallery.activeIndex;
 
-    (index >= 1) ? index-- : index = 0;
-    
-    eventChangeItem(pmGallery, index);
+    if (pmGallery.activeIndex >= 1) {
+        index--;
+        eventChangeItem(pmGallery, index);
+    }
 }
 
 export default prevIndex;
