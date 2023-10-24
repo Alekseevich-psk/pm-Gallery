@@ -1,1 +1,11 @@
-export const pmgAnimSlide = ['fade'];
+export const pmgAnimSlide = [
+    'fade',
+    'fadeInLeft',
+    'fadeInRight',
+    'fadeInUp',
+    'flipInX',
+    'flipInY',
+    'zoomIn',
+    'slideInRight',
+    'slideInLeft'
+];

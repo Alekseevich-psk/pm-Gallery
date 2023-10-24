@@ -30,6 +30,7 @@ const defOptions: initOptions = {
     fullScreen: {
         visiblePreviews: true,
         speedAnim: 300,
+        animSlide: 'none',
         breakpoints: {
             320: {
                 positionPreviews: pmgClasses['posPreviewsBottom'],
