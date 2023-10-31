@@ -1,7 +1,8 @@
 export type initOptions = {
-    countPreSlides?: number | string,
     positionPreviews?: string,
     visiblePreviews?: boolean,
+    countPreSlides?: number,
+    spaceBetween?: number,
     slideWidth?: number,
     slideHeight?: number,
     speedAnim?: number,

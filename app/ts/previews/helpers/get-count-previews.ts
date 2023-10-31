@@ -12,83 +12,68 @@ const res = {
     wrapperWidth: 0,
     innerPreviewsHeight: 0,
     innerPreviewsWidth: 0,
-    hideTrackLength: 0
+    hideTrackLength: 0,
+    spaceBetween: 0
 };
 
 function getCountPreviews(pmGallery: any) {
     const options = pmGallery.initOptions;
     const previews = pmGallery.previews as NodeList;
     const posPreviews = pmGallery.posPreviews;
+    const spaceBetween = pmGallery.initOptions.spaceBetween ?
+        pmGallery.initOptions.spaceBetween : 0;
+
     const countSlides = previews.length;
     const sizeWrapper = getSizeElement(pmGallery.wrapper);
-    
-    let countPreSlides: number | string = options.countPreSlides;
+
+    const previewsVertical = (posPreviews === pmgClasses['vertical'] ? true : false);
+    const spaceBetweenAll = (spaceBetween * (countSlides - 1));
+
+    let countPreSlides: number = options.countPreSlides;
     let slideHeight: number = options.slideHeight;
     let slideWidth: number = options.slideWidth;
 
-    if (typeof (countPreSlides) === "number") {
-        res.countHideSlides = countSlides - countPreSlides;
+    if (countPreSlides) {
+        let spaceBetweenActive = spaceBetween * (countPreSlides - 1);
+
+        if (previewsVertical) {
+            slideHeight = Math.abs(sizeWrapper.height - spaceBetweenActive) / countPreSlides;
+        } else {
+            slideWidth = Math.abs(sizeWrapper.width - spaceBetweenActive) / countPreSlides;
+        }
+    }
+
+    res.innerPreviewsHeight = (previewsVertical ?
+        sizeWrapper.height : options.slideHeight);
+
+    res.innerPreviewsWidth = (previewsVertical ?
+        options.slideWidth : sizeWrapper.width);
+
+    res.trackWidth = (previewsVertical ?
+        slideWidth : ((countSlides * slideWidth) + spaceBetweenAll));
+
+    res.trackHeight = (previewsVertical ?
+        ((countSlides * slideHeight) + spaceBetweenAll) : slideHeight);
+
+    res.hideTrackLength = (previewsVertical ?
+        (res.trackHeight - sizeWrapper.height) : (res.trackWidth - sizeWrapper.width));
         
-        if (countPreSlides === 0) {
-            countPreSlides = 4;
-        }
-    }
-
-    if (posPreviews === pmgClasses['vertical']) {
-
-        if (typeof (countPreSlides) === "number") {
-            slideHeight = Math.abs(sizeWrapper.height / countPreSlides);
-        }
-
-        res.innerPreviewsHeight = sizeWrapper.height;
-        res.innerPreviewsWidth = options.slideWidth;
-
-        res.trackWidth = slideWidth;
-
-        res.trackHeight = (countSlides * slideHeight);
-        res.hideTrackLength = (res.trackHeight - sizeWrapper.height);
-
-        if (res.hideTrackLength > 0) {
-            res.countHideSlides = Math.ceil(res.hideTrackLength / slideHeight);
-        }
-    }
-
-    if (posPreviews === pmgClasses['horizontal']) {
-
-        if (typeof (countPreSlides) === "number") {
-            slideWidth = Math.abs(sizeWrapper.width / countPreSlides);
-        }
-
-        res.innerPreviewsHeight = options.slideHeight;
-        res.innerPreviewsWidth = sizeWrapper.width;
-
-        res.trackHeight = slideHeight;
-
-        res.trackWidth = (countSlides * slideWidth);
-        res.hideTrackLength = (res.trackWidth - sizeWrapper.width);
-
-        if (res.hideTrackLength > 0) {
-            res.countHideSlides = Math.ceil(res.hideTrackLength / slideWidth);
-        }
-
-    }
-
-    if (res.hideTrackLength < 0) {
-        res.countHideSlides = 0;
-    }
-
-    previews.forEach(element => {
-        const el = element as HTMLElement;
-        el.style.height = slideHeight + 'px';
-        el.style.width = slideWidth + 'px';
-    });
+    res.countSlides = countSlides;
 
     res.wrapperHeight = sizeWrapper.height;
     res.wrapperWidth = sizeWrapper.width;
-    res.countSlides = countSlides;
+
     res.slideWidth = slideWidth;
     res.slideHeight = slideHeight;
-    
+    res.spaceBetween = spaceBetween;
+
+    if (res.hideTrackLength > 0) {
+        let slideLength = (previewsVertical ? slideHeight : slideWidth);
+        res.countHideSlides = Math.ceil(res.hideTrackLength / (slideLength + spaceBetween));
+    } else {
+        res.countHideSlides = 0;
+    }
+
     return res;
 }
 
