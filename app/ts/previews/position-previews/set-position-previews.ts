@@ -1,6 +1,6 @@
 import pmGalleryClasses from "../../setting/pmgClasses";
-import posVertical from "./vertical";
-import posHorizontal from "./horizontal";
+import posVertical from "./pos-vertical";
+import posHorizontal from "./pos-horizontal";
 import hidePreviews from "../helpers/hide-previews";
 
 
