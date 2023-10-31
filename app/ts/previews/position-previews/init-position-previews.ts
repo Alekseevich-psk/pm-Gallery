@@ -1,4 +1,4 @@
-import getCountPreviews from "../helpers/get-count-previews";
+import getSizePreviews from "../helpers/get-size-previews";
 import getPosPreviews from "../helpers/get-pos-previews";
 import checkTrackLength from "../helpers/check-track-length";
 import setPosPreviews from "./set-position-previews";
@@ -8,7 +8,7 @@ function initPosPreviews(pmGallery: any) {
 
     const updateModules = [
         getPosPreviews,
-        getCountPreviews,
+        getSizePreviews,
         checkTrackLength,
         setSizePreviews,
         setPosPreviews,

@@ -16,7 +16,7 @@ const res = {
     spaceBetween: 0
 };
 
-function getCountPreviews(pmGallery: any) {
+function getSizePreviews(pmGallery: any) {
     const options = pmGallery.initOptions;
     const previews = pmGallery.previews as NodeList;
     const posPreviews = pmGallery.posPreviews;
@@ -77,4 +77,4 @@ function getCountPreviews(pmGallery: any) {
     return res;
 }
 
-export default getCountPreviews;
+export default getSizePreviews;
