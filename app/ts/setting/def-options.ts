@@ -3,12 +3,12 @@ import pmgClasses from "./pmgClasses";
 
 const defOptions: initOptions = {
     visiblePreviews: false,
-    spaceBetween: 20,
+    spaceBetween: 10,
     breakpoints: {
         320: {
             slideHeight: 60,
             slideWidth: 60,
-            // countPreSlides: 3.6,
+            countPreSlides: 3.6,
             speedAnim: 300,
             positionPreviews: pmgClasses['posPreviewsBottom'],
             fullScreen: false,
@@ -17,7 +17,7 @@ const defOptions: initOptions = {
         768: {
             slideHeight: 60,
             slideWidth: 80,
-            // countPreSlides: 4,
+            countPreSlides: 4,
             fullScreen: true,
             positionPreviews: pmgClasses['posPreviewsLeft'],
             visiblePreviews: true
@@ -25,7 +25,7 @@ const defOptions: initOptions = {
         1024: {
             slideHeight: 100,
             slideWidth: 82,
-            // countPreSlides: 3,
+            countPreSlides: 4,
         },
     },
     fullScreen: {
@@ -42,7 +42,7 @@ const defOptions: initOptions = {
             960: {
                 slideHeight: 100,
                 slideWidth: 160,
-                countPreSlides: 3,
+                countPreSlides: 8,
             },
         },
     }

@@ -13,7 +13,7 @@ function positionVertical(pmGallery: any, position: string) {
         innerPreviews.style.left = 0;
         innerPreviews.style.right = 'auto';
 
-        innerPicture.style.left = pmGallery.slideWidth + 'px';
+        innerPicture.style.left = (pmGallery.slideWidth + pmGallery.spaceBetween) + 'px';
         innerPicture.style.right = 'auto';
     }
 
@@ -33,7 +33,7 @@ function positionVertical(pmGallery: any, position: string) {
     innerPicture.style.top = 0;
     innerPicture.style.bottom = 'auto';
 
-    innerPicture.style.width = sizeWrapper.width - pmGallery.slideWidth + 'px';
+    innerPicture.style.width = (sizeWrapper.width - pmGallery.slideWidth - pmGallery.spaceBetween) + 'px';
     innerPicture.style.height = sizeWrapper.height + 'px';
 
     track.className = '';

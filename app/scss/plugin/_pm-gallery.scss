@@ -40,7 +40,7 @@
     &__inner {
         position: relative;
         height: auto;
-        border: 1px solid gray;
+        // border: 1px solid gray;
 
         &--previews {
             position: absolute;
@@ -97,11 +97,18 @@
     }
 
     &__preview {
+        cursor: pointer;
         position: relative;
         height: 100%;
+        opacity: 0.8;
+        transition: $transition;
+
+        &:hover {
+            opacity: 1;
+        }
 
         img {
-            border: 1px solid blue;
+            // border: 1px solid blue;
             position: absolute;
             top: 0;
             z-index: 1;
@@ -112,8 +119,9 @@
         }
 
         &.active {
+            opacity: 1;
             img {
-                border: 1px solid red;
+                // border: 1px solid red;
                 z-index: 2;
             }
         }
