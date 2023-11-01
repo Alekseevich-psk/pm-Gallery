@@ -9,5 +9,6 @@ export type initOptions = {
     borderRadius?: number,
     breakpoints?: object,
     fullScreen?: object | boolean,
-    pagination?: object | boolean,
+    pagination?: boolean,
+    swipeSlider?: boolean
 }
