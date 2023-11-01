@@ -5,6 +5,7 @@ const defOptions: initOptions = {
     visiblePreviews: false,
     spaceBetween: 10,
     borderRadius: 4,
+    pagination: true,
     breakpoints: {
         320: {
             slideHeight: 60,
@@ -30,7 +31,7 @@ const defOptions: initOptions = {
         },
     },
     fullScreen: {
-        visiblePreviews: true,
+        visiblePreviews: false,
         speedAnim: 300,
         animSlide: 'none',
         breakpoints: {

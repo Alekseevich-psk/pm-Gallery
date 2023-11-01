@@ -5,9 +5,7 @@ import defOptions from "./setting/def-options";
 import getOptionsBreakpoints from './helpers/get-options-breakpoints';
 import initListeners from './listeners/init-listeners';
 import initPreviews from './previews/init-previews';
-import initSwipeOnSliders from './modules/swipe-sliders/init-swipe-sliders';
-import initUserControls from './modules/user-controls/init-user-controls';
-import initStyleOptions from './modules/style-options/init-style-options';
+import initModules from './modules/init-modules';
 
 class PmGallery {
 
@@ -34,9 +32,7 @@ class PmGallery {
         const modules = [
             initListeners,
             initPreviews,
-            initSwipeOnSliders,
-            initUserControls,
-            initStyleOptions
+            initModules
         ];
 
         helpers.forEach(helper => {

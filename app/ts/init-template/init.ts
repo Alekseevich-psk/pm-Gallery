@@ -10,6 +10,8 @@ import initTrack from "./init-track";
 import initControls from "./init-controls";
 import initBtnScreen from "./init-btn-screen";
 import initArrowsSlider from "./init-arrows-slider";
+import initPagination from "./init-pagination";
+import initPaginationItems from "./init-pagination-items";
 
 export default function initTemplate(wrapper: string) {
     const res: pmgTemplate = {};
@@ -27,6 +29,8 @@ export default function initTemplate(wrapper: string) {
     res.mainPicture = initMainPicture(mainElement, previewPictures);
     res.controls = initControls(mainElement);
     res.btnScreen = initBtnScreen(mainElement);
+    res.pagination = initPagination(mainElement);
+    res.paginationItems = initPaginationItems(mainElement, previewPictures);
     res.arrowsSlider = initArrowsSlider(mainElement);
 
     return res;
