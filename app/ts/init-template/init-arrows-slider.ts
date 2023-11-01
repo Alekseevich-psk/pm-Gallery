@@ -11,6 +11,7 @@ function initArrowsSlider(pmGallery: HTMLElement) {
 
     pmGallery.querySelector('.' + pmgClasses['controls']).insertAdjacentHTML('beforeend', html);
 
+    res.arrowsSlider = pmGallery.querySelector('.' + pmgClasses['btnArrows']);
     res.defBtnPrev = pmGallery.querySelector('.' + pmgClasses['btnPrev']);
     res.defBtnNext = pmGallery.querySelector('.' + pmgClasses['btnNext']);
 

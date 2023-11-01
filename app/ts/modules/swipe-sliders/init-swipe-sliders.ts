@@ -3,7 +3,7 @@ import swipeSlider from "./swipe-slider";
 function initSwipeOnSliders(pmGallery: any) {
 
     const sliders = [
-        pmGallery.track,
+        pmGallery.arrowsSlider.arrowsSlider,
         pmGallery.mainPicture
     ];
 

@@ -6,6 +6,7 @@ export type initOptions = {
     slideWidth?: number,
     slideHeight?: number,
     speedAnim?: number,
+    borderRadius?: number,
     breakpoints?: object,
     fullScreen?: object | boolean,
 }
