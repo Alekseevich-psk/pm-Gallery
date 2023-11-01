@@ -2,7 +2,6 @@ import pmGalleryClasses from "../../setting/pmgClasses";
 import getSizeElement from "../../helpers/get-size-element";
 
 function positionVertical(pmGallery: any, position: string) {
-    const visiblePreviews = pmGallery.visiblePreviews;
     const sizeWrapper = getSizeElement(pmGallery.wrapper);
     const innerPreviews = pmGallery.innerPreviews;
     const innerPicture = pmGallery.innerPicture;

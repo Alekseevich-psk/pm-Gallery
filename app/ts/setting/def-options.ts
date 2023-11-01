@@ -25,7 +25,7 @@ const defOptions: initOptions = {
         1024: {
             slideHeight: 100,
             slideWidth: 82,
-            countPreSlides: 3,
+            // countPreSlides: 3,
         },
     },
     fullScreen: {
@@ -42,7 +42,7 @@ const defOptions: initOptions = {
             960: {
                 slideHeight: 100,
                 slideWidth: 160,
-                countPreSlides: 'auto',
+                countPreSlides: 3,
             },
         },
     }

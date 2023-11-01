@@ -33,9 +33,8 @@ function getSizePreviews(pmGallery: any) {
     let slideHeight: number = options.slideHeight;
     let slideWidth: number = options.slideWidth;
 
-    if (countPreSlides) {
+    if (typeof (countPreSlides) === "number") {
         let spaceBetweenActive = spaceBetween * (countPreSlides - 1);
-
         if (previewsVertical) {
             slideHeight = Math.abs(sizeWrapper.height - spaceBetweenActive) / countPreSlides;
         } else {
@@ -57,7 +56,7 @@ function getSizePreviews(pmGallery: any) {
 
     res.hideTrackLength = (previewsVertical ?
         (res.trackHeight - sizeWrapper.height) : (res.trackWidth - sizeWrapper.width));
-        
+
     res.countSlides = countSlides;
 
     res.wrapperHeight = sizeWrapper.height;
@@ -73,6 +72,9 @@ function getSizePreviews(pmGallery: any) {
     } else {
         res.countHideSlides = 0;
     }
+
+    console.log(pmGallery);
+
 
     return res;
 }
