@@ -12,22 +12,22 @@ import initBtnScreen from "./init-btn-screen";
 import initArrowsSlider from "./init-arrows-slider";
 
 export default function initTemplate(wrapper: string) {
-    const result: pmgTemplate = {};
-
+    const res: pmgTemplate = {};
+    
     const mainElement: HTMLElement = getWrapper(wrapper);
     const previewPictures: object[] = getImages(mainElement);
 
     if (!mainElement || previewPictures.length === 0) return;
 
-    result.wrapper = initWrapper(mainElement);
-    result.innerPreviews = initInnerPreviews(mainElement);
-    result.innerPicture = initInnerPicture(mainElement);
-    result.track = initTrack(mainElement);
-    result.previews = initPreviews(mainElement, previewPictures);
-    result.mainPicture = initMainPicture(mainElement, previewPictures);
-    result.controls = initControls(mainElement);
-    result.btnScreen = initBtnScreen(mainElement);
-    result.arrowsSlider = initArrowsSlider(mainElement);
+    res.wrapper = initWrapper(mainElement);
+    res.innerPreviews = initInnerPreviews(mainElement);
+    res.innerPicture = initInnerPicture(mainElement);
+    res.track = initTrack(mainElement);
+    res.previews = initPreviews(mainElement, previewPictures);
+    res.mainPicture = initMainPicture(mainElement, previewPictures);
+    res.controls = initControls(mainElement);
+    res.btnScreen = initBtnScreen(mainElement);
+    res.arrowsSlider = initArrowsSlider(mainElement);
 
-    return result;
+    return res;
 }

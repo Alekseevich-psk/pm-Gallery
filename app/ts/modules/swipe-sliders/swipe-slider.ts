@@ -4,9 +4,6 @@ import prevIndex from "../change-index/prev-index";
 function swipeSlider(pmGallery: any, slider: HTMLElement) {
     slider.addEventListener('pointerdown', pointerDownHandler);
 
-    console.log(slider);
-    
-
     function pointerDownHandler(event: PointerEvent) {
         const touchStart = event.clientX;
 

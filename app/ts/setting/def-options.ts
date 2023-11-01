@@ -4,7 +4,7 @@ import pmgClasses from "./pmgClasses";
 const defOptions: initOptions = {
     visiblePreviews: false,
     spaceBetween: 10,
-    borderRadius: 10,
+    borderRadius: 4,
     breakpoints: {
         320: {
             slideHeight: 60,
