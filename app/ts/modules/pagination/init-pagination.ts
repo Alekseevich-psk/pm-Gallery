@@ -1,15 +1,20 @@
 import pmGalleryClasses from "../../core/setting/pmgClasses";
+import changeActivePaginationItem from "./change-active-item";
 
 function initPagination(pmGallery: any) {
     const optionPagination = pmGallery.initOptions.pagination;
-    const paginationItems = pmGallery.paginationItems;
-
-    paginationItems[pmGallery.activeIndex].classList.add(pmGalleryClasses['paginationItemActive']);
+    const hasHideClass = pmGallery.pagination.classList.contains('hide');
 
     if (optionPagination) {
-        pmGallery.pagination.classList.toggle('hide');
+        if (hasHideClass) {
+            pmGallery.pagination.classList.remove('hide');
+        }
+        
+        changeActivePaginationItem(pmGallery, pmGallery.activeIndex);
     } else {
-        pmGallery.pagination.classList.toggle('hide');
+        if (!hasHideClass) {
+            pmGallery.pagination.classList.add('hide');
+        }
     }
 }
 

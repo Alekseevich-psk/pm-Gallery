@@ -24,8 +24,9 @@ const defOptions: initOptions = {
     fullScreen: {
         visiblePreviews: true,
         borderRadius: 10,
+        spaceBetween: 6,
         slideHeight: 80,
-        slideWidth: 80,
+        slideWidth: 120,
         positionPreviews: pmgClasses['posPreviewsBottom'],
         animSlide: 'none',
         autoPlay: false,

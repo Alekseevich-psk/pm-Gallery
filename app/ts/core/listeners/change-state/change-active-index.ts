@@ -6,11 +6,11 @@ import initAutoPlay from "../../../modules/autoplay/init-auto-play";
 
 function changeActiveIndex(pmGallery: any) {
     pmGallery.wrapper.addEventListener('changeIndex', (event: CustomEvent) => {        
+        initAutoPlay(pmGallery);
+
         changeActivePreview(pmGallery, event.detail.activeIndex);
         changeMainPicture(pmGallery, event.detail.activeIndex);
         changeActivePaginationItem(pmGallery, event.detail.activeIndex);
-        initAutoPlay(pmGallery);
-        
         pmGallery.activeIndex = event.detail.activeIndex;
 
         sliderScrollPreviews(pmGallery);
