@@ -3,7 +3,6 @@ import pmGalleryClasses from "../../core/setting/pmgClasses";
 function setSizePreviews(pmGallery: any) {
     const previews = pmGallery.previews as NodeList;
 
-
     previews.forEach(element => {
         const el = element as HTMLElement;
         el.style.height = pmGallery.slideHeight + 'px';

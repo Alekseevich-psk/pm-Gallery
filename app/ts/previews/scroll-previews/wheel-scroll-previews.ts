@@ -30,10 +30,14 @@ function wheelScrollPreviews(pmGallery: any) {
     });
 
     pmGallery.wrapper.addEventListener('fullScreen', (event: CustomEvent) => {
-        let newHideTrackLength = pmGallery.hideTrackLength;
-
-        del = hideTrackLength / newHideTrackLength;
+        del = hideTrackLength / pmGallery.hideTrackLength;
         distance = Math.round(distance / del);
+
+        hideTrackLength = pmGallery.hideTrackLength;
+
+        if (pmGallery.hideTrackLength < 0) {
+            return track.style.transform = `translate(0, 0)`;
+        }
 
         if (pmGallery.posPreviews == pmGalleryClasses['vertical']) {
             track.style.transform = `translate(0, ${distance + 'px'})`;
@@ -43,11 +47,14 @@ function wheelScrollPreviews(pmGallery: any) {
             track.style.transform = `translate(${distance + 'px'}, 0)`;
         }
 
-        hideTrackLength = newHideTrackLength;
     });
 
     innerPreviews.addEventListener('wheel', (event: any) => {
         event.preventDefault();
+
+        if (hideTrackLength < 0) {
+            return track.style.transform = `translate(0, 0)`;
+        }
 
         if (event.wheelDeltaY < 0) {
             distance -= speedScroll;

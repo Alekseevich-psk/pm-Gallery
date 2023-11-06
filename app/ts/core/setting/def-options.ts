@@ -3,39 +3,27 @@ import pmgClasses from "./pmgClasses";
 
 const defOptions: pmgOptions = {
     visiblePreviews: true,
-    spaceBetween: 10,
+    positionPreviews: pmgClasses['posPreviewsLeft'],
+    spaceBetween: 8,
     borderRadius: 4,
+    countPreSlides: 4,
+    slideHeight: 120,
+    slideWidth: 100,
+    autoPlay: false,
     swipeSlider: true,
     pagination: false,
-    breakpoints: {
-        320: {
-            slideHeight: 80,
-            slideWidth: 80,
-            countPreSlides: 3.6,
-            speedAnim: 300,
-            positionPreviews: pmgClasses['posPreviewsBottom'],
-        },
-        960: {
-            slideHeight: 100,
-            slideWidth: 80,
-            countPreSlides: 4,
-            positionPreviews: pmgClasses['posPreviewsLeft'],
-        },
-        1024: {
-            slideHeight: 100,
-            slideWidth: 80,
-            countPreSlides: 5,
-        }
-    },
+    loop: false,
+    speedAnim: 300,
     fullScreen: {
-        visiblePreviews: false,
-        borderRadius: 0,
-        spaceBetween: 0,
-        slideHeight: 120,
-        slideWidth: 120,
-        animSlide: 'none',
-        autoPlay: false,
         pagination: true,
+        speedAnim: 300,
+        fullScreen: true,
+        visiblePreviews: true,
+        slideHeight: 80,
+        slideWidth: 100,
+        spaceBetween: 8,
+        countPreSlides: 12,
+        positionPreviews: pmgClasses['posPreviewsBottom'],
     }
 }
 

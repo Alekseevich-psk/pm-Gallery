@@ -15,7 +15,7 @@ function initPosPreviews(pmGallery: any) {
     ];
 
     updateModules.forEach(module => {
-        pmGallery = Object.assign(pmGallery, module(pmGallery));
+        Object.assign(pmGallery, module(pmGallery));
     });
 }
 

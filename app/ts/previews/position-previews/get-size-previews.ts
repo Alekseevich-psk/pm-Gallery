@@ -20,8 +20,7 @@ function getSizePreviews(pmGallery: any) {
     const options = pmGallery.initOptions;
     const previews = pmGallery.previews as NodeList;
     const posPreviews = pmGallery.posPreviews;
-    const spaceBetween = pmGallery.initOptions.spaceBetween ?
-        pmGallery.initOptions.spaceBetween : 0;
+    const spaceBetween = pmGallery.initOptions.spaceBetween;
 
     const countSlides = previews.length;
     const sizeWrapper = getSizeElement(pmGallery.wrapper);

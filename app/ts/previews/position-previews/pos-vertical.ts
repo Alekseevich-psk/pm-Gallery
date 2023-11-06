@@ -6,7 +6,7 @@ function positionVertical(pmGallery: any, position: string) {
     const innerPreviews = pmGallery.innerPreviews;
     const innerPicture = pmGallery.innerPicture;
     const track = pmGallery.track;
-
+    
     innerPreviews.style.display = 'block';
 
     if (position === pmGalleryClasses['posPreviewsLeft']) {
