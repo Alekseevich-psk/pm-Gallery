@@ -1,4 +1,4 @@
-import pmgClasses from "../setting/pmgClasses";
+import pmgClasses from "../core/setting/pmgClasses";
 import { preview } from '../types/pmgPreview';
 
 function initMainPicture(pmGallery: HTMLElement, previews: object[]) {

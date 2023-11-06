@@ -1,4 +1,4 @@
-import pmGalleryClasses from "../../setting/pmgClasses";
+import pmGalleryClasses from "../../core/setting/pmgClasses";
 
 function setSizePreviews(pmGallery: any) {
     const previews = pmGallery.previews as NodeList;

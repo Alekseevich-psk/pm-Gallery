@@ -1,7 +1,7 @@
 import pmgClasses from "../../setting/pmgClasses";
-import nextIndex from "../change-index/next-index";
-import prevIndex from "../change-index/prev-index";
-import fullScreen from "../full-screen/full-screen";
+import nextIndex from "../../modules/change-index/next-index";
+import prevIndex from "../../modules/change-index/prev-index";
+import fullScreen from "../../modules/full-screen/full-screen";
 
 function initUserControls(pmGallery: any) {
     const controls = pmGallery.initOptions.controls;

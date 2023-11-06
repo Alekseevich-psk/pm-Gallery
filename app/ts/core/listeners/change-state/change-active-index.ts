@@ -1,8 +1,8 @@
-import sliderScrollPreviews from "../previews/scroll-previews/slider-scroll-previews";
-import changeActivePreview from "../modules/change-slide/change-active-preview";
-import changeMainPicture from "../modules/change-slide/change-main-picture";
-import changeActivePaginationItem from "../modules/pagination/change-active-item";
-import initAutoPlay from "../modules/autoplay/init-auto-play";
+import sliderScrollPreviews from "../../../previews/scroll-previews/slider-scroll-previews";
+import changeActivePreview from "../../modules/change-slide/change-active-preview";
+import changeMainPicture from "../../modules/change-slide/change-main-picture";
+import changeActivePaginationItem from "../../../modules/pagination/change-active-item";
+import initAutoPlay from "../../../modules/autoplay/init-auto-play";
 
 function changeActiveIndex(pmGallery: any) {
     pmGallery.wrapper.addEventListener('changeIndex', (event: CustomEvent) => {        

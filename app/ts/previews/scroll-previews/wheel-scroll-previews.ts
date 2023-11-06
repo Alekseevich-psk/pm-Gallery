@@ -1,4 +1,4 @@
-import pmGalleryClasses from "../../setting/pmgClasses";
+import pmGalleryClasses from "../../core/setting/pmgClasses";
 
 function wheelScrollPreviews(pmGallery: any) {
     const innerPreviews = pmGallery.innerPreviews;

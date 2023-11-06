@@ -1,5 +1,5 @@
-import nextIndex from "../change-index/next-index";
-import prevIndex from "../change-index/prev-index";
+import nextIndex from "../../modules/change-index/next-index";
+import prevIndex from "../../modules/change-index/prev-index";
 
 function swipeSlider(pmGallery: any, slider: HTMLElement) {
     slider.addEventListener('pointerdown', pointerDownHandler);

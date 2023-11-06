@@ -1,4 +1,4 @@
-import pmgClasses from "../../setting/pmgClasses";
+import pmgClasses from "../../core/setting/pmgClasses";
 
 function changeActivePaginationItem(pmGallery: any, index: number) {
     const paginationItems = pmGallery.paginationItems;

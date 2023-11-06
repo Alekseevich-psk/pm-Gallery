@@ -1,4 +1,4 @@
-import pmgClasses from "../setting/pmgClasses";
+import pmgClasses from "../core/setting/pmgClasses";
 
 function initTrack(pmGallery: HTMLElement) {
     const innerPreviews = pmGallery.querySelector('.' + pmgClasses['innerPreviews']);

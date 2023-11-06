@@ -1,4 +1,4 @@
-import pmgClasses from "../setting/pmgClasses";
+import pmgClasses from "../core/setting/pmgClasses";
 
 function initArrowsSlider(pmGallery: HTMLElement) {
     const res: any = {};

@@ -1,9 +1,9 @@
 import { initOptions } from './types/pmgOptions';
 import initTemplate from './init-template/init';
-import defOptions from "./setting/def-options";
+import defOptions from "./core/setting/def-options";
 
-import getOptionsBreakpoints from './helpers/get-options-breakpoints';
-import initListeners from './listeners/init-listeners';
+import optionsBreakpoints from './core/modules/breakpoints/options-breakpoints';
+import initListeners from './core/listeners/init-listeners';
 import initPreviews from './previews/init-previews';
 import initModules from './modules/init-modules';
 
@@ -27,7 +27,7 @@ class PmGallery {
         this.pmGallery = Object.assign(resInitTemplate, this);
 
         const helpers = [
-            getOptionsBreakpoints
+            optionsBreakpoints
         ];
 
         const modules = [

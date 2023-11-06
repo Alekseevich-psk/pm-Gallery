@@ -1,4 +1,4 @@
-import changeIndex from "../event/on-change-index";
+import changeIndex from "../../events/on-change-index";
 
 function clickPreviews(pmGallery: any) {
     const previews = pmGallery.previews;

@@ -1,4 +1,4 @@
-import changeIndex from "../../event/on-change-index";
+import changeIndex from "../../events/on-change-index";
 
 function nextIndex(pmGallery: any) {
     const optionLoop = pmGallery.initOptions.loop;

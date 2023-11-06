@@ -1,5 +1,5 @@
 import pmgClasses from "../../setting/pmgClasses";
-import onFullScreen from "../../event/on-full-screen";
+import onFullScreen from "../../events/on-full-screen";
 
 function fullScreen(pmGallery: any) {
     const body = document.querySelector('body');

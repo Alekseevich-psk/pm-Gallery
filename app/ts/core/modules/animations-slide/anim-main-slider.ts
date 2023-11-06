@@ -1,4 +1,4 @@
-import { pmgAnimSlide } from "../../types/pmgAnimSlide";
+import { pmgAnimSlide } from "../../../types/pmgAnimSlide";
 
 function animationMainSlider(pmGallery: any, slide: HTMLElement) {
     const picture = pmGallery.mainPicture;

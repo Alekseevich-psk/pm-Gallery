@@ -1,5 +1,5 @@
-import prevIndex from "../modules/change-index/prev-index";
-import nextIndex from "../modules/change-index/next-index";
+import prevIndex from "../../modules/change-index/prev-index";
+import nextIndex from "../../modules/change-index/next-index";
 
 function clickDefArrows(pmGallery: any) {
 

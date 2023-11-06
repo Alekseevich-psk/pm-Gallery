@@ -1,5 +1,5 @@
 
-import pmgClasses from "../setting/pmgClasses";
+import pmgClasses from "../core/setting/pmgClasses";
 
 function initPaginationItems(pmGallery: HTMLElement, previews: object[]) {
     const list = pmGallery.querySelector('.' + pmgClasses['paginationList']);

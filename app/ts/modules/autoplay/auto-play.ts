@@ -1,4 +1,4 @@
-import nextIndex from "../change-index/next-index";
+import nextIndex from "../../core/modules/change-index/next-index";
 
 function autoPlay(pmGallery: any, speed: number) {
     const optionLoop = pmGallery.initOptions.loop;
