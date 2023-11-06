@@ -1,4 +1,4 @@
-export type initOptions = {
+export type pmgOptions = {
     positionPreviews?: string,
     visiblePreviews?: boolean,
     countPreSlides?: number,

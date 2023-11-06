@@ -28,7 +28,7 @@ function getSizePreviews(pmGallery: any) {
 
     const previewsVertical = (posPreviews === pmgClasses['vertical'] ? true : false);
     const spaceBetweenAll = (spaceBetween * (countSlides - 1));
-
+    
     let countPreSlides: number = options.countPreSlides;
     let slideHeight: number = options.slideHeight;
     let slideWidth: number = options.slideWidth;

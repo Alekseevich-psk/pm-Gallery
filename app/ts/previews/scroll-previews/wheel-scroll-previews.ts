@@ -68,7 +68,6 @@ function wheelScrollPreviews(pmGallery: any) {
         if (pmGallery.posPreviews == pmGalleryClasses['horizontal']) {
             track.style.transform = `translate(${distance + 'px'}, 0)`;
         }
-
     });
 }
 

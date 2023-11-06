@@ -33,6 +33,8 @@
             }
 
             .pm-gallery__overlay {
+                padding: 0 !important;
+                margin: 0 !important;
                 width: 100%;
                 height: 100%;
             }
@@ -41,6 +43,7 @@
 
     &__overlay {
         position: relative;
+        background-color: #fff;
         display: block;
         width: 100%;
         height: auto;
