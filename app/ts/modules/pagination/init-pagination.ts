@@ -4,11 +4,13 @@ function initPagination(pmGallery: any) {
     const optionPagination = pmGallery.initOptions.pagination;
     const paginationItems = pmGallery.paginationItems;
 
-    if (!optionPagination) {
-        return pmGallery.pagination.classList.add('hide');
-    }
+    paginationItems[pmGallery.activeIndex].classList.add(pmGalleryClasses['paginationItemActive']);
 
-    paginationItems[0].classList.add(pmGalleryClasses['paginationItemActive']);
+    if (optionPagination) {
+        pmGallery.pagination.classList.toggle('hide');
+    } else {
+        pmGallery.pagination.classList.toggle('hide');
+    }
 }
 
 export default initPagination;

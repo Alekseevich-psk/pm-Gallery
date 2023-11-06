@@ -1,6 +1,6 @@
 function getOptionsBreakpoints(pmGallery: any) {
     pmGallery.initOptions = Object.assign({}, pmGallery.options);
-    
+
     if (pmGallery.fullScreen) {
         pmGallery.initOptions = Object.assign({}, pmGallery.initOptions.fullScreen);
     }
@@ -8,9 +8,11 @@ function getOptionsBreakpoints(pmGallery: any) {
     const windowInnerWidth = document.documentElement.clientWidth;
     const breakpointsOptions = pmGallery.initOptions.breakpoints;
 
-    for (const option of Object.keys(breakpointsOptions)) {
-        if (Number(option) <= windowInnerWidth) {
-            pmGallery.initOptions = Object.assign(pmGallery.initOptions, breakpointsOptions[option]);
+    if (breakpointsOptions) {
+        for (const option of Object.keys(breakpointsOptions)) {
+            if (Number(option) <= windowInnerWidth) {
+                pmGallery.initOptions = Object.assign(pmGallery.initOptions, breakpointsOptions[option]);
+            }
         }
     }
 }

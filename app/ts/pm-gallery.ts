@@ -44,7 +44,7 @@ class PmGallery {
             this.pmGallery = Object.assign(this.pmGallery, module(this.pmGallery));
         });
 
-        // console.log(this.pmGallery);
+        console.log(this.pmGallery);
 
     }
 
