@@ -6,7 +6,6 @@ const defOptions: initOptions = {
     spaceBetween: 10,
     borderRadius: 4,
     swipeSlider: true,
-    loop: true,
     pagination: true,
     breakpoints: {
         320: {
@@ -36,6 +35,7 @@ const defOptions: initOptions = {
         visiblePreviews: false,
         speedAnim: 300,
         animSlide: 'none',
+        autoPlay: false,
         breakpoints: {
             320: {
                 positionPreviews: pmgClasses['posPreviewsBottom'],

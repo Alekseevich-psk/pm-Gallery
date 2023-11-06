@@ -2,6 +2,7 @@ import initPagination from "./pagination/init-pagination";
 import initStyleOptions from "./style-options/init-style-options";
 import initSwipeOnSliders from "./swipe-sliders/init-swipe-sliders";
 import initUserControls from "./user-controls/init-user-controls";
+import initAutoPlay from "./autoplay/init-auto-play";
 
 function initModules(pmGallery: any) {
 
@@ -9,7 +10,8 @@ function initModules(pmGallery: any) {
         initSwipeOnSliders,
         initStyleOptions,
         initUserControls,
-        initPagination
+        initPagination,
+        initAutoPlay
     ];
 
     modules.forEach(module => {

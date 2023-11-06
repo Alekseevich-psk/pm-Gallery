@@ -9,6 +9,7 @@ export type initOptions = {
     borderRadius?: number,
     breakpoints?: object,
     fullScreen?: object | boolean,
+    autoPlay?: number | boolean,
     pagination?: boolean,
     swipeSlider?: boolean,
     loop?: boolean,
