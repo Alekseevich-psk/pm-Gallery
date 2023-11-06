@@ -1,7 +1,7 @@
-function onChangeIndex(pmGallery: any, index: number) {
-    pmGallery.wrapper.dispatchEvent(new CustomEvent("onChangeIndex", {
+function changeIndex(pmGallery: any, index: number) {
+    pmGallery.wrapper.dispatchEvent(new CustomEvent("changeIndex", {
         detail: { activeIndex: index }
     }));
 }
 
-export default onChangeIndex;
+export default changeIndex;

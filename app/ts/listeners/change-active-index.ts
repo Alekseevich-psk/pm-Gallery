@@ -5,7 +5,7 @@ import changeActivePaginationItem from "../modules/pagination/change-active-item
 import initAutoPlay from "../modules/autoplay/init-auto-play";
 
 function changeActiveIndex(pmGallery: any) {
-    pmGallery.wrapper.addEventListener('onChangeIndex', (event: CustomEvent) => {        
+    pmGallery.wrapper.addEventListener('changeIndex', (event: CustomEvent) => {        
         changeActivePreview(pmGallery, event.detail.activeIndex);
         changeMainPicture(pmGallery, event.detail.activeIndex);
         changeActivePaginationItem(pmGallery, event.detail.activeIndex);

@@ -1,4 +1,4 @@
-import onChangeIndex from "../event/on-change-index";
+import changeIndex from "../event/on-change-index";
 
 function clickPreviews(pmGallery: any) {
     const previews = pmGallery.previews;
@@ -7,7 +7,7 @@ function clickPreviews(pmGallery: any) {
         const element = previews[i];
 
         element.addEventListener('click', () => {
-            onChangeIndex(pmGallery, i);
+            changeIndex(pmGallery, i);
         })
     };
 }

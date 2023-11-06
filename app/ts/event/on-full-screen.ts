@@ -1,5 +1,5 @@
 function onFullScreen(pmGallery: any, fullScreenFlag: boolean) {
-    pmGallery.wrapper.dispatchEvent(new CustomEvent("onFullScreen", {
+    pmGallery.wrapper.dispatchEvent(new CustomEvent("fullScreen", {
         detail: { fullScreen: fullScreenFlag }
     }));
 }

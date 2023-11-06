@@ -15,7 +15,7 @@ function wheelScrollPreviews(pmGallery: any) {
         track.style.transform = `translate(0, 0)`;
     })
 
-    pmGallery.wrapper.addEventListener('onChangeIndex', (event: CustomEvent) => {
+    pmGallery.wrapper.addEventListener('changeIndex', (event: CustomEvent) => {
         if (track.style.transform !== '') {
             let transformValue = track.style.transform;
 
@@ -29,7 +29,7 @@ function wheelScrollPreviews(pmGallery: any) {
         }
     });
 
-    pmGallery.wrapper.addEventListener('onFullScreen', (event: CustomEvent) => {
+    pmGallery.wrapper.addEventListener('fullScreen', (event: CustomEvent) => {
         let newHideTrackLength = pmGallery.hideTrackLength;
 
         del = hideTrackLength / newHideTrackLength;

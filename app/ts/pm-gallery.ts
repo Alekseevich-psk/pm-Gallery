@@ -23,6 +23,7 @@ class PmGallery {
         const resInitTemplate = initTemplate(wrapper);
         if (!resInitTemplate) return;
 
+        this.pmGallery = this;
         this.pmGallery = Object.assign(resInitTemplate, this);
 
         const helpers = [
@@ -43,8 +44,15 @@ class PmGallery {
             this.pmGallery = Object.assign(this.pmGallery, module(this.pmGallery));
         });
 
-        console.log(this.pmGallery);
+        // console.log(this.pmGallery);
 
+    }
+
+    on = function (event: string, foo: any) {
+        const wrapper = this.pmGallery.wrapper as HTMLElement;
+        if (!wrapper) return;
+
+        wrapper.addEventListener(event, foo);
     }
 
 }

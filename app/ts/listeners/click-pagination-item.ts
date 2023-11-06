@@ -1,4 +1,4 @@
-import onChangeIndex from "../event/on-change-index";
+import changeIndex from "../event/on-change-index";
 
 function clickPaginationItem(pmGallery: any) {
     const paginationItems = pmGallery.paginationItems;
@@ -7,7 +7,7 @@ function clickPaginationItem(pmGallery: any) {
         const element = paginationItems[i];
 
         element.addEventListener('click', () => {
-            onChangeIndex(pmGallery, i);
+            changeIndex(pmGallery, i);
         });
     };
 }

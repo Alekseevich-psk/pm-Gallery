@@ -1,4 +1,4 @@
-import onChangeIndex from "../../event/on-change-index";
+import changeIndex from "../../event/on-change-index";
 
 function prevIndex(pmGallery: any) {
     const optionLoop = pmGallery.initOptions.loop;
@@ -8,12 +8,12 @@ function prevIndex(pmGallery: any) {
     index--;
 
     if (index >= 0) {
-        onChangeIndex(pmGallery, index);
+        changeIndex(pmGallery, index);
     }
 
     if (optionLoop && index < 0) {
         index = countSlides - 1;
-        onChangeIndex(pmGallery, index);
+        changeIndex(pmGallery, index);
     }
 }
 
