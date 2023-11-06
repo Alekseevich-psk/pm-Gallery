@@ -1,4 +1,4 @@
-import eventChangeItem from "../event/event-change-index";
+import eventChangeItem from "../event/on-change-index";
 
 function clickPaginationItem(pmGallery: any) {
     const paginationItems = pmGallery.paginationItems;

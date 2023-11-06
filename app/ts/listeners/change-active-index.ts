@@ -4,7 +4,7 @@ import changeMainPicture from "../modules/change-slide/change-main-picture";
 import changeActivePaginationItem from "../modules/pagination/change-active-item";
 
 function changeActiveIndex(pmGallery: any) {
-    pmGallery.wrapper.addEventListener('changeActiveIndex', (event: CustomEvent) => {
+    pmGallery.wrapper.addEventListener('onChangeIndex', (event: CustomEvent) => {
         changeActivePreview(pmGallery, event.detail.activeIndex);
         changeMainPicture(pmGallery, event.detail.activeIndex);
         changeActivePaginationItem(pmGallery, event.detail.activeIndex);
