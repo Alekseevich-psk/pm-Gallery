@@ -6,6 +6,7 @@ const defOptions: initOptions = {
     spaceBetween: 10,
     borderRadius: 4,
     swipeSlider: true,
+    loop: true,
     pagination: true,
     breakpoints: {
         320: {
