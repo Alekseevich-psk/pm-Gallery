@@ -2,17 +2,17 @@ import pmGalleryClasses from "../../core/setting/pmgClasses";
 
 function sliderScrollPreviews(pmGallery: any) {
     const track = pmGallery.track;
-    const speedAnim = pmGallery.initOptions.speedAnim;
+    const speedAnimScroll = pmGallery.initOptions.speedAnimScroll;
     const countHideSlides = pmGallery.countHideSlides;
     const index = pmGallery.activeIndex;
     let distance: number = 0;
 
     if (pmGallery.posPreviews == pmGalleryClasses['vertical']) {
-        distance = pmGallery.slideHeight;
+        distance = pmGallery.previewHeight;
     }
 
     if (pmGallery.posPreviews == pmGalleryClasses['horizontal']) {
-        distance = pmGallery.slideWidth;
+        distance = pmGallery.previewWidth;
     }
 
     let disEnd = index * distance;
@@ -40,18 +40,18 @@ function sliderScrollPreviews(pmGallery: any) {
     }
 
     if (pmGallery.posPreviews == pmGalleryClasses['vertical']) {
-        track.style.transitionDuration = speedAnim + 'ms';
+        track.style.transitionDuration = speedAnimScroll + 'ms';
         track.style.transform = `translate(0, ${(-1 * disEnd) + 'px'})`;
     }
 
     if (pmGallery.posPreviews == pmGalleryClasses['horizontal']) {
-        track.style.transitionDuration = speedAnim + 'ms';
+        track.style.transitionDuration = speedAnimScroll + 'ms';
         track.style.transform = `translate(${(-1 * disEnd) + 'px'}, 0)`;
     }
 
     setTimeout(() => {
         track.style.transitionDuration = 0 + 'ms';
-    }, speedAnim);
+    }, speedAnimScroll);
 
     return disEnd;
 }

@@ -13,7 +13,7 @@ function positionVertical(pmGallery: any, position: string) {
         innerPreviews.style.left = 0;
         innerPreviews.style.right = 'auto';
 
-        innerPicture.style.left = (pmGallery.slideWidth + pmGallery.spaceBetween) + 'px';
+        innerPicture.style.left = (pmGallery.previewWidth + pmGallery.spaceBetween) + 'px';
         innerPicture.style.right = 'auto';
     }
 
@@ -27,13 +27,13 @@ function positionVertical(pmGallery: any, position: string) {
     innerPreviews.style.top = '0';
     innerPreviews.style.bottom = 'auto';
 
-    innerPreviews.style.width = pmGallery.slideWidth + 'px';
+    innerPreviews.style.width = pmGallery.previewWidth + 'px';
     innerPreviews.style.height = sizeWrapper.height + 'px';
 
     innerPicture.style.top = 0;
     innerPicture.style.bottom = 'auto';
 
-    innerPicture.style.width = (sizeWrapper.width - pmGallery.slideWidth - pmGallery.spaceBetween) + 'px';
+    innerPicture.style.width = (sizeWrapper.width - pmGallery.previewWidth - pmGallery.spaceBetween) + 'px';
     innerPicture.style.height = sizeWrapper.height + 'px';
 
     track.className = '';

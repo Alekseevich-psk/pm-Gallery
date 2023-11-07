@@ -5,8 +5,8 @@ function setSizePreviews(pmGallery: any) {
 
     previews.forEach(element => {
         const el = element as HTMLElement;
-        el.style.height = pmGallery.slideHeight + 'px';
-        el.style.width = pmGallery.slideWidth + 'px';
+        el.style.height = pmGallery.previewHeight + 'px';
+        el.style.width = pmGallery.previewWidth + 'px';
 
         if (pmGallery.posPreviews === pmGalleryClasses['vertical']) {
             el.style.marginBottom = pmGallery.spaceBetween + 'px';

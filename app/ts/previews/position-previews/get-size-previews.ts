@@ -2,8 +2,8 @@ import getSizeElement from "../../helpers/get-size-element";
 import pmgClasses from "../../core/setting/pmgClasses";
 
 const res = {
-    slideWidth: 0,
-    slideHeight: 0,
+    previewWidth: 0,
+    previewHeight: 0,
     trackWidth: 0,
     trackHeight: 0,
     countSlides: 0,
@@ -29,30 +29,30 @@ function getSizePreviews(pmGallery: any) {
     const spaceBetweenAll = (spaceBetween * (countSlides - 1));
     
     let countPreSlides: number = options.countPreSlides;
-    let slideHeight: number = options.slideHeight;
-    let slideWidth: number = options.slideWidth;
+    let previewHeight: number = options.previewHeight;
+    let previewWidth: number = options.previewWidth;
 
     if (typeof (countPreSlides) === "number") {
         let spaceBetweenActive = spaceBetween * (countPreSlides - 1);
 
         if (previewsVertical) {
-            slideHeight = Math.abs(sizeWrapper.height - spaceBetweenActive) / countPreSlides;
+            previewHeight = Math.abs(sizeWrapper.height - spaceBetweenActive) / countPreSlides;
         } else {
-            slideWidth = Math.abs(sizeWrapper.width - spaceBetweenActive) / countPreSlides;
+            previewWidth = Math.abs(sizeWrapper.width - spaceBetweenActive) / countPreSlides;
         }
     }
 
     res.innerPreviewsHeight = (previewsVertical ?
-        sizeWrapper.height : options.slideHeight);
+        sizeWrapper.height : options.previewHeight);
 
     res.innerPreviewsWidth = (previewsVertical ?
-        options.slideWidth : sizeWrapper.width);
+        options.previewWidth : sizeWrapper.width);
 
     res.trackWidth = (previewsVertical ?
-        slideWidth : ((countSlides * slideWidth) + spaceBetweenAll));
+        previewWidth : ((countSlides * previewWidth) + spaceBetweenAll));
 
     res.trackHeight = (previewsVertical ?
-        ((countSlides * slideHeight) + spaceBetweenAll) : slideHeight);
+        ((countSlides * previewHeight) + spaceBetweenAll) : previewHeight);
 
     res.hideTrackLength = (previewsVertical ?
         (res.trackHeight - sizeWrapper.height) : (res.trackWidth - sizeWrapper.width));
@@ -62,12 +62,12 @@ function getSizePreviews(pmGallery: any) {
     res.wrapperHeight = sizeWrapper.height;
     res.wrapperWidth = sizeWrapper.width;
 
-    res.slideWidth = slideWidth;
-    res.slideHeight = slideHeight;
+    res.previewWidth = previewWidth;
+    res.previewHeight = previewHeight;
     res.spaceBetween = spaceBetween;
 
     if (res.hideTrackLength > 0) {
-        let slideLength = (previewsVertical ? slideHeight : slideWidth);
+        let slideLength = (previewsVertical ? previewHeight : previewWidth);
         res.countHideSlides = Math.ceil(res.hideTrackLength / (slideLength + spaceBetween));
     } else {
         res.countHideSlides = 0;

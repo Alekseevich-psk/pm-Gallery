@@ -13,7 +13,7 @@ function positionHorizontal(pmGallery: any, position: string) {
         innerPreviews.style.top = 0;
         innerPreviews.style.bottom = 'auto';
 
-        innerPicture.style.top = (pmGallery.slideHeight + pmGallery.spaceBetween) + 'px';
+        innerPicture.style.top = (pmGallery.previewHeight + pmGallery.spaceBetween) + 'px';
         innerPicture.style.bottom = 0;
     }
 
@@ -29,13 +29,13 @@ function positionHorizontal(pmGallery: any, position: string) {
     innerPreviews.style.right = 'auto';
 
     innerPreviews.style.width = 100 + '%';
-    innerPreviews.style.height = pmGallery.slideHeight + 'px';
+    innerPreviews.style.height = pmGallery.previewHeight + 'px';
 
     innerPicture.style.left = 0;
     innerPicture.style.right = 'auto';
 
     innerPicture.style.width = 100 + '%';
-    innerPicture.style.height = (sizeWrapper.height - pmGallery.slideHeight - pmGallery.spaceBetween) + 'px';
+    innerPicture.style.height = (sizeWrapper.height - pmGallery.previewHeight - pmGallery.spaceBetween) + 'px';
 
     track.className = '';
     track.classList.add(pmgClasses["track"]);

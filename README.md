@@ -40,6 +40,19 @@ new PmGallery(".pm-gallery", {});
 
 ---
 
-| Name     | type | Default |                        Value                         | Description |
-| :------- | :--: | :-----: | :--------------------------------------------------: | :---------- |
-| **test** | test | 'test'  | test &#124; test &#124; test &#124; test &#124; test | test        |
+| Name                 |         type          | Default |                       Value                       | Description                                           |
+| :------------------- | :-------------------: | :-----: | :-----------------------------------------------: | :---------------------------------------------------- |
+| **positionPreviews** |        string         | 'left'  | 'top' &#124; 'bottom' &#124; 'left'&#124; 'right' | Positioning of preview images relative to the gallery |
+| **visiblePreviews**  |        boolean        |  true   |                 true &#124; false                 | Image preview visibility                              |
+| **pagination**       |        boolean        |  false  |                 true &#124; false                 | Pagination visibility                                 |
+| **swipeSlider**      |        boolean        |  true   |                 true &#124; false                 | Swipe on main picture                                 |
+| **loop**             |        boolean        |  false  |                 true &#124; false                 | Set to true to enable continuous loop mode                                 |
+| **countPreSlides**   |        number         |    4    |                         -                         | Number of preview images                              |
+| **spaceBetween**     |        number         |   10    |                         -                         | Distance between preview images - px                  |
+| **previewWidth**       |        number         |   100   |                         -                         | Width of the preview image - px                       |
+| **previewHeight**      |        number         |   100   |                         -                         | Height of the preview image - px                      |
+| **speedAnimScroll**  |        number         |   300   |                         -                         | Scrolling speed of preview images                     |
+| **breakpoints**      |        object         |   {}    |                         -                         | Adaptive Parameters                                   |
+| **fullScreen**       |        object         |   {}    |                         -                         | FullScreen Parameters                                 |
+| **borderRadius**     | number &#124; boolean |    4    |          true &#124; false &#124; count           | Adaptive Parameters                                   |
+| **autoPlay**         | number &#124; boolean |  false  |          true &#124; false &#124; count           | Adaptive Parameters                                   |
