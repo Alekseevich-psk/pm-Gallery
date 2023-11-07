@@ -1,0 +1,16 @@
+.pm-gallery {
+    &__main-picture,
+    &__track,
+    &__arrows {
+        user-select: none;
+        touch-action: none;
+    }
+
+    &__main-picture,
+    &__preview-picture {
+        padding: 0;
+        user-select: none;
+        margin: 0;
+        box-sizing: border-box;
+    }
+}

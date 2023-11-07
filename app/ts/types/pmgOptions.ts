@@ -1,0 +1,16 @@
+export type pmgOptions = {
+    positionPreviews?: string,
+    visiblePreviews?: boolean,
+    countPreSlides?: number,
+    spaceBetween?: number,
+    previewWidth?: number,
+    previewHeight?: number,
+    speedAnimScroll?: number,
+    breakpoints?: object,
+    borderRadius?: number | boolean,
+    fullScreen?: object | boolean,
+    autoPlay?: number | boolean,
+    pagination?: boolean,
+    swipeSlider?: boolean,
+    loop?: boolean,
+}

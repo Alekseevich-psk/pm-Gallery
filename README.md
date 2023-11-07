@@ -17,7 +17,7 @@ With pm-Gallery, you can create professional-quality visual content.
 
 1. npm i pm-gallery
 2. Add files: <br> HEAD - pm-gallery-style.css <br>
-    Scripts - pm-gallery.js
+   Scripts - pm-gallery.js
 3. Init
 
 ```js
@@ -28,18 +28,9 @@ new PmGallery(".pm-gallery", {});
 
 ```html
 <div class="pm-gallery">
-    <div class="pm-gallery__wrapper">
-        <div class="pm-gallery__inner pm-gallery__inner--previews">
-            <div class="pm-gallery__preview-picture">
-                <img src="./images/1.jpg" alt="" />
-            </div>
-            <div class="pm-gallery__preview-picture">
-                <img src="./images/2.jpg" alt="" />
-            </div>
-        </div>
-
-        <div class="pm-gallery__inner pm-gallery__inner--picture"></div>
-    </div>
+    <img src="./images/img-small-1.svg" data-src="./images/img-large-1.svg" alt="img" />
+    <img src="./images/img-small-2.svg" data-src="./images/img-large-2.svg" alt="img" />
+    <img src="./images/img-small-3.svg" data-src="./images/img-large-3.svg" alt="img" />
 </div>
 ```
 
@@ -49,14 +40,19 @@ new PmGallery(".pm-gallery", {});
 
 ---
 
-| Name          |  type  | Default |                            Value                             | Description                                                                   |
-| :------------ | :----: | :-----: | :----------------------------------------------------------: | :---------------------------------------------------------------------------- |
-| **objectFit** | string | 'cover' | cover &#124; contain &#124; none &#124; fill &#124; scaleDown | The 'object-fit' CSS property sets how the content of a replaced main picture |
-| **positionPreviews** | string | 'verticalLeft' | horizontalBottom &#124; horizontalTop &#124; verticalRight | Managing the position of preview images relative to the main picture|
-| **animationSlide** | string | 'none' | zoom &#124; fade &#124; slide &#124; flip | Add animation for slide|
-| **pagination** | boolean | false | false &#124; true | Parameter add pagination |
-| **loop** | boolean | false | false &#124; true | Set to 'true' to enable continuous loop mode |
-| **fullScreenMode** | boolean | false | false &#124; true | Parameter add fullScreen mode. Preview main picture on all screen |
-| **swipeOnMainPicture** | boolean | true | false &#124; true | Add the ability to switch slides by swipe on the main picture |
-| **autoPlay** | number | false | >1000 | Parameter add autoPlay. |
-| **activeSlide** | number | 0 | number > 0 &#124; number < arr.count | Active slide by the set value |
+| Name                 |         type          | Default |                       Value                       | Description                                           |
+| :------------------- | :-------------------: | :-----: | :-----------------------------------------------: | :---------------------------------------------------- |
+| **positionPreviews** |        string         | 'left'  | 'top' &#124; 'bottom' &#124; 'left'&#124; 'right' | Positioning of preview images relative to the gallery |
+| **visiblePreviews**  |        boolean        |  true   |                 true &#124; false                 | Image preview visibility                              |
+| **pagination**       |        boolean        |  false  |                 true &#124; false                 | Pagination visibility                                 |
+| **swipeSlider**      |        boolean        |  true   |                 true &#124; false                 | Swipe on main picture                                 |
+| **loop**             |        boolean        |  false  |                 true &#124; false                 | Set to true to enable continuous loop mode                                 |
+| **countPreSlides**   |        number         |    4    |                         -                         | Number of preview images                              |
+| **spaceBetween**     |        number         |   10    |                         -                         | Distance between preview images - px                  |
+| **previewWidth**       |        number         |   100   |                         -                         | Width of the preview image - px                       |
+| **previewHeight**      |        number         |   100   |                         -                         | Height of the preview image - px                      |
+| **speedAnimScroll**  |        number         |   300   |                         -                         | Scrolling speed of preview images                     |
+| **breakpoints**      |        object         |   {}    |                         -                         | Adaptive Parameters                                   |
+| **fullScreen**       |        object         |   {}    |                         -                         | FullScreen Parameters                                 |
+| **borderRadius**     | number &#124; boolean |    4    |          true &#124; false &#124; count           | Adaptive Parameters                                   |
+| **autoPlay**         | number &#124; boolean |  false  |          true &#124; false &#124; count           | Adaptive Parameters                                   |

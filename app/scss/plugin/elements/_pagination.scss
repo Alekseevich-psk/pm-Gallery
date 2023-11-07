@@ -1,0 +1,43 @@
+.pm-gallery {
+    &__pagination {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        text-align: center;
+
+        &.hide {
+            display: none;
+        }
+
+        &-list {
+            padding: 0;
+            margin: 0;
+        }
+
+        &-item {
+            cursor: pointer;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            opacity: 0.8;
+            transition: $transition;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &.active {
+                background-color: #61010183;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

@@ -26,7 +26,7 @@
   },
   "name": "pm-gallery",
   "description": "pm-Gallery - being developed as a test project within the framework of learning JavaScript",
-  "version": "1.0.0",
+  "version": "2.0.2",
   "main": "pm-gallery.js",
   "dependencies": {
     "accepts": "^1.3.8",
