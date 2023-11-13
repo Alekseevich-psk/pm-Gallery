@@ -41,7 +41,7 @@
                 padding: 0 !important;
                 margin: 0 !important;
                 width: 100%;
-                height: 100%;
+                height: 100% !important;
             }
         }
     }
@@ -54,7 +54,7 @@
         height: auto;
         left: 0;
         top: 0;
-        padding-bottom: 65.7% !important;
+        padding-bottom: 65.7%;
     }
 
     &__inner {
