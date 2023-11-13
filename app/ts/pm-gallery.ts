@@ -1,11 +1,10 @@
 import { pmgOptions } from './types/pmgOptions';
 import initTemplate from './init-template/init';
-import defOptions from "./core/setting/def-options";
 
-import initOptions from './core/modules/options/init-options';
 import initListeners from './core/listeners/init-listeners';
 import initPreviews from './previews/init-previews';
 import initModules from './modules/init-modules';
+import initCoreModules from './core/modules/init-core-modules';
 
 class PmGallery {
 
@@ -23,22 +22,14 @@ class PmGallery {
         const resInitTemplate = initTemplate(wrapper);
         if (!resInitTemplate) return;
 
-        this.pmGallery = this;
-        this.pmGallery = Object.assign(resInitTemplate, this);
-
-        const helpers = [
-            initOptions
-        ];
+        this.pmGallery = Object.assign({}, this, resInitTemplate);
 
         const modules = [
+            initCoreModules,
             initListeners,
             initPreviews,
-            initModules
+            initModules,
         ];
-
-        helpers.forEach(helper => {
-            this.pmGallery = Object.assign(this.pmGallery, helper(this.pmGallery));
-        });
 
         modules.forEach(module => {
             this.pmGallery = Object.assign(this.pmGallery, module(this.pmGallery));
