@@ -32,6 +32,6 @@ export default function initTemplate(wrapper: string) {
     res.pagination = initPagination(mainElement);
     res.paginationItems = initPaginationItems(mainElement, previewPictures);
     res.arrowsSlider = initArrowsSlider(mainElement);
-
+    
     return res;
 }

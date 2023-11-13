@@ -1,4 +1,3 @@
-import { pmgOptions } from "../../../types/pmgOptions";
 import defOptions from "../../setting/def-options";
 import breakpoints from "./breakpoints";
 

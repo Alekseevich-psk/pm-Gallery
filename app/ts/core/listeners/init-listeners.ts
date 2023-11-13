@@ -6,8 +6,8 @@ import clickDefArrows from "./click-elements/click-def-arrows";
 import clickPreviews from "./click-elements/click-previews";
 import clickBtnFullScreen from "./click-elements/click-btn-full-screen";
 import clickPaginationItem from "./click-elements/click-pagination-item";
-import initUserControls from "./user-controls/init-user-controls";
 import initSwipeOnSliders from "./swipe-sliders/init-swipe-sliders";
+import clickUserButtons from "./click-elements/click-user-buttons";
 
 function initListeners(pmGallery: any) {
 
@@ -16,10 +16,10 @@ function initListeners(pmGallery: any) {
         clickPreviews,
         clickBtnFullScreen,
         clickPaginationItem,
+        clickUserButtons,
         changeActiveIndex,
         changeFullScreen,
         changeSizeWindow,
-        initUserControls,
         initSwipeOnSliders
     ];
 
@@ -27,7 +27,7 @@ function initListeners(pmGallery: any) {
         module(pmGallery);
     });
 
-    return {activeIndex: 0}
+    return { activeIndex: 0 }
 }
 
 export default initListeners;

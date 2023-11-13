@@ -27,16 +27,21 @@
             left: 0;
             width: 100%;
             height: 100%;
+            z-index: 9999;
 
             .pm-gallery__main-picture {
                 border-radius: 0 !important;
+
+                img {
+                    object-fit: contain;
+                }
             }
 
             .pm-gallery__overlay {
                 padding: 0 !important;
                 margin: 0 !important;
                 width: 100%;
-                height: 100%;
+                height: 100% !important;
             }
         }
     }
@@ -49,13 +54,12 @@
         height: auto;
         left: 0;
         top: 0;
-        padding-bottom: 65.7% !important;
+        padding-bottom: 65.7%;
     }
 
     &__inner {
         position: relative;
         height: auto;
-        // border: 1px solid gray;
 
         &--previews {
             position: absolute;
@@ -123,7 +127,6 @@
         }
 
         img {
-            // border: 1px solid blue;
             position: absolute;
             top: 0;
             z-index: 1;
@@ -136,7 +139,6 @@
         &.active {
             opacity: 1;
             img {
-                // border: 1px solid red;
                 z-index: 2;
             }
         }
