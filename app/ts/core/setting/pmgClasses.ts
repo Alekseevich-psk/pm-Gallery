@@ -1,6 +1,7 @@
 const pmGallery = 'pm-gallery';
 
 const pmGalleryClasses = {
+    'init' : 'init',
     'wrapper' : pmGallery + '__wrapper',
     'overlay' : pmGallery + '__overlay',
     'inner' : pmGallery + '__inner',
