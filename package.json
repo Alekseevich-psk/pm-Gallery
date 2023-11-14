@@ -8,7 +8,7 @@
     },
     "name": "pm-gallery",
     "description": "pm-Gallery - being developed as a test project within the framework of learning JavaScript",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "main": "pm-gallery.js",
     "devDependencies": {
         "autoprefixer": "^10.4.14",
