@@ -14,12 +14,12 @@ class PmGallery {
     private initOptions: pmgOptions;
     private activeIndex: number;
 
-    constructor(msGalleryWrapper: string, options: pmgOptions) {
+    constructor(msGalleryWrapper: any, options: pmgOptions) {
         this.options = options;
         this.init(msGalleryWrapper);
     }
 
-    init(wrapper: string) {
+    init(wrapper: any) {
         const resInitTemplate = initTemplate(wrapper);
         if (!resInitTemplate) return;
 
