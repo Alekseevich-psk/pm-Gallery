@@ -36,6 +36,8 @@ class PmGallery {
         modules.forEach(module => {
             this.pmGallery = Object.assign(this.pmGallery, module(this.pmGallery));
         });
+
+        // console.log(this.pmGallery);
     }
 
     on = function (event: string, foo: any) {

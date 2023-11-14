@@ -7,6 +7,7 @@ export type pmgOptions = {
     previewHeight?: number,
     speedAnimScroll?: number,
     breakpoints?: object,
+    objectFitPicture?: string,
     borderRadius?: number | boolean,
     fullScreen?: object | boolean,
     autoPlay?: number | boolean,

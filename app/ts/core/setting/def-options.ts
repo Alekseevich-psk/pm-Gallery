@@ -10,6 +10,7 @@ const defOptions: pmgOptions = {
     previewHeight: 120,
     previewWidth: 100,
     autoPlay: false,
+    objectFitPicture: 'cover',
     swipeSlider: true,
     pagination: false,
     loop: false,
