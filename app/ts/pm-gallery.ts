@@ -5,6 +5,7 @@ import initListeners from './core/listeners/init-listeners';
 import initPreviews from './previews/init-previews';
 import initModules from './modules/init-modules';
 import initCoreModules from './core/modules/init-core-modules';
+import onInitGallery from './core/events/on-init-gallery';
 
 class PmGallery {
 
@@ -13,12 +14,12 @@ class PmGallery {
     private initOptions: pmgOptions;
     private activeIndex: number;
 
-    constructor(msGalleryWrapper: string, options: pmgOptions) {
+    constructor(msGalleryWrapper: any, options: pmgOptions) {
         this.options = options;
         this.init(msGalleryWrapper);
     }
 
-    init(wrapper: string) {
+    init(wrapper: any) {
         const resInitTemplate = initTemplate(wrapper);
         if (!resInitTemplate) return;
 
@@ -29,6 +30,7 @@ class PmGallery {
             initListeners,
             initPreviews,
             initModules,
+            onInitGallery
         ];
 
         modules.forEach(module => {
@@ -36,13 +38,11 @@ class PmGallery {
         });
 
         // console.log(this.pmGallery);
-
     }
 
     on = function (event: string, foo: any) {
         const wrapper = this.pmGallery.wrapper as HTMLElement;
         if (!wrapper) return;
-
         wrapper.addEventListener(event, foo);
     }
 

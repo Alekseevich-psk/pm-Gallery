@@ -8,6 +8,7 @@ import clickBtnFullScreen from "./click-elements/click-btn-full-screen";
 import clickPaginationItem from "./click-elements/click-pagination-item";
 import initSwipeOnSliders from "./swipe-sliders/init-swipe-sliders";
 import clickUserButtons from "./click-elements/click-user-buttons";
+import changeInitGallery from "./change-state/change-init-gallery";
 
 function initListeners(pmGallery: any) {
 
@@ -20,6 +21,7 @@ function initListeners(pmGallery: any) {
         changeActiveIndex,
         changeFullScreen,
         changeSizeWindow,
+        changeInitGallery,
         initSwipeOnSliders
     ];
 

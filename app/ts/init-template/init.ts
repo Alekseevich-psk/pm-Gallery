@@ -13,7 +13,7 @@ import initArrowsSlider from "./init-arrows-slider";
 import initPagination from "./init-pagination";
 import initPaginationItems from "./init-pagination-items";
 
-export default function initTemplate(wrapper: string) {
+export default function initTemplate(wrapper: any) {
     const res: pmgTemplate = {};
     
     const mainElement: HTMLElement = getWrapper(wrapper);

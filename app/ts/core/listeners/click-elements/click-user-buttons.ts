@@ -4,6 +4,8 @@ import fullScreen from "../../modules/full-screen/full-screen";
 
 function clickUserButtons(pmGallery: any) {
 
+    if (!pmGallery.userControls) return;
+
     const userBtnPrev = pmGallery.userControls.btnPrev;
     const userBtnNext = pmGallery.userControls.btnNext;
     const userBtnScreen = pmGallery.userControls.btnScreen;
@@ -14,7 +16,7 @@ function clickUserButtons(pmGallery: any) {
         });
     }
 
-    if (userBtnNext) {    
+    if (userBtnNext) {
         userBtnNext.addEventListener('click', () => {
             nextIndex(pmGallery);
         });
@@ -25,7 +27,6 @@ function clickUserButtons(pmGallery: any) {
             fullScreen(pmGallery);
         });
     }
-
 
 }
 

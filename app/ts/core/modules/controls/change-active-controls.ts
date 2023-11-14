@@ -5,8 +5,19 @@ function changeActiveControls(pmGallery: any, index: number) {
 
     if (optionLoop) return;
 
-    const buttonsPrev = [pmGallery.userControls.btnPrev, pmGallery.arrowsSlider.defBtnPrev];
-    const buttonsNext = [pmGallery.userControls.btnNext, pmGallery.arrowsSlider.defBtnNext];
+    const buttonsPrev = [];
+    const buttonsNext = [];
+    
+    if (pmGallery.userControls?.btnPrev) {
+        buttonsPrev.push(pmGallery.userControls.btnPrev);
+    }
+
+    if (pmGallery.userControls?.btnNext) {
+        buttonsPrev.push(pmGallery.userControls.btnNext);
+    }
+
+    buttonsPrev.push(pmGallery.arrowsSlider.defBtnPrev);
+    buttonsNext.push(pmGallery.arrowsSlider.defBtnNext);
 
     const buttons = [...buttonsPrev, ...buttonsNext];
     const disabled = pmgClasses['disabled'];
