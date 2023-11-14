@@ -55,6 +55,10 @@
         left: 0;
         top: 0;
         padding-bottom: 65.7%;
+
+        @media(max-width: 768px) {
+            padding-bottom: 100%;
+        }
     }
 
     &__inner {
