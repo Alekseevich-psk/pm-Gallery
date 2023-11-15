@@ -2,6 +2,12 @@
     position: relative;
     width: 100%;
 
+    img {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+    }
+
     --widthPreview: 120px;
 
     @media (max-width: 768px) {
@@ -73,6 +79,12 @@
             height: 100%;
             z-index: 1;
             overflow: hidden;
+
+            img {
+                opacity: 1;
+                visibility: visible;
+                height: 100%;
+            }
         }
 
         &--main-picture {
@@ -86,6 +98,8 @@
             background-color: $white;
 
             img {
+                opacity: 1;
+                visibility: visible;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;

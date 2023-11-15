@@ -1,7 +1,6 @@
 const pmGallery = 'pm-gallery';
 
 const pmGalleryClasses = {
-    'init' : 'init',
     'wrapper' : pmGallery + '__wrapper',
     'overlay' : pmGallery + '__overlay',
     'inner' : pmGallery + '__inner',
@@ -22,6 +21,7 @@ const pmGalleryClasses = {
     'paginationItem' : pmGallery + '__pagination-item',
     'paginationItemActive' : 'active',
     'previewActive' : 'active', 
+    'preloader' : 'preloader',
     'overflow' : 'overflow', 
     'horizontal' : 'horizontal',
     'vertical' : 'vertical',
