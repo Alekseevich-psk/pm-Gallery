@@ -22,7 +22,7 @@ const defOptions: pmgOptions = {
         pagination: true,
         speedAnimScroll: 300,
         fullScreen: true,
-        visiblePreviews: true,
+        visiblePreviews: false,
         previewHeight: 60,
         previewWidth: 100,
         spaceBetween: 8,
