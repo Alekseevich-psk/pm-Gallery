@@ -14,5 +14,6 @@ export type pmgOptions = {
     autoPlay?: number | boolean,
     pagination?: boolean,
     swipeSlider?: boolean,
+    onCenterPreviews?: boolean,
     loop?: boolean,
 }

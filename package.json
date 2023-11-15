@@ -8,7 +8,7 @@
     },
     "name": "pm-gallery",
     "description": "A simple picture gallery for your project",
-    "version": "2.0.10",
+    "version": "2.0.11",
     "main": "pm-gallery.js",
     "devDependencies": {
         "autoprefixer": "^10.4.14",
