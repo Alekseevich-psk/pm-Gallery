@@ -6,6 +6,7 @@ function checkLoadMainPicture(pmGallery: any, index: number) {
     let timerId: any = 0;
 
     const promise = new Promise(function (resolve, reject) {
+        if (!previews[index].dataSrc) return;
         const image = new Image();
         image.src = previews[index].dataSrc;
 
