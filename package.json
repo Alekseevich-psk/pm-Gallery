@@ -7,7 +7,7 @@
         "watch": "webpack --mode development --watch"
     },
     "name": "pm-gallery",
-    "description": "pm-Gallery - being developed as a test project within the framework of learning JavaScript",
+    "description": "A simple picture gallery for your project",
     "version": "2.0.6",
     "main": "pm-gallery.js",
     "devDependencies": {

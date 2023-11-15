@@ -1,12 +1,14 @@
 import pmGalleryClasses from "../../setting/pmgClasses";
 
 function preloaderGallery(pmGallery: any) {
-    const wrapper = pmGallery.wrapper as Element;
-    if (!wrapper) return;
+    const gallery = pmGallery.gallery as Element;
+    if (!gallery) return;
 
-    if (wrapper.classList.contains(pmGalleryClasses['init'])) {
-        wrapper.classList.remove(pmGalleryClasses['init']);
-    }
+    setTimeout(() => {
+        if (gallery.classList.contains(pmGalleryClasses['init'])) {
+            gallery.classList.remove(pmGalleryClasses['init']);
+        }
+    }, 100);
 }
 
 export default preloaderGallery;

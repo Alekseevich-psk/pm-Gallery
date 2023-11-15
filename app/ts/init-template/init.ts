@@ -12,15 +12,18 @@ import initBtnScreen from "./init-btn-screen";
 import initArrowsSlider from "./init-arrows-slider";
 import initPagination from "./init-pagination";
 import initPaginationItems from "./init-pagination-items";
+import setInitClass from "../helpers/set-init-class";
 
 export default function initTemplate(wrapper: any) {
     const res: pmgTemplate = {};
-    
+
     const mainElement: HTMLElement = getWrapper(wrapper);
     const previewPictures: object[] = getImages(mainElement);
 
     if (!mainElement || previewPictures.length === 0) return;
-
+    
+    setInitClass(mainElement);
+    res.gallery = mainElement;
     res.wrapper = initWrapper(mainElement);
     res.innerPreviews = initInnerPreviews(mainElement);
     res.innerPicture = initInnerPicture(mainElement);
@@ -32,6 +35,6 @@ export default function initTemplate(wrapper: any) {
     res.pagination = initPagination(mainElement);
     res.paginationItems = initPaginationItems(mainElement, previewPictures);
     res.arrowsSlider = initArrowsSlider(mainElement);
-    
+
     return res;
 }
