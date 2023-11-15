@@ -15,4 +15,5 @@ export type pmgTemplate = {
     paginationItems?: NodeListOf<Element>,
     arrowsSlider?: Element[],
     previews?: NodeListOf<Element>,
+    previewsSrc?: Object,
 }

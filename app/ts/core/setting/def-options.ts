@@ -2,6 +2,7 @@ import { pmgOptions } from "../../types/pmgOptions";
 import pmgClasses from "./pmgClasses";
 
 const defOptions: pmgOptions = {
+    activeIndex: 0,
     visiblePreviews: true,
     positionPreviews: pmgClasses['posPreviewsLeft'],
     spaceBetween: 8,
@@ -19,11 +20,11 @@ const defOptions: pmgOptions = {
         pagination: true,
         speedAnimScroll: 300,
         fullScreen: true,
-        visiblePreviews: false,
-        previewHeight: 80,
+        visiblePreviews: true,
+        previewHeight: 60,
         previewWidth: 100,
         spaceBetween: 8,
-        countPreSlides: 12,
+        countPreSlides: 8,
         positionPreviews: pmgClasses['posPreviewsBottom'],
     }
 }

@@ -5,7 +5,6 @@ import initListeners from './core/listeners/init-listeners';
 import initPreviews from './previews/init-previews';
 import initModules from './modules/init-modules';
 import initCoreModules from './core/modules/init-core-modules';
-import onInitGallery from './core/events/on-init-gallery';
 
 class PmGallery {
 
@@ -30,14 +29,13 @@ class PmGallery {
             initListeners,
             initPreviews,
             initModules,
-            onInitGallery
         ];
 
         modules.forEach(module => {
             this.pmGallery = Object.assign(this.pmGallery, module(this.pmGallery));
         });
 
-        // console.log(this.pmGallery);
+        console.log(this.pmGallery);
     }
 
     on = function (event: string, foo: any) {

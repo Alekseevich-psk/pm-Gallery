@@ -1,4 +1,5 @@
 export type pmgOptions = {
+    activeIndex?: number,
     positionPreviews?: string,
     visiblePreviews?: boolean,
     countPreSlides?: number,
