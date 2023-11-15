@@ -6,21 +6,22 @@ function positionHorizontal(pmGallery: any, position: string) {
     const innerPreviews = pmGallery.innerPreviews;
     const innerPicture = pmGallery.innerPicture;
     const track = pmGallery.track;
+    const sbFullScreen = pmGallery.fullScreen ? pmGallery.spaceBetween : 0;
 
     innerPreviews.style.display = 'block';
 
     if (position === pmgClasses['posPreviewsTop']) {
-        innerPreviews.style.top = 0;
+        innerPreviews.style.top = (0 + sbFullScreen) + 'px';
         innerPreviews.style.bottom = 'auto';
 
-        innerPicture.style.top = (pmGallery.previewHeight + pmGallery.spaceBetween) + 'px';
+        innerPicture.style.top = (pmGallery.previewHeight + pmGallery.spaceBetween + sbFullScreen) + 'px';
         innerPicture.style.bottom = 0;
     }
 
     if (position === pmgClasses['posPreviewsBottom']) {
         innerPreviews.style.top = 'auto';
-        innerPreviews.style.bottom = 0;
-
+        innerPreviews.style.bottom = (0 + sbFullScreen) + 'px';
+        
         innerPicture.style.top = 0;
         innerPicture.style.bottom = 'auto';
     }
@@ -35,7 +36,7 @@ function positionHorizontal(pmGallery: any, position: string) {
     innerPicture.style.right = 'auto';
 
     innerPicture.style.width = 100 + '%';
-    innerPicture.style.height = (sizeWrapper.height - pmGallery.previewHeight - pmGallery.spaceBetween) + 'px';
+    innerPicture.style.height = (sizeWrapper.height - pmGallery.previewHeight - pmGallery.spaceBetween - sbFullScreen) + 'px';
 
     track.className = '';
     track.classList.add(pmgClasses["track"]);

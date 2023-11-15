@@ -24,7 +24,7 @@ const defOptions: pmgOptions = {
         previewHeight: 60,
         previewWidth: 100,
         spaceBetween: 8,
-        countPreSlides: 8,
+        countPreSlides: 'none',
         positionPreviews: pmgClasses['posPreviewsBottom'],
     }
 }
