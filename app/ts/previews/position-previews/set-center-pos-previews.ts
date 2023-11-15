@@ -11,7 +11,6 @@ function setCenterPosPreviews(pmGallery: any) {
     const countHideSlides = pmGallery.countHideSlides > 0 ? true : false;
 
     if (!countHideSlides && posPreviews) {
-        console.log(optionOnCenterPreviews, pmGallery.countHideSlides);
         track.style.justifyContent = 'center';
     }
 }
