@@ -45,6 +45,7 @@ new PmGallery(".pm-gallery", {});
 | **positionPreviews** |        string         | 'left'  |            'top' &#124; 'bottom' &#124; 'left'&#124; 'right'            | Positioning of preview images relative to the gallery |
 | **objectFitPicture** |        string         | 'cover' | 'fill' &#124; 'contain' &#124; 'cover' &#124; 'scaleDown' &#124; 'none' | Adds the 'object-fit' class for the main image        |
 | **visiblePreviews**  |        boolean        |  true   |                            true &#124; false                            | Image preview visibility                              |
+| **onCenterPreviews** |        boolean        |  true   |                            true &#124; false                            | Center previews in horizontal mode                    |
 | **pagination**       |        boolean        |  false  |                            true &#124; false                            | Pagination visibility                                 |
 | **swipeSlider**      |        boolean        |  true   |                            true &#124; false                            | Swipe on main picture                                 |
 | **loop**             |        boolean        |  false  |                            true &#124; false                            | Set to true to enable continuous loop mode            |
