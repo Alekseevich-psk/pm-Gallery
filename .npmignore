@@ -6,5 +6,7 @@ package.json
 postcss.config.js
 webpack.config.js
 tsconfig.json
+pm-gallery-style.js
+style.js
 .idea
 quest
