@@ -36,7 +36,6 @@ new PmGallery(".pm-gallery", {});
 
 ## Parameters
 
-
 | Name                 |         type          | Default |                                  Value                                  | Description                                           |
 | :------------------- | :-------------------: | :-----: | :---------------------------------------------------------------------: | :---------------------------------------------------- |
 | **positionPreviews** |        string         | 'left'  |            'top' &#124; 'bottom' &#124; 'left'&#124; 'right'            | Positioning of preview images relative to the gallery |
@@ -53,5 +52,5 @@ new PmGallery(".pm-gallery", {});
 | **speedAnimScroll**  |        number         |   300   |                                    -                                    | Scrolling speed of preview images                     |
 | **breakpoints**      |        object         |   {}    |                                    -                                    | Adaptive Parameters                                   |
 | **fullScreen**       |        object         |   {}    |                                    -                                    | FullScreen Parameters                                 |
-| **borderRadius**     | number &#124; boolean |    4    |                     true &#124; false &#124; count                      | Adaptive Parameters                                   |
-| **autoPlay**         | number &#124; boolean |  false  |                     true &#124; false &#124; count                      | Adaptive Parameters                                   |
+| **borderRadius**     | number &#124; boolean |    4    |                           false &#124; count                            | The options adds border radius for images             |
+| **autoPlay**         | number &#124; boolean |  false  |                           false &#124; count                            | Automatic slide change                                |
