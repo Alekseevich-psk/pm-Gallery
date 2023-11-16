@@ -1,0 +1,33 @@
+.constructor {
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-size: 36px;
+        line-height: 120%;
+        margin-bottom: 12px;
+        color: $black;
+        font-weight: 700;
+    }
+
+    &__description {
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+
+    &__inner {
+        
+        &--param {
+            padding: 18px 14px;
+            border: 1px solid rgb(207, 207, 207);
+            flex: 0 0 28%;
+        }
+
+        &--demo {
+            flex: 0 0 70%;
+        }
+    }
+}

@@ -3,6 +3,7 @@ import getSizePreviews from "./get-size-previews";
 import getPosPreviews from "./get-pos-previews";
 import setPosPreviews from "./set-position-previews";
 import setSizePreviews from "./set-size-previews";
+import setCenterPosPreviews from "./set-center-pos-previews";
 
 function initPosPreviews(pmGallery: any) {
 
@@ -12,6 +13,7 @@ function initPosPreviews(pmGallery: any) {
         checkTrackLength,
         setSizePreviews,
         setPosPreviews,
+        setCenterPosPreviews,
     ];
 
     updateModules.forEach(module => {

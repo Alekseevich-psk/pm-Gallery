@@ -1,0 +1,44 @@
+.checkbox {
+    display: none;
+
+    & ~ label {
+        cursor: pointer;
+        position: relative;
+        font-size: 16px;
+        line-height: 110%;
+        padding-left: 20px;
+        user-select: none;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+            border: 1px solid gray;
+        }
+
+        span {
+            padding-left: 20px;
+            display: block;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    }
+
+    &:hover ~ label {
+        &:before {
+            border: 1px solid $active;
+        }
+    }
+
+    &:checked ~ label {
+        &:before {
+            background-size: 100%;
+            border: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3e%3cg clip-path='url(%23clip0_13_166)'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.66667 0C1.95942 0 1.28115 0.280951 0.781048 0.781048C0.280951 1.28115 0 1.95942 0 2.66667V21.3333C0 22.0406 0.280951 22.7189 0.781048 23.219C1.28115 23.719 1.95942 24 2.66667 24H21.3333C22.0406 24 22.7189 23.719 23.219 23.219C23.719 22.7189 24 22.0406 24 21.3333V2.66667C24 1.95942 23.719 1.28115 23.219 0.781048C22.7189 0.280951 22.0406 0 21.3333 0H2.66667ZM18.6 9.06133C18.8502 8.81132 18.9908 8.47217 18.9909 8.11847C18.9911 7.76478 18.8507 7.42552 18.6007 7.17533C18.3507 6.92515 18.0115 6.78452 17.6578 6.7844C17.3041 6.78427 16.9649 6.92466 16.7147 7.17467L10.1147 13.7747L7.28667 10.9467C7.16287 10.8228 7.01589 10.7245 6.85412 10.6574C6.69234 10.5903 6.51894 10.5558 6.3438 10.5557C5.99011 10.5556 5.65085 10.696 5.40067 10.946C5.15048 11.196 5.00986 11.5352 5.00973 11.8889C5.00961 12.2426 5.14999 12.5818 5.4 12.832L9.07733 16.5093C9.21353 16.6456 9.37525 16.7537 9.55324 16.8274C9.73123 16.9012 9.922 16.9392 10.1147 16.9392C10.3073 16.9392 10.4981 16.9012 10.6761 16.8274C10.8541 16.7537 11.0158 16.6456 11.152 16.5093L18.6 9.06133Z' fill='%23CD6200'/%3e%3c/g%3e%3cdefs%3e%3cclipPath id='clip0_13_166'%3e%3crect width='24' height='24' fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e");
+        }
+    }
+}

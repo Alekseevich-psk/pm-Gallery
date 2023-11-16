@@ -1,4 +1,5 @@
 export type pmgTemplate = {
+    gallery?: HTMLElement,
     wrapper?: HTMLElement,
     wrapperWidth?: number,
     wrapperHeight?: number,
@@ -14,4 +15,5 @@ export type pmgTemplate = {
     paginationItems?: NodeListOf<Element>,
     arrowsSlider?: Element[],
     previews?: NodeListOf<Element>,
+    previewsSrc?: Object,
 }

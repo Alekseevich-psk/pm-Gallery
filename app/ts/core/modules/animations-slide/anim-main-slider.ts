@@ -3,7 +3,8 @@ import { pmgAnimSlide } from "../../../types/pmgAnimSlide";
 function animationMainSlider(pmGallery: any, slide: HTMLElement) {
     const picture = pmGallery.mainPicture;
     const typeAnim = pmGallery.initOptions.animSlide;
-    
+
+    if (!typeAnim) return;
     const checkAnimationType = pmgAnimSlide.includes(typeAnim);
 
     if (checkAnimationType) {

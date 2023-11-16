@@ -1,24 +1,22 @@
-# pm-Gallery
+# Pm-Gallery.js
 
-## Micro gallery for your project
-
-pm-Gallery - being developed as a test project within the framework of learning JavaScript
+Pm-Gallery.js - A simple yet powerful responsive image gallery
 
 With pm-Gallery, you can create professional-quality visual content.
 
 1. [**Demo page**](https://alekseevich-psk.github.io/pm-Gallery/dist)
-2. [**How install?**](#how-install)
+2. [**How usage?**](#how-usage)
 3. [**Example**](#example)
 4. [**Parameters**](#parameters)
 
 ---
 
-## How install?
+## How usage?
 
 1. npm i pm-gallery
 2. Add files: <br> HEAD - pm-gallery-style.css <br>
    Scripts - pm-gallery.js
-3. Init
+3. Init:
 
 ```js
 new PmGallery(".pm-gallery", {});
@@ -38,13 +36,12 @@ new PmGallery(".pm-gallery", {});
 
 ## Parameters
 
----
-
 | Name                 |         type          | Default |                                  Value                                  | Description                                           |
 | :------------------- | :-------------------: | :-----: | :---------------------------------------------------------------------: | :---------------------------------------------------- |
 | **positionPreviews** |        string         | 'left'  |            'top' &#124; 'bottom' &#124; 'left'&#124; 'right'            | Positioning of preview images relative to the gallery |
 | **objectFitPicture** |        string         | 'cover' | 'fill' &#124; 'contain' &#124; 'cover' &#124; 'scaleDown' &#124; 'none' | Adds the 'object-fit' class for the main image        |
 | **visiblePreviews**  |        boolean        |  true   |                            true &#124; false                            | Image preview visibility                              |
+| **onCenterPreviews** |        boolean        |  true   |                            true &#124; false                            | Center previews in horizontal mode                    |
 | **pagination**       |        boolean        |  false  |                            true &#124; false                            | Pagination visibility                                 |
 | **swipeSlider**      |        boolean        |  true   |                            true &#124; false                            | Swipe on main picture                                 |
 | **loop**             |        boolean        |  false  |                            true &#124; false                            | Set to true to enable continuous loop mode            |
@@ -55,5 +52,6 @@ new PmGallery(".pm-gallery", {});
 | **speedAnimScroll**  |        number         |   300   |                                    -                                    | Scrolling speed of preview images                     |
 | **breakpoints**      |        object         |   {}    |                                    -                                    | Adaptive Parameters                                   |
 | **fullScreen**       |        object         |   {}    |                                    -                                    | FullScreen Parameters                                 |
-| **borderRadius**     | number &#124; boolean |    4    |                     true &#124; false &#124; count                      | Adaptive Parameters                                   |
-| **autoPlay**         | number &#124; boolean |  false  |                     true &#124; false &#124; count                      | Adaptive Parameters                                   |
+| **borderRadius**     | number &#124; boolean |    4    |                           false &#124; count                            | The options adds border radius for images             |
+| **autoPlay**         | number &#124; boolean |  false  |                           false &#124; count                            | Automatic slide change                                |
+| **animSlide**        | string &#124; boolean |  false  |       false &#124; 'fade' &#124; 'flipInX' &#124; 'zoomIn' &#124;       | Animation of the slide change                         |

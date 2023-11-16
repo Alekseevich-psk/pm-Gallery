@@ -28,8 +28,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./app/html/index.html",
-            minify: false,
+            template: "app/pug/template.pug",
+            // filename: "index.html",
         }),
         new MiniCssExtractPlugin({
             filename: "[name].css",
@@ -46,6 +46,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.pug$/i,
+                use: ["pug-loader"],
+            },
+            {
                 test: /\.s[ac]ss$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
             },
@@ -53,6 +57,18 @@ module.exports = {
                 test: /\.tsx?$/,
                 use: "ts-loader",
                 exclude: /node_modules/,
+            },
+            {
+                test: /\.md$/,
+                use: [
+                    {
+                        loader: "html-loader",
+                    },
+                    {
+                        loader: "markdown-loader",
+                        options: {},
+                    },
+                ],
             },
         ],
     },

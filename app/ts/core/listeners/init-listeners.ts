@@ -9,6 +9,7 @@ import clickPaginationItem from "./click-elements/click-pagination-item";
 import initSwipeOnSliders from "./swipe-sliders/init-swipe-sliders";
 import clickUserButtons from "./click-elements/click-user-buttons";
 import changeInitGallery from "./change-state/change-init-gallery";
+import keydownEsc from "./keydown/keydown-esc";
 
 function initListeners(pmGallery: any) {
 
@@ -22,6 +23,7 @@ function initListeners(pmGallery: any) {
         changeFullScreen,
         changeSizeWindow,
         changeInitGallery,
+        keydownEsc,
         initSwipeOnSliders
     ];
 

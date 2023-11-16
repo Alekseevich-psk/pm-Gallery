@@ -1,8 +1,9 @@
+import onInitGallery from '../core/events/on-init-gallery';
 import { preview } from '../types/pmgPreview';
 
 export default function getImages(wrapper: HTMLElement) {
-    if(!wrapper) return;
-    
+    if (!wrapper) return;
+
     const previews = wrapper.querySelectorAll('img');
     const result: object[] = [];
 
@@ -17,7 +18,7 @@ export default function getImages(wrapper: HTMLElement) {
         res.alt = element.alt;
         result.push(res);
     });
-    
+
     wrapper.innerHTML = '';
     return result;
 }
