@@ -16,9 +16,11 @@ const defOptions: pmgOptions = {
     pagination: false,
     loop: false,
     speedAnimScroll: 300,
+    animSlide: false,
     onCenterPreviews: true,
     fullScreen: {
         onCenterPreviews: true,
+        animSlide: 'fade',
         pagination: true,
         speedAnimScroll: 300,
         fullScreen: true,

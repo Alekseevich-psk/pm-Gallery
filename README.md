@@ -54,3 +54,4 @@ new PmGallery(".pm-gallery", {});
 | **fullScreen**       |        object         |   {}    |                                    -                                    | FullScreen Parameters                                 |
 | **borderRadius**     | number &#124; boolean |    4    |                           false &#124; count                            | The options adds border radius for images             |
 | **autoPlay**         | number &#124; boolean |  false  |                           false &#124; count                            | Automatic slide change                                |
+| **animSlide**        | string &#124; boolean |  false  |       false &#124; 'fade' &#124; 'flipInX' &#124; 'zoomIn' &#124;       | Animation of the slide change                         |
