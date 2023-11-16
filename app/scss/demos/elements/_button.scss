@@ -1,0 +1,14 @@
+.button {
+    cursor: pointer;
+    padding: 12px 36px;
+    border-radius: 6px;
+    color: $white;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url("../images/bg-button.svg");
+
+    &:hover {
+        transition: $transition;
+        box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.06);
+    }
+}

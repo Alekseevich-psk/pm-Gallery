@@ -1,10 +1,3 @@
-
-const gallery = document.querySelector('.pm-gallery');
-
-new PmGallery('.pm-gallery', {
-    controls: {
-        btnPrev: ".main__btn-slide--prev",
-        btnNext: ".main__btn-slide--next",
-        btnFullScreen: ".main__btn-slide--fullscreen",
-    },
-});
+import "./menu";
+import "./navigation";
+import "./pm-gallery";
