@@ -47,7 +47,7 @@ module.exports = {
         rules: [
             {
                 test: /\.pug$/i,
-                use: ['pug-loader'],
+                use: ["pug-loader"],
             },
             {
                 test: /\.s[ac]ss$/i,
@@ -57,6 +57,18 @@ module.exports = {
                 test: /\.tsx?$/,
                 use: "ts-loader",
                 exclude: /node_modules/,
+            },
+            {
+                test: /\.md$/,
+                use: [
+                    {
+                        loader: "html-loader",
+                    },
+                    {
+                        loader: "markdown-loader",
+                        options: {},
+                    },
+                ],
             },
         ],
     },

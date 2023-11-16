@@ -1,8 +1,6 @@
-# pm-Gallery
+# Pm-Gallery.js
 
-## Micro gallery for your project
-
-pm-Gallery - being developed as a test project within the framework of learning JavaScript
+Pm-Gallery.js - A simple yet powerful responsive image gallery
 
 With pm-Gallery, you can create professional-quality visual content.
 
@@ -13,7 +11,7 @@ With pm-Gallery, you can create professional-quality visual content.
 
 ---
 
-## How install?
+## How usage?
 
 1. npm i pm-gallery
 2. Add files: <br> HEAD - pm-gallery-style.css <br>
@@ -38,7 +36,6 @@ new PmGallery(".pm-gallery", {});
 
 ## Parameters
 
----
 
 | Name                 |         type          | Default |                                  Value                                  | Description                                           |
 | :------------------- | :-------------------: | :-----: | :---------------------------------------------------------------------: | :---------------------------------------------------- |

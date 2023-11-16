@@ -1,7 +1,7 @@
 (function () {
     const gallery = document.querySelector(".pm-gallery");
 
-    new PmGallery(".pm-gallery", {
+    new PmGallery(gallery, {
         countPreSlides: 4,
         positionPreviews: 'bottom',
         controls: {

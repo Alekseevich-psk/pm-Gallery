@@ -4,12 +4,10 @@
 
     const buttons = menu.querySelectorAll(".menu__link");
     const sections = document.querySelectorAll("section");
-    const mainPage = "#main";
 
-    for (let i = 0; i < buttons.length; i++) {
-        const btn = buttons[i];
-
+    buttons.forEach((btn, index) => {
         btn.addEventListener("click", (e) => {
+            if (btn.classList.contains("menu__link--outside")) return;
             e.preventDefault();
 
             sections.forEach((section) => {
@@ -20,7 +18,7 @@
 
             onSection(btn);
         });
-    }
+    });
 
     function onSection(el, hash = null) {
         const link = hash ? hash : "#" + getLink(el);
