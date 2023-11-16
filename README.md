@@ -5,7 +5,7 @@ Pm-Gallery.js - A simple yet powerful responsive image gallery
 With pm-Gallery, you can create professional-quality visual content.
 
 1. [**Demo page**](https://alekseevich-psk.github.io/pm-Gallery/dist)
-2. [**How install?**](#how-install)
+2. [**How usage?**](#how-usage)
 3. [**Example**](#example)
 4. [**Parameters**](#parameters)
 
@@ -16,7 +16,7 @@ With pm-Gallery, you can create professional-quality visual content.
 1. npm i pm-gallery
 2. Add files: <br> HEAD - pm-gallery-style.css <br>
    Scripts - pm-gallery.js
-3. Init
+3. Init:
 
 ```js
 new PmGallery(".pm-gallery", {});

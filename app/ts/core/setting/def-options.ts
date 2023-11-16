@@ -10,7 +10,7 @@ const defOptions: pmgOptions = {
     countPreSlides: 4,
     previewHeight: 100,
     previewWidth: 100,
-    autoPlay: 1000,
+    autoPlay: false,
     objectFitPicture: 'cover',
     swipeSlider: true,
     pagination: false,
