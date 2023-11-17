@@ -1,5 +1,4 @@
 import "./pm-gallery";
-// import "./constructor";
+import "./demo";
 import "./menu";
-import "./navigation";
 import "./markdown";
