@@ -1,4 +1,30 @@
 .params {
     padding-left: 8px;
-    
+
+    &__item {
+        padding-bottom: 12px;
+
+        span {
+            padding-left: 20px;
+            display: block;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .label {
+            position: relative;
+            padding-left: 10px;
+
+            &:before {
+                position: absolute;
+                content: "";
+                top: 10px;
+                left: 0;
+                border-radius: 50%;
+                width: 4px;
+                height: 4px;
+                background-color: $active;
+            }
+        }
+    }
 }

@@ -1,20 +1,54 @@
-section.constructor#constructor
-    .constructor__container.container 
-        h2.constructor__title Options Constructor
-        h2.constructor__description Here you can assemble the necessary configuration for your project on the fly
-        .constructor__wrapper 
-            .constructor__inner.constructor__inner--param 
-                .constructor__categories.categories
+section.demo#demo
+    .demo__container.container 
+        h2.demo__title Demo mode
+        h2.demo__description In this section you can get acquainted with the main features of the gallery
+        .demo__wrapper 
+            .demo__inner.demo__inner--param 
+                .demo__categories.categories
                     .categories__wrapper 
                         .categories__inner 
-                            .categories__title Default mode 
+                            .categories__title Parameters
                             .categories__param.params
                                 .params__item 
                                     input(type='checkbox' name='visiblePreviews' id="visiblePreviews" class="checkbox" checked )
-                                    label(for="visiblePreviews") Показывать миниатюры
+                                    label(for="visiblePreviews") Show thumbnails of images
                                         span (visiblePreviews)
-            .constructor__inner.constructor__inner--demo 
-                .constructor__gallery.pm-gallery 
+                                .params__item 
+                                    input(type='checkbox' name='pagination' id="pagination" class="checkbox" checked )
+                                    label(for="pagination") Enable pagination
+                                        span (pagination)
+                                .params__item 
+                                    input(type='checkbox' name='loop' id="loop" class="checkbox" checked )
+                                    label(for="loop") Enable loop mode
+                                        span (loop)
+                                hr
+                                .params__item 
+                                    label(for="positionPreviews" class="label") Select the sides of the thumbnail arrangement:
+                                        span (positionPreviews)
+                                    select#positionPreviews(class='select')
+                                        option(value="bottom" selected) Bottom
+                                        option(value="top") Top
+                                        option(value="left") Left
+                                        option(value="right") Right
+                                .params__item 
+                                    label(for="animSlide" class="label") Animation of the slide change:
+                                        span (animSlide)
+                                    select#animSlide(class='select')
+                                        option(value="none") none
+                                        option(value="top") fade
+                                        option(value="left") flipInX
+                                        option(value="right") zoomIn
+                                hr
+                                .params__item 
+                                    label(for="countPreSlides") Count of preview images
+                                        span (countPreSlides)
+                                    input(type="range" class="input" name="countPreSlides" id="countPreSlides" min="1" max="10" value="4" step='1')
+                                .params__item 
+                                    label(for="spaceBetween") Distance between preview images - px
+                                        span (spaceBetween)
+                                    input(type="range" class="input" name="spaceBetween" id="spaceBetween" min="1" max="30" value="6" step='2')
+            .demo__inner.demo__inner--demo 
+                .demo__gallery.pm-gallery 
                     img(src="./images/img-small-1.svg" data-src="./images/img-large-1.svg" alt="img")
                     img(src="./images/img-small-2.svg" data-src="./images/img-large-2.svg" alt="img")
                     img(src="./images/img-small-3.svg" data-src="./images/img-large-3.svg" alt="img")

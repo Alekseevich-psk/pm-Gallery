@@ -1,9 +1,9 @@
 (function () {
-    const gallery = document.querySelector(".pm-gallery");
+    const parent = document.querySelector(".main");
 
-    if (!gallery) return;
+    if (!parent) return;
 
-    new PmGallery(gallery, {
+    new PmGallery('.main__pm-gallery', {
         countPreSlides: 4,
         positionPreviews: "bottom",
         controls: {
