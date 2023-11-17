@@ -45,13 +45,13 @@ new PmGallery(".pm-gallery", {});
 | **pagination**       |        boolean        |  false  |                            true &#124; false                            | Pagination visibility                                 |
 | **swipeSlider**      |        boolean        |  true   |                            true &#124; false                            | Swipe on main picture                                 |
 | **loop**             |        boolean        |  false  |                            true &#124; false                            | Set to true to enable continuous loop mode            |
-| **countPreSlides**   |        number         |    4    |                                    -                                    | Number of preview images                              |
-| **spaceBetween**     |        number         |   10    |                                    -                                    | Distance between preview images - px                  |
-| **previewWidth**     |        number         |   100   |                                    -                                    | Width of the preview image - px                       |
-| **previewHeight**    |        number         |   100   |                                    -                                    | Height of the preview image - px                      |
-| **speedAnimScroll**  |        number         |   300   |                                    -                                    | Scrolling speed of preview images                     |
-| **breakpoints**      |        object         |   {}    |                                    -                                    | Adaptive Parameters                                   |
-| **fullScreen**       |        object         |   {}    |                                    -                                    | FullScreen Parameters                                 |
+| **countPreSlides**   |        number         |    4    |                                 number                                  | Count of preview images                               |
+| **spaceBetween**     |        number         |   10    |                                 number                                  | Distance between preview images - px                  |
+| **previewWidth**     |        number         |   100   |                                 number                                  | Width of the preview image - px                       |
+| **previewHeight**    |        number         |   100   |                                 number                                  | Height of the preview image - px                      |
+| **speedAnimScroll**  |        number         |   300   |                                 number                                  | Scrolling speed of preview images                     |
+| **breakpoints**      |        object         |   {}    |                                    -                                    | Object with parameters for responsive mode Parameters |
+| **fullScreen**       |        object         |   {}    |                                    -                                    | Object with parameters for fullScreen mode Parameters |
 | **borderRadius**     | number &#124; boolean |    4    |                           false &#124; count                            | The options adds border radius for images             |
 | **autoPlay**         | number &#124; boolean |  false  |                           false &#124; count                            | Automatic slide change                                |
 | **animSlide**        | string &#124; boolean |  false  |       false &#124; 'fade' &#124; 'flipInX' &#124; 'zoomIn' &#124;       | Animation of the slide change                         |

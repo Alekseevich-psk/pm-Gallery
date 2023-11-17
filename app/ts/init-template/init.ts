@@ -13,6 +13,7 @@ import initArrowsSlider from "./init-arrows-slider";
 import initPagination from "./init-pagination";
 import initPaginationItems from "./init-pagination-items";
 import onPreloader from "../core/modules/preloader-gallery/on-preloader";
+import initOverlay from "./init-overlay";
 
 export default function initTemplate(wrapper: any) {
     const res: pmgTemplate = {};
@@ -25,6 +26,7 @@ export default function initTemplate(wrapper: any) {
     
     res.gallery = mainElement;
     res.wrapper = initWrapper(mainElement);
+    res.overlay = initOverlay(mainElement);
     res.innerPreviews = initInnerPreviews(mainElement);
     res.innerPicture = initInnerPicture(mainElement);
     res.track = initTrack(mainElement);

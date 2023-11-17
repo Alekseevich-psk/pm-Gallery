@@ -1,6 +1,7 @@
 export type pmgTemplate = {
     gallery?: HTMLElement,
     wrapper?: HTMLElement,
+    overlay?: HTMLElement,
     wrapperWidth?: number,
     wrapperHeight?: number,
     innerPreviewsWidth?: number,
