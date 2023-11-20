@@ -1,0 +1,30 @@
+.console {
+    overflow: hidden;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid rgb(207, 207, 207);
+
+    &__inner {
+        padding: 18px 14px;
+
+        &--header {
+            background-color: #dbdbdb;
+            border-bottom: 1px solid rgb(207, 207, 207);
+        }
+
+        // &--body {
+
+        // }
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    &__status {
+        font-size: 14px;
+    }
+
+
+}

@@ -10,15 +10,15 @@ section.demo#demo
                             .categories__title Parameters
                             .categories__param.params
                                 .params__item 
-                                    input(type='checkbox' name='visiblePreviews' id="visiblePreviews" class="checkbox" checked )
+                                    input(type='checkbox' name='visiblePreviews' value="true" id="visiblePreviews" class="checkbox" checked )
                                     label(for="visiblePreviews") Show thumbnails of images
                                         span (visiblePreviews)
                                 .params__item 
-                                    input(type='checkbox' name='pagination' id="pagination" class="checkbox" checked )
+                                    input(type='checkbox' name='pagination' value="true" id="pagination" class="checkbox" checked )
                                     label(for="pagination") Enable pagination
                                         span (pagination)
                                 .params__item 
-                                    input(type='checkbox' name='loop' id="loop" class="checkbox" checked )
+                                    input(type='checkbox' name='loop' value="true" id="loop" class="checkbox" checked )
                                     label(for="loop") Enable loop mode
                                         span (loop)
                                 hr
@@ -65,3 +65,10 @@ section.demo#demo
                     img(src="./images/img-small-7.svg" data-src="./images/img-large-7.svg" alt="img")
                     img(src="./images/img-small-8.svg" data-src="./images/img-large-8.svg" alt="img")
                     img(src="./images/img-small-9.svg" data-src="./images/img-large-9.svg" alt="img") 
+                .demo__console.console 
+                    .console__wrapper 
+                        .console__inner.console__inner--header
+                            .console__title Demo config
+                            //- .console__status Status..
+                        .console__inner.console__inner--body 
+                            code {}
