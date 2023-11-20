@@ -3,10 +3,11 @@
     if (!parent) return;
     const options = {};
 
+    const gallery = document.querySelector(".demo__gallery");
     const paramsInput = parent.querySelectorAll("input");
     const paramsSelect = parent.querySelectorAll("select");
-
-    const gallery = new PmGallery(".demo__gallery", options);
+    
+    getInitOptions();
 
     paramsInput.forEach((input) => {
         setInputValue(input);
@@ -26,6 +27,16 @@
         });
     });
 
+    function getInitOptions() {
+        paramsInput.forEach((input) => {
+            setInputValue(input);
+        });
+
+        paramsInput.forEach((select) => {
+            setSelectValue(select);
+        });
+    }
+
     function setSelectValue(select) {
         options[select.id] = select.value;
     }
@@ -36,12 +47,13 @@
         }
 
         if (input.type === "range") {
-            options[input.name] = Number(input.value);
+            options[input.name] = input.value;
         }
     }
 
     function updateGallery(options) {
-        // gallery.update();
+        demoGallery.update();
     }
 
+    const demoGallery = new PmGallery(gallery, options);
 })();

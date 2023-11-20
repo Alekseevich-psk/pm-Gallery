@@ -5,6 +5,7 @@
 
     new PmGallery('.main__pm-gallery', {
         countPreSlides: 4,
+        borderRadius: 4,
         positionPreviews: "bottom",
         controls: {
             btnPrev: ".main__btn-slide--prev",

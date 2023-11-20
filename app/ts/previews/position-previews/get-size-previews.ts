@@ -20,26 +20,24 @@ function getSizePreviews(pmGallery: any) {
     const options = pmGallery.initOptions;
     const previews = pmGallery.previews as NodeList;
     const posPreviews = pmGallery.posPreviews;
-    const spaceBetween = pmGallery.initOptions.spaceBetween;
+    const spaceBetween = Number(pmGallery.initOptions.spaceBetween);
 
     const countSlides = previews.length;
     const sizeWrapper = getSizeElement(pmGallery.wrapper);
 
     const previewsVertical = (posPreviews === pmgClasses['vertical'] ? true : false);
     const spaceBetweenAll = (spaceBetween * (countSlides - 1));
-    
-    let countPreSlides: number = options.countPreSlides;
-    let previewHeight: number = options.previewHeight;
-    let previewWidth: number = options.previewWidth;
 
-    if (typeof (countPreSlides) === "number") {
-        let spaceBetweenActive = spaceBetween * (countPreSlides - 1);
+    let countPreSlides: number = Number(options.countPreSlides);
+    let previewHeight: number = Number(options.previewHeight);
+    let previewWidth: number = Number(options.previewWidth);
 
-        if (previewsVertical) {
-            previewHeight = Math.abs(sizeWrapper.height - spaceBetweenActive) / countPreSlides;
-        } else {
-            previewWidth = Math.abs(sizeWrapper.width - spaceBetweenActive) / countPreSlides;
-        }
+    let spaceBetweenActive = spaceBetween * (countPreSlides - 1);
+
+    if (previewsVertical) {
+        previewHeight = Math.abs(sizeWrapper.height - spaceBetweenActive) / countPreSlides;
+    } else {
+        previewWidth = Math.abs(sizeWrapper.width - spaceBetweenActive) / countPreSlides;
     }
 
     res.innerPreviewsHeight = (previewsVertical ?

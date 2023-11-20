@@ -35,18 +35,25 @@ section.demo#demo
                                         span (animSlide)
                                     select#animSlide(class='select')
                                         option(value="none") none
-                                        option(value="top") fade
-                                        option(value="left") flipInX
-                                        option(value="right") zoomIn
+                                        option(value="fade") fade
+                                        option(value="flipInX") flipInX
+                                        option(value="zoomIn") zoomIn
                                 hr
                                 .params__item 
-                                    label(for="countPreSlides") Count of preview images
+                                    label(for="countPreSlides") Count of preview images 
                                         span (countPreSlides)
-                                    input(type="range" class="input" name="countPreSlides" id="countPreSlides" min="1" max="10" value="4" step='1')
+                                    output.params__item-count 4
+                                    input(type="range" oninput="this.previousElementSibling.value = this.value" class="input" name="countPreSlides" id="countPreSlides" min="1" max="10" value="4" step='1')
                                 .params__item 
                                     label(for="spaceBetween") Distance between preview images - px
                                         span (spaceBetween)
-                                    input(type="range" class="input" name="spaceBetween" id="spaceBetween" min="1" max="30" value="6" step='2')
+                                    output.params__item-count 6
+                                    input(type="range" oninput="this.previousElementSibling.value = this.value" class="input" name="spaceBetween" id="spaceBetween" min="0" max="30" value="6" step='1')
+                                .params__item 
+                                    label(for="borderRadius") The options adds border radius for images - px
+                                        span (borderRadius)
+                                    output.params__item-count 6
+                                    input(type="range" oninput="this.previousElementSibling.value = this.value" class="input" name="borderRadius" id="borderRadius" min="0" max="30" value="6" step='1')
             .demo__inner.demo__inner--demo 
                 .demo__gallery.pm-gallery 
                     img(src="./images/img-small-1.svg" data-src="./images/img-large-1.svg" alt="img")
