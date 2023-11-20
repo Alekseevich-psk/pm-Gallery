@@ -10,14 +10,6 @@ body {
     color: #181818;
 }
 
-section {
-    display: none;
-
-    &.active {
-        display: block;
-    }
-}
-
 html {
     scroll-behavior: smooth;
 }

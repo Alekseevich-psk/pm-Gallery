@@ -7,13 +7,11 @@ function positionVertical(pmGallery: any, position: string) {
     const innerPicture = pmGallery.innerPicture;
     const track = pmGallery.track;
     const sbFullScreen = pmGallery.fullScreen ? pmGallery.spaceBetween : 0;
-    
     innerPreviews.style.display = 'block';
 
     if (position === pmGalleryClasses['posPreviewsLeft']) {
         innerPreviews.style.left = (0 + sbFullScreen) + 'px';
         innerPreviews.style.right = 'auto';
-
         innerPicture.style.left = (pmGallery.previewWidth + pmGallery.spaceBetween + sbFullScreen) + 'px';
         innerPicture.style.right = 'auto';
     }
@@ -21,7 +19,6 @@ function positionVertical(pmGallery: any, position: string) {
     if (position === pmGalleryClasses['posPreviewsRight']) {
         innerPreviews.style.left = 'auto';
         innerPreviews.style.right = (0 + sbFullScreen) + 'px';
-
         innerPicture.style.left = 0;
         innerPicture.style.right = 'auto';
     }

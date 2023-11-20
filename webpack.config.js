@@ -1,7 +1,11 @@
 const path = require("path");
+const fs = require("fs");
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+
+const pagesPug = fs.readdirSync("app/pug/").filter((fileName) => fileName.endsWith(".pug"));
 
 module.exports = {
     entry: {
@@ -27,10 +31,13 @@ module.exports = {
         extensions: [".tsx", ".ts", ".js"],
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: "app/pug/template.pug",
-            // filename: "index.html",
-        }),
+        ...pagesPug.map(
+            (page) =>
+                new HtmlWebpackPlugin({
+                    template: `app/pug/${page}`,
+                    filename: `./${page.replace(/\.pug/, ".html")}`,
+                })
+        ),
         new MiniCssExtractPlugin({
             filename: "[name].css",
         }),

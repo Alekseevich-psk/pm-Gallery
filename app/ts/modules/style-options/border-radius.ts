@@ -1,12 +1,8 @@
 
 function borderRadius(pmGallery: any) {
-    const optionBorderRadius = pmGallery.initOptions.borderRadius;
+    const optionBorderRadius = pmGallery.initOptions.borderRadius === 'none' ? 0 : pmGallery.initOptions.borderRadius;
     if (!optionBorderRadius) return;
-
-    if (typeof optionBorderRadius === 'number') {
-        pmGallery.wrapper.style.setProperty('--border-radius', (optionBorderRadius + 'px'))
-    }
-
+    pmGallery.wrapper.style.setProperty('--border-radius', (Number(optionBorderRadius) + 'px'))
 }
 
 export default borderRadius;

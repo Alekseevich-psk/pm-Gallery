@@ -5,16 +5,19 @@ import initListeners from './core/listeners/init-listeners';
 import initPreviews from './previews/init-previews';
 import initModules from './modules/init-modules';
 import initCoreModules from './core/modules/init-core-modules';
+import destroyedGallery from './core/modules/destroyed/destroyed-gallery';
 
 class PmGallery {
 
     private pmGallery: any;
+    private msGalleryWrapper: string;
     private options: object;
     private initOptions: pmgOptions;
     private activeIndex: number;
 
     constructor(msGalleryWrapper: any, options: pmgOptions) {
         this.options = options;
+        this.msGalleryWrapper = msGalleryWrapper;
         this.init(msGalleryWrapper);
     }
 
@@ -35,7 +38,16 @@ class PmGallery {
             this.pmGallery = Object.assign(this.pmGallery, module(this.pmGallery));
         });
 
-        // console.log(this.pmGallery);
+        console.log(this.pmGallery);
+    }
+
+    destroyed() {
+        destroyedGallery(this.pmGallery);
+    }
+
+    update() {
+        this.destroyed();
+        this.init(this.msGalleryWrapper);
     }
 
     on = function (event: string, foo: any) {

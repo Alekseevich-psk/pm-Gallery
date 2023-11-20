@@ -1,3 +1,16 @@
-.input {
-    
+.input,
+.select {
+    margin-top: 4px;
+    border: 1px solid gray;
+    padding: 4px 6px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: $black;
+    width: 100%;
+    display: block;
+
+    &:hover,
+    &:active {
+        border: 1px solid $active;
+    }
 }
