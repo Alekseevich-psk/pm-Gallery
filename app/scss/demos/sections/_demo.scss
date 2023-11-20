@@ -1,8 +1,11 @@
 .demo {
-
     &__wrapper {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: 960px) {
+            flex-direction: column;
+        }
     }
 
     &__title {
@@ -19,15 +22,24 @@
     }
 
     &__inner {
-        
+
         &--param {
             padding: 18px 14px;
+            border-radius: 8px;
             border: 1px solid rgb(207, 207, 207);
             flex: 0 0 28%;
         }
 
         &--demo {
             flex: 0 0 70%;
+        }
+
+        @media (max-width: 960px) {
+            flex: 0 0 100%;
+
+            &:first-child {
+                margin-bottom: 20px;
+            }
         }
     }
 }

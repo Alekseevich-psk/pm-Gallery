@@ -10,6 +10,8 @@ import initSwipeOnSliders from "./swipe-sliders/init-swipe-sliders";
 import clickUserButtons from "./click-elements/click-user-buttons";
 import changeInitGallery from "./change-state/change-init-gallery";
 import keydownEsc from "./keydown/keydown-esc";
+import clickBtnAutoPlay from "./click-elements/click-btn-auto-play";
+import keydownArrows from "./keydown/keydown-arrows";
 
 function initListeners(pmGallery: any) {
 
@@ -17,6 +19,7 @@ function initListeners(pmGallery: any) {
         clickDefArrows,
         clickPreviews,
         clickBtnFullScreen,
+        clickBtnAutoPlay,
         clickPaginationItem,
         clickUserButtons,
         changeActiveIndex,
@@ -24,6 +27,7 @@ function initListeners(pmGallery: any) {
         changeSizeWindow,
         changeInitGallery,
         keydownEsc,
+        keydownArrows,
         initSwipeOnSliders
     ];
 

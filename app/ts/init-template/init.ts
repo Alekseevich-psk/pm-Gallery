@@ -14,6 +14,7 @@ import initPagination from "./init-pagination";
 import initPaginationItems from "./init-pagination-items";
 import onPreloader from "../core/modules/preloader-gallery/on-preloader";
 import initOverlay from "./init-overlay";
+import initBtnAutoPlay from "./init-btn-auto-play";
 
 export default function initTemplate(wrapper: any) {
     const res: pmgTemplate = {};
@@ -34,6 +35,7 @@ export default function initTemplate(wrapper: any) {
     res.mainPicture = initMainPicture(mainElement, previewPictures);
     res.controls = initControls(mainElement);
     res.btnScreen = initBtnScreen(mainElement);
+    res.btnAutoPlay = initBtnAutoPlay(mainElement);
     res.pagination = initPagination(mainElement);
     res.paginationItems = initPaginationItems(mainElement, previewPictures);
     res.arrowsSlider = initArrowsSlider(mainElement);
