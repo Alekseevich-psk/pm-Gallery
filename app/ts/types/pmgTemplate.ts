@@ -12,6 +12,7 @@ export type pmgTemplate = {
     mainPicture?: HTMLElement,
     controls?: HTMLElement,
     btnScreen?: HTMLElement,
+    btnAutoPlay?: HTMLElement,
     pagination?: HTMLElement,
     paginationItems?: NodeListOf<Element>,
     arrowsSlider?: Element[],

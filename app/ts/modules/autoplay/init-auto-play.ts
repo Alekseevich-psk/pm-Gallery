@@ -1,13 +1,10 @@
 import autoPlay from "./auto-play";
 
 function initAutoPlay(pmGallery: any) {
-    const optionAutoPlay = pmGallery.initOptions.autoPlay;
-
-    if (!optionAutoPlay) return;
-
-    if (typeof optionAutoPlay !== 'number') {
-        return console.error('The "autoPlay" option must have the type === number');
-    }
+    const optionAutoPlay = Number(pmGallery.initOptions.autoPlay);
+    if (!optionAutoPlay) return pmGallery.btnAutoPlay.style.display = 'none';
+    
+    pmGallery.btnAutoPlay.style.display = 'block';
 
     if (pmGallery.autoPlayTimerId) {
         clearTimeout(pmGallery.autoPlayTimerId);
