@@ -6,7 +6,7 @@ function initAutoPlay(pmGallery: any) {
     const optionAutoPlay = Number(pmGallery.initOptions.autoPlay);
     const optionHideBtnAutoPlay = Number(pmGallery.initOptions.hideBtnAutoPlay);
 
-    if (!optionAutoPlay) return pmGallery.btnAutoPlay.style.display = 'none';
+    if (!optionAutoPlay) return hideBtnAutoPlay(pmGallery);
 
     if (optionHideBtnAutoPlay) {
         hideBtnAutoPlay(pmGallery);
