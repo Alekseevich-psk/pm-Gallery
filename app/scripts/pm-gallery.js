@@ -4,11 +4,12 @@
     if (!parent) return;
 
     new PmGallery(".main__pm-gallery", {
-        countPreSlides: 4,
+        countPreSlides: 4.4,
         borderRadius: 4,
         positionPreviews: "bottom",
         autoPlay: 2000,
-        loop: true,
+        // spaceBetween: 0,
+        // loop: true,
         fullScreen: {
         },
         controls: {
