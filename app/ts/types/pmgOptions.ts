@@ -13,6 +13,7 @@ export type pmgOptions = {
     borderRadius?: number | boolean,
     fullScreen?: object | boolean,
     autoPlay?: number | boolean,
+    hideBtnAutoPlay?: boolean,
     pagination?: boolean,
     swipeSlider?: boolean,
     onCenterPreviews?: boolean,
