@@ -4,6 +4,7 @@ function sliderScrollPreviews(pmGallery: any) {
     const track = pmGallery.track;
     const speedAnimScroll = pmGallery.initOptions.speedAnimScroll;
     const countHideSlides = pmGallery.countHideSlides;
+    const spaceBetween = pmGallery.initOptions.spaceBetween;
     const index = pmGallery.activeIndex;
     let distance: number = 0;
 
@@ -15,13 +16,15 @@ function sliderScrollPreviews(pmGallery: any) {
         distance = pmGallery.previewWidth;
     }
 
+    distance += spaceBetween;
+
     let disEnd = index * distance;
     let disCut = countHideSlides * distance;
 
     if (countHideSlides === 0) return;
 
     if (index > 1) {
-        disEnd = disEnd - distance;
+        disEnd = (disEnd - distance);
     }
 
     if (index === 1) {
@@ -45,6 +48,8 @@ function sliderScrollPreviews(pmGallery: any) {
     }
 
     if (pmGallery.posPreviews == pmGalleryClasses['horizontal']) {
+        console.log();
+
         track.style.transitionDuration = speedAnimScroll + 'ms';
         track.style.transform = `translate(${(-1 * disEnd) + 'px'}, 0)`;
     }
