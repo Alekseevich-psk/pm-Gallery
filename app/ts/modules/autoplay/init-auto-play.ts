@@ -1,26 +1,24 @@
-import pmGalleryClasses from "../../core/setting/pmgClasses";
 import autoPlay from "./auto-play";
-import hideBtnAutoPlay from "./hide-btn-auto-play";
+import pmGalleryClasses from "../../core/setting/pmgClasses";
 
 function initAutoPlay(pmGallery: any) {
+    const wrapper = pmGallery.wrapper as HTMLElement;
     const optionAutoPlay = Number(pmGallery.initOptions.autoPlay);
-    const optionHideBtnAutoPlay = Number(pmGallery.initOptions.hideBtnAutoPlay);
 
-    if (!optionAutoPlay) return hideBtnAutoPlay(pmGallery);
-
-    if (optionHideBtnAutoPlay) {
-        hideBtnAutoPlay(pmGallery);
-    } else {
-        pmGallery.btnAutoPlay.style.display = 'block';
+    if (wrapper.classList.contains(pmGalleryClasses['pause'])) {
+        return clearTimeout(pmGallery.autoPlayTimerId);
     }
 
-    if (pmGallery.wrapper.classList.contains(pmGalleryClasses['pause'])) return;
+    if (!optionAutoPlay) {
+        return pmGallery.btnAutoPlay.style.display = 'none';
+    }
 
     if (pmGallery.autoPlayTimerId) {
         clearTimeout(pmGallery.autoPlayTimerId);
         return autoPlay(pmGallery, optionAutoPlay);
     }
 
+    pmGallery.btnAutoPlay.style.display = 'block';
     return autoPlay(pmGallery, optionAutoPlay);
 }
 
