@@ -22,6 +22,7 @@ const pmGalleryClasses = {
     'paginationItem': pmGallery + '__pagination-item',
     'preloader': pmGallery + '__preloader',
     'paginationItemActive': 'active',
+    'hide': 'hide',
     'previewActive': 'active',
     'overflow': 'overflow',
     'horizontal': 'horizontal',

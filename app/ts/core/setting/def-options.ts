@@ -14,6 +14,7 @@ const defOptions: pmgOptions = {
     swipeSlider: true,
     pagination: false,
     autoPlay: false,
+    hideBtnAutoPlay: false,
     loop: false,
     speedAnimScroll: 300,
     animSlide: false,
