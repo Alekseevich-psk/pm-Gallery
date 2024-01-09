@@ -30,7 +30,7 @@ function sliderScrollPreviews(pmGallery: any) {
     if (index === 1) {
         disEnd = 0;
     }
-
+    
     if (disEnd >= disCut) {
 
         if (pmGallery.posPreviews == pmGalleryClasses['vertical']) {
@@ -48,8 +48,6 @@ function sliderScrollPreviews(pmGallery: any) {
     }
 
     if (pmGallery.posPreviews == pmGalleryClasses['horizontal']) {
-        console.log();
-
         track.style.transitionDuration = speedAnimScroll + 'ms';
         track.style.transform = `translate(${(-1 * disEnd) + 'px'}, 0)`;
     }

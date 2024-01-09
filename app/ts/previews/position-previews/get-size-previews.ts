@@ -36,8 +36,10 @@ function getSizePreviews(pmGallery: any) {
 
     if (previewsVertical) {
         previewHeight = Math.abs(sizeWrapper.height - spaceBetweenActive) / countPreSlides;
+        previewHeight = Math.round(previewHeight);
     } else {
         previewWidth = Math.abs(sizeWrapper.width - spaceBetweenActive) / countPreSlides;
+        previewWidth = Math.round(previewWidth);
     }
 
     res.innerPreviewsHeight = (previewsVertical ?
