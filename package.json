@@ -8,8 +8,8 @@
     },
     "name": "pm-gallery",
     "description": "A simple picture gallery for your project",
-    "version": "2.0.21",
-    "main": "pm-gallery.js",
+    "version": "2.0.22",
+    "main": "./dist/pm-gallery.js",
     "devDependencies": {
         "autoprefixer": "^10.4.14",
         "copy-webpack-plugin": "^11.0.0",
